@@ -26,14 +26,16 @@ namespace Rentacar.Repositorio
 
         public MySqlConnection GetConexion()
         {
-           
-        
+
             if (conexion is null)
             {
-                string url = string
-                    .Format("Server={0}; database={1}; UID={2}; password={3}",
+                string url = "";
+
+                url = string.Format("Server={0}; database={1}; UID={2}; password={3}",
                     Server, Database, User, Password);
-                conexion = new MySqlConnection(url);       
+
+                conexion = new MySqlConnection(url);
+
             }
 
             return conexion;
