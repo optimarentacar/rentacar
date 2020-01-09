@@ -30,9 +30,20 @@ namespace Rentacar.Repositorio
         
             if (conexion is null)
             {
-                string url = string
-                    .Format("Server={0}; database={1}; UID={2}; password={3}",
-                    Server, Database, User, Password);
+                string url = "";
+                try
+                {
+                     url = string
+                                        .Format("Server={0}; database={1}; UID={2}; password={3}",
+                                        Server, Database, User, Password);
+                }
+                catch(Exception ex)
+                {
+                     url = string
+                                        .Format("Server={0}; database={1}; UID={2}; password={3}",
+                                        Server, Database, "Adrian", "");
+                }
+                
                 conexion = new MySqlConnection(url);       
             }
 
