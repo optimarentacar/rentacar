@@ -133,7 +133,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Assets\Iconos\" />
-    <Folder Include="Assets\Imagenes\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\Imagenes\FotoPortada.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
