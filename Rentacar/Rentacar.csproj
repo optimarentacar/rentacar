@@ -69,20 +69,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Enums\Orden.cs" />
-    <Compile Include="Interfaz\Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Interfaz\Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Interfaz\Form2.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Interfaz\Form2.Designer.cs">
-      <DependentUpon>Form2.cs</DependentUpon>
-    </Compile>
+    <Compile Include="Excepciones\DatosNoEncontradosException.cs" />
+    <Compile Include="Excepciones\DniYaExisteException.cs" />
     <Compile Include="Interfaz\Personalizados\BotonPersonalizado.cs">
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Interfaz\Principal\FormPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaz\Principal\FormPrincipal.Designer.cs">
+      <DependentUpon>FormPrincipal.cs</DependentUpon>
     </Compile>
     <Compile Include="Modelos\Accesorio.cs" />
     <Compile Include="Modelos\Alquiler.cs" />
@@ -92,17 +88,21 @@
     <Compile Include="Modelos\Vehiculo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositorio\ContextoBD.cs" />
     <Compile Include="Repositorio\Interfaces\IRepositorioAccesorio.cs" />
     <Compile Include="Repositorio\Interfaces\IRepositorioAlquiler.cs" />
     <Compile Include="Repositorio\Interfaces\IRepositorioCaracteristica.cs" />
     <Compile Include="Repositorio\Interfaces\IRepositorioCliente.cs" />
     <Compile Include="Repositorio\Interfaces\IRepositorioMarca.cs" />
     <Compile Include="Repositorio\Interfaces\IRepositorioVehiculo.cs" />
+    <Compile Include="Repositorio\Repositorios\RepositorioAccesorio.cs" />
+    <Compile Include="Repositorio\Repositorios\RepositorioAlquiler.cs" />
+    <Compile Include="Repositorio\Repositorios\RepositorioCaracteristica.cs" />
+    <Compile Include="Repositorio\Repositorios\RepositorioCliente.cs" />
+    <Compile Include="Repositorio\Repositorios\RepositorioMarca.cs" />
     <Compile Include="Repositorio\Repositorios\RepositorioVehiculo.cs" />
-    <Compile Include="Servicios\Interfaces\IServicioVehiculo.cs" />
-    <Compile Include="Servicios\Servicios\ServicioVehiculo.cs" />
-    <EmbeddedResource Include="Interfaz\Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="Interfaz\Principal\FormPrincipal.resx">
+      <DependentUpon>FormPrincipal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -129,10 +129,8 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Excepciones\" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\error-icon.png" />
+    <Folder Include="Assets\Iconos\" />
+    <Folder Include="Assets\Imagenes\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

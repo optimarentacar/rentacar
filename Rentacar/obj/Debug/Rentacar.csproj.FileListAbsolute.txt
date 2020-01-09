@@ -15,4 +15,5 @@ F:\Rentacar\Rentacar\Rentacar\obj\Debug\Rentacar.csproj.GenerateResource.cache
 F:\Rentacar\Rentacar\Rentacar\obj\Debug\Rentacar.csproj.CopyComplete
 F:\Rentacar\Rentacar\Rentacar\obj\Debug\Rentacar.exe
 F:\Rentacar\Rentacar\Rentacar\obj\Debug\Rentacar.pdb
-F:\Rentacar\Rentacar\Rentacar\obj\Debug\Rentacar.Interfaz.Form1.resources
+F:\Rentacar\Rentacar\Rentacar\obj\Debug\Rentacar.Interfaz.Principal.FormPrincipal.resources
+F:\Rentacar\Rentacar\Rentacar\obj\Debug\Rentacar.csprojAssemblyReference.cache

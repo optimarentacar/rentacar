@@ -9,8 +9,8 @@ namespace Rentacar.Repositorio.Interfaces
 {
     public interface IRepositorioCaracteristica
     {
-        bool Crear(Caracteristica caracteristica);
-        bool Modificar(Caracteristica caracteristica);
-        bool Borrar(int idCaracteristica);
+        Task<bool> Crear(Caracteristica caracteristica);
+        Task<bool> Modificar(Caracteristica caracteristica);
+        Task<bool> Borrar(int idCaracteristica);
     }
 }

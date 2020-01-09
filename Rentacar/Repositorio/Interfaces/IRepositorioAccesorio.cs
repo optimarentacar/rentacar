@@ -9,8 +9,8 @@ namespace Rentacar.Repositorio.Interfaces
 {
     public interface IRepositorioAccesorio
     {
-        bool Crear(Accesorio accesorio);
-        bool Modificar(Accesorio accesorio);
-        bool Borrar(int idAccesorio);
+        Task<bool> Crear(Accesorio accesorio);
+        Task<bool> Modificar(Accesorio accesorio);
+        Task<bool> Borrar(int idAccesorio);
     }
 }

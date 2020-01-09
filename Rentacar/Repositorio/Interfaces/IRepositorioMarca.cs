@@ -9,8 +9,8 @@ namespace Rentacar.Repositorio.Interfaces
 {
     public interface IRepositorioMarca
     {
-        bool Crear(Marca marca);
-        bool Modificar(Marca marca);
-        bool Borrar(int idMarca);
+        Task<bool> Crear(Marca marca);
+        Task<bool> Modificar(Marca marca);
+        Task<bool> Borrar(int idMarca);
     }
 }

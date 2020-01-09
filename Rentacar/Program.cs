@@ -1,8 +1,7 @@
 ﻿using Rentacar.Interfaz;
+using Rentacar.Interfaz.Principal;
 using Rentacar.Repositorio.Interfaces;
 using Rentacar.Repositorio.Repositorios;
-using Rentacar.Servicios.Interfaces;
-using Rentacar.Servicios.Servicios;
 using SimpleInjector;
 using System;
 using System.Collections.Generic;
@@ -14,7 +13,7 @@ namespace Rentacar
 {
     static class Program
     {
-        private static Container container;
+        public static Container container;
         /// <summary>
         /// Punto de entrada principal para la aplicación.
         /// </summary>
@@ -24,18 +23,24 @@ namespace Rentacar
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             RegistrarDependencias();
-            Application.Run(container.GetInstance<Form1>());
+            Application.Run(container.GetInstance<FormPrincipal>());
         }
 
         private static void RegistrarDependencias()
         {
             container = new Container();
 
-            container.Register<Form1>();
+            container.Register<FormPrincipal>();
+          
 
-            container.Register<IServicioVehiculo, ServicioVehiculo>(Lifestyle.Transient);
-
+         
+            //Repositorios
             container.Register<IRepositorioVehiculo, RepositorioVehiculo>(Lifestyle.Transient);
+            container.Register<IRepositorioAlquiler, RepositorioAlquiler>(Lifestyle.Transient);
+            container.Register<IRepositorioCaracteristica, RepositorioCaracteristica>(Lifestyle.Transient);
+            container.Register<IRepositorioCliente, RepositorioCliente>(Lifestyle.Transient);
+            container.Register<IRepositorioAccesorio, RepositorioAccesorio>(Lifestyle.Transient);
+            container.Register<IRepositorioMarca, RepositorioMarca>(Lifestyle.Transient);
         }
     }
 }
