@@ -74,11 +74,8 @@
     <Compile Include="Interfaz\Personalizados\BotonPersonalizado.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Interfaz\Principal\Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Interfaz\Principal\Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Interfaz\Personalizados\LabelTitulo1.cs">
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Interfaz\Principal\FormPrincipal.cs">
       <SubType>Form</SubType>
