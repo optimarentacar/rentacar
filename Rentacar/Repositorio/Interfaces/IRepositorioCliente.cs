@@ -55,5 +55,13 @@ namespace Rentacar.Repositorio.Interfaces
         /// <returns>
         /// </returns>
         Task<List<Cliente>> Listar();
+
+        /// <summary>
+        ///     Comprueba si el cliente tiene
+        ///     alquileres asignados o no
+        /// </summary>
+        /// <param name="dni"></param>
+        /// <returns></returns>
+        Task<bool> TieneAlquileresAsignados(string dni);
     }
 }

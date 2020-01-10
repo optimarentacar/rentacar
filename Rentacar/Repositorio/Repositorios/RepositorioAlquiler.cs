@@ -245,7 +245,104 @@ namespace Rentacar.Repositorio.Repositorios
 
         public Task<List<Alquiler>> ListarPorFechaResumido(DateTime inicio, DateTime fin, Orden orden)
         {
-            throw new NotImplementedException();
+            string peticion = "SELECT al.id, al.fechaInicio, al.fechaFin, al.importe, " +
+                                       "v.matricula, v.modelo, v.capacidad, v.anio, v.pathFoto, " +
+                                       "m.nombre, " +
+                                       "c.dni, c.nombre, c.telefono, c.domicilio " +
+                                       "SUM(ac.costo) " +
+                              "INNER JOIN clientes c " +
+                              "ON c.dni = al.dni " +
+                              "AND al.fechaInicion >= @inicio " +
+                              "AND al.fechaFin <= @fin " +
+                              "INNER JOIN vehiculos v " +
+                              "ON v.matricula = al.matricula " +
+                              "INNER JOIN marcas m " +
+                              "ON m.id = v.idMarca " +
+                              "FROM alquileres al " +
+                              "INNER JOIN accesorios_alquileres acal " +
+                              "ON acal.idAlquiler = al.id " +
+                              "INNER JOIN accesorios ac " +
+                              "ON acal.idAccesorio = ac.id " +
+                              "GROUP BY al.id " +
+                              "ORDER BY @orden";
+
+            var conexion = ContextoBD.GetInstancia().GetConexion();
+            conexion.Open();
+            MySqlCommand command = new MySqlCommand(peticion, conexion);
+            string ordenarPor = "";
+            ;
+            switch (orden)
+            {
+                case Orden.CLIENTE:
+                    ordenarPor = "c.dni";
+                    break;
+                case Orden.FECHA:
+                    ordenarPor = "al.fechaInicio";
+                    break;
+                case Orden.MATRICULA:
+                    ordenarPor = "v.matricula";
+                    break;
+            }
+
+            command.Parameters.AddWithValue("@orden", ordenarPor);
+            command.Parameters.AddWithValue("@inicio", inicio);
+            command.Parameters.AddWithValue("@fin", fin);
+            command.Prepare();
+
+            List<Alquiler> alquileres = new List<Alquiler>();
+
+            try
+            {
+                DbDataReader reader = await command.ExecuteReaderAsync();
+
+                if (reader.HasRows)
+                {
+                    Alquiler alquiler;
+
+                    while (reader.Read())
+                    {
+                        alquiler = new Alquiler()
+                        {
+                            Id = reader.GetInt32(0),
+                            FechaInicio = reader.GetDateTime(1),
+                            FechaFin = reader.GetDateTime(2),
+                            Importe = reader.GetFloat(3),
+                            Vehiculo = new Vehiculo()
+                            {
+                                Matricula = reader.GetString(4),
+                                Modelo = reader.GetString(5),
+                                Capacidad = reader.GetInt32(6),
+                                Anio = reader.GetString(7),
+                                PathFoto = reader.GetString(8),
+                                Marca = new Marca()
+                                {
+                                    Nombre = reader.GetString(9)
+                                },
+                            },
+                            Cliente = new Cliente()
+                            {
+                                Dni = reader.GetString(10),
+                                Nombre = reader.GetString(11),
+                                Telefono = reader.GetString(12),
+                                Domilicio = reader.GetString(13),
+                            },
+                            CostoTotalAccesorios = reader.GetFloat(14)
+                        };
+
+                        alquileres.Add(alquiler);
+                    }
+                }
+            }
+            catch (DbException ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                conexion.Close();
+            }
+
+            return alquileres;
         }
     }
 }
