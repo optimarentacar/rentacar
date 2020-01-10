@@ -1,4 +1,5 @@
 ﻿using Rentacar.Excepciones;
+using Rentacar.Interfaz.Clientes;
 using Rentacar.Modelos;
 using Rentacar.Repositorio.Interfaces;
 using System;
@@ -39,6 +40,12 @@ namespace Rentacar.Interfaz.Principal
             {
                 Console.WriteLine(ex.Message);
             }
+        }
+
+        private void clienteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormGestionCliente fgc = Program.container.GetInstance<FormGestionCliente>();
+            fgc.ShowDialog();
         }
     }
 }

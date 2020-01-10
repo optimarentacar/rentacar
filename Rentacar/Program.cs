@@ -1,4 +1,5 @@
 ﻿using Rentacar.Interfaz;
+using Rentacar.Interfaz.Clientes;
 using Rentacar.Interfaz.Principal;
 using Rentacar.Repositorio.Interfaces;
 using Rentacar.Repositorio.Repositorios;
@@ -31,9 +32,10 @@ namespace Rentacar
             container = new Container();
 
             container.Register<FormPrincipal>();
-          
+            container.Register<FormGestionCliente>();
 
-         
+
+
             //Repositorios
             container.Register<IRepositorioVehiculo, RepositorioVehiculo>(Lifestyle.Transient);
             container.Register<IRepositorioAlquiler, RepositorioAlquiler>(Lifestyle.Transient);

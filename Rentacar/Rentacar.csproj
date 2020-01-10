@@ -71,10 +71,13 @@
     <Compile Include="Enums\Orden.cs" />
     <Compile Include="Excepciones\DatosNoEncontradosException.cs" />
     <Compile Include="Excepciones\DniYaExisteException.cs" />
-    <Compile Include="Interfaz\Personalizados\BotonPersonalizado.cs">
-      <SubType>Component</SubType>
+    <Compile Include="Interfaz\Clientes\FormGestionCliente.cs">
+      <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Interfaz\Personalizados\LabelTitulo1.cs">
+    <Compile Include="Interfaz\Clientes\FormGestionCliente.Designer.cs">
+      <DependentUpon>FormGestionCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaz\Personalizados\BotonPersonalizado.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Interfaz\Principal\FormPrincipal.cs">
@@ -104,6 +107,9 @@
     <Compile Include="Repositorio\Repositorios\RepositorioCliente.cs" />
     <Compile Include="Repositorio\Repositorios\RepositorioMarca.cs" />
     <Compile Include="Repositorio\Repositorios\RepositorioVehiculo.cs" />
+    <EmbeddedResource Include="Interfaz\Clientes\FormGestionCliente.resx">
+      <DependentUpon>FormGestionCliente.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Interfaz\Principal\FormPrincipal.resx">
       <DependentUpon>FormPrincipal.cs</DependentUpon>
     </EmbeddedResource>
@@ -135,7 +141,27 @@
     <Folder Include="Assets\Iconos\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Assets\Imagenes\FotoPortada.jpg" />
+    <Content Include="Assets\Imagenes\AlquilerAccesorios.PNG" />
+    <Content Include="Assets\Imagenes\AlquilerAccesorios6.PNG" />
+    <Content Include="Assets\Imagenes\AlquilerFecha.PNG" />
+    <Content Include="Assets\Imagenes\AlquilerVehiculos.PNG" />
+    <Content Include="Assets\Imagenes\AlquilerVehiculos2.PNG" />
+    <Content Include="Assets\Imagenes\AlquilerVehiculos3.PNG" />
+    <Content Include="Assets\Imagenes\AlquilerVehiculos4.PNG" />
+    <Content Include="Assets\Imagenes\AlquilerVehiculos5.PNG" />
+    <Content Include="Assets\Imagenes\AlquilerVehiculos7.PNG" />
+    <Content Include="Assets\Imagenes\BusquedaClientes.PNG" />
+    <Content Include="Assets\Imagenes\BusquedaVehiculosMatricula.PNG" />
+    <Content Include="Assets\Imagenes\CaracteristicasVehiculos.PNG" />
+    <Content Include="Assets\Imagenes\DetallesAlquiler.PNG" />
+    <Content Include="Assets\Imagenes\FlitrosConsultas.PNG" />
+    <Content Include="Assets\Imagenes\GestionAccesorios.PNG" />
+    <Content Include="Assets\Imagenes\GestionCaracteristicas.PNG" />
+    <Content Include="Assets\Imagenes\GestionClientes.PNG" />
+    <Content Include="Assets\Imagenes\GestionMarcas.PNG" />
+    <Content Include="Assets\Imagenes\GestionVehiculos.PNG" />
+    <Content Include="Assets\Imagenes\Portada.PNG" />
+    <Content Include="Assets\Imagenes\VehiculosAlquilados.PNG" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
