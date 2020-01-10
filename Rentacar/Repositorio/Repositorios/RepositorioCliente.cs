@@ -37,7 +37,7 @@ namespace Rentacar.Repositorio.Repositorios
             }
             catch (DbException ex)
             {
-
+                throw ex;
             }
             finally
             {
@@ -57,7 +57,7 @@ namespace Rentacar.Repositorio.Repositorios
 
             MySqlCommand command = new MySqlCommand(peticion, conexion);
             command.Parameters.AddWithValue("@dni", cliente.Dni);
-            command.Parameters.AddWithValue("nombre", cliente.Nombre);
+            command.Parameters.AddWithValue("@nombre", cliente.Nombre);
             command.Parameters.AddWithValue("@telefono", cliente.Telefono);
             command.Parameters.AddWithValue("@domicilio", cliente.Domilicio);
             command.Prepare();
@@ -101,9 +101,18 @@ namespace Rentacar.Repositorio.Repositorios
             command.Parameters.AddWithValue("@domicilio", cliente.Domilicio);
             command.Prepare();
 
-            int result = await command.ExecuteNonQueryAsync();
-
-            conexion.Close();
+            try
+            {
+                int result = await command.ExecuteNonQueryAsync();
+            }
+            catch (DbException ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                conexion.Close();
+            }
 
             return true;
         }
