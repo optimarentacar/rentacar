@@ -198,5 +198,37 @@ namespace Rentacar.Repositorio.Repositorios
             return clientes;
         }
 
+        public async Task<bool> TieneAlquileresAsignados(string dni)
+        {
+            string peticion = "SELECT id FROM alquileres " +
+                              "WHERE dni = @dni " +
+                              "LIMIT 1";
+
+            var conexion = ContextoBD.GetInstancia().GetConexion();
+            conexion.Open();
+            MySqlCommand command = new MySqlCommand(peticion, conexion);
+
+            bool resultado = false;
+
+            try
+            {
+                DbDataReader reader = await command.ExecuteReaderAsync();
+
+                if (reader.HasRows)
+                {
+                    resultado = true;
+                }
+            }
+            catch (DbException ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                conexion.Close();
+            }
+
+            return resultado;
+        }
     }
 }
