@@ -8,5 +8,7 @@ namespace Rentacar.Modelos
 {
     public class Caracteristica
     {
+        public int Id { get; set; }
+        public string Nombre { get; set; }
     }
 }

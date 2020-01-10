@@ -13,7 +13,7 @@ namespace Rentacar.Modelos
         public Marca Marca { get; set; }
         public string Modelo { get; set; }
         public int Capacidad { get; set; }
-        public int Anio { get; set; }
+        public string Anio { get; set; }
         public float CostoDia { get; set; }
         public string PathFoto { get; set; }
     }

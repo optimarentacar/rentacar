@@ -61,7 +61,7 @@ namespace Rentacar.Repositorio.Repositorios
             }
             catch (DbException ex)
             {
-                if (ex.Message.Contains("UC_nombre"))
+                if (ex.Message.Contains("UC_nombre_accesorio"))
                 {
                     throw new NombreAccesorioYaExisteException();
                 }
