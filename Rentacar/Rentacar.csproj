@@ -71,6 +71,10 @@
     <Compile Include="Enums\Orden.cs" />
     <Compile Include="Excepciones\DatosNoEncontradosException.cs" />
     <Compile Include="Excepciones\DniYaExisteException.cs" />
+    <Compile Include="Excepciones\ModeloVehiculoYaExisteException.cs" />
+    <Compile Include="Excepciones\NombreAccesorioYaExisteException.cs" />
+    <Compile Include="Excepciones\NombreCaracteristicaYaExisteException.cs" />
+    <Compile Include="Excepciones\NombreMarcaYaExisteException.cs" />
     <Compile Include="Interfaz\Clientes\FormGestionCliente.cs">
       <SubType>Form</SubType>
     </Compile>

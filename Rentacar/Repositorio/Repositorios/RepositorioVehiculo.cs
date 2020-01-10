@@ -59,7 +59,7 @@ namespace Rentacar.Repositorio.Repositorios
                             Nombre = reader.GetString(2)
                         },
                         Modelo = reader.GetString(3),
-                        Anio = reader.GetInt16(4),
+                        Anio = reader.GetString(4),
                         Capacidad = reader.GetInt16(5),
                         CostoDia = reader.GetFloat(6),
                         PathFoto = reader.GetString(7),
