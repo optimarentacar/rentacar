@@ -83,32 +83,32 @@
             // clienteToolStripMenuItem
             // 
             this.clienteToolStripMenuItem.Name = "clienteToolStripMenuItem";
-            this.clienteToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.clienteToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
             this.clienteToolStripMenuItem.Text = "Cliente";
             this.clienteToolStripMenuItem.Click += new System.EventHandler(this.clienteToolStripMenuItem_Click);
             // 
             // vehículosToolStripMenuItem
             // 
             this.vehículosToolStripMenuItem.Name = "vehículosToolStripMenuItem";
-            this.vehículosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.vehículosToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
             this.vehículosToolStripMenuItem.Text = "Vehículos";
             // 
             // característicasToolStripMenuItem
             // 
             this.característicasToolStripMenuItem.Name = "característicasToolStripMenuItem";
-            this.característicasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.característicasToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
             this.característicasToolStripMenuItem.Text = "Características";
             // 
             // accesoriosToolStripMenuItem
             // 
             this.accesoriosToolStripMenuItem.Name = "accesoriosToolStripMenuItem";
-            this.accesoriosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.accesoriosToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
             this.accesoriosToolStripMenuItem.Text = "Accesorios";
             // 
             // marcasToolStripMenuItem
             // 
             this.marcasToolStripMenuItem.Name = "marcasToolStripMenuItem";
-            this.marcasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.marcasToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
             this.marcasToolStripMenuItem.Text = "Marcas";
             // 
             // operacionesToolStripMenuItem

@@ -25,10 +25,10 @@ namespace Rentacar.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("0, 192, 192")]
-        public global::System.Drawing.Color colorPrincipal {
+        [global::System.Configuration.DefaultSettingValueAttribute("Microsoft Tai Le, 9.75pt")]
+        public global::System.Drawing.Font Fuente {
             get {
-                return ((global::System.Drawing.Color)(this["colorPrincipal"]));
+                return ((global::System.Drawing.Font)(this["Fuente"]));
             }
         }
     }
