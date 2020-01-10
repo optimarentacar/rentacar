@@ -144,10 +144,13 @@
   <ItemGroup />
   <ItemGroup>
     <Content Include="Assets\Iconos\Atras.PNG" />
+    <Content Include="Assets\Iconos\Añadir.PNG" />
     <Content Include="Assets\Iconos\Cancelar.jpg" />
-    <Content Include="Assets\Iconos\primero.jpg" />
-    <Content Include="Assets\Iconos\siguiente.PNG" />
-    <Content Include="Assets\Iconos\ultimo.jpg" />
+    <Content Include="Assets\Iconos\Eliminar.PNG" />
+    <Content Include="Assets\Iconos\Modificar.PNG" />
+    <Content Include="Assets\Iconos\Primero.PNG" />
+    <Content Include="Assets\Iconos\Siguiente.PNG" />
+    <Content Include="Assets\Iconos\Ultimo.PNG" />
     <Content Include="Assets\Iconos\Validar.png" />
     <Content Include="Assets\Imagenes\GestionClientes.PNG" />
     <Content Include="Assets\Imagenes\Portada.PNG" />

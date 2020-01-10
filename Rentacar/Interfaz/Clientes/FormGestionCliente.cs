@@ -16,5 +16,10 @@ namespace Rentacar.Interfaz.Clientes
         {
             InitializeComponent();
         }
+
+        private void FormGestionCliente_Load(object sender, EventArgs e)
+        {
+            
+        }
     }
 }
