@@ -36,6 +36,9 @@
     <Reference Include="BouncyCastle.Crypto, Version=1.8.3.0, Culture=neutral, PublicKeyToken=0e99375e54769942">
       <HintPath>..\packages\BouncyCastle.1.8.3.1\lib\BouncyCastle.Crypto.dll</HintPath>
     </Reference>
+    <Reference Include="FluentValidation, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7de548da2fbae0f0, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentValidation.8.6.1\lib\net45\FluentValidation.dll</HintPath>
+    </Reference>
     <Reference Include="Google.Protobuf, Version=3.6.1.0, Culture=neutral, PublicKeyToken=a7d26565bac4d604, processorArchitecture=MSIL">
       <HintPath>..\packages\Google.Protobuf.3.6.1\lib\net45\Google.Protobuf.dll</HintPath>
     </Reference>
@@ -50,6 +53,9 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel" />
+    <Reference Include="System.ComponentModel.Annotations, Version=4.2.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ComponentModel.Annotations.4.4.1\lib\net461\System.ComponentModel.Annotations.dll</HintPath>
+    </Reference>
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Configuration.Install" />
@@ -110,14 +116,25 @@
     <Compile Include="Repositorio\Interfaces\IRepositorioAlquiler.cs" />
     <Compile Include="Repositorio\Interfaces\IRepositorioCaracteristica.cs" />
     <Compile Include="Repositorio\Interfaces\IRepositorioCliente.cs" />
+    <Compile Include="Repositorio\Interfaces\IRepositorioFotografia.cs" />
     <Compile Include="Repositorio\Interfaces\IRepositorioMarca.cs" />
     <Compile Include="Repositorio\Interfaces\IRepositorioVehiculo.cs" />
     <Compile Include="Repositorio\Repositorios\RepositorioAccesorio.cs" />
     <Compile Include="Repositorio\Repositorios\RepositorioAlquiler.cs" />
     <Compile Include="Repositorio\Repositorios\RepositorioCaracteristica.cs" />
     <Compile Include="Repositorio\Repositorios\RepositorioCliente.cs" />
+    <Compile Include="Repositorio\Repositorios\RepositorioFotografia.cs" />
     <Compile Include="Repositorio\Repositorios\RepositorioMarca.cs" />
     <Compile Include="Repositorio\Repositorios\RepositorioVehiculo.cs" />
+    <Compile Include="Test\FormTest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Test\FormTest.Designer.cs">
+      <DependentUpon>FormTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Validacion\ValidacionCliente.cs" />
+    <Compile Include="Validacion\ValidacionMarca.cs" />
+    <Compile Include="Validacion\ValidacionVehiculo.cs" />
     <EmbeddedResource Include="Interfaz\Clientes\FormGestionCliente.resx">
       <DependentUpon>FormGestionCliente.cs</DependentUpon>
     </EmbeddedResource>
@@ -137,6 +154,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Test\FormTest.resx">
+      <DependentUpon>FormTest.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -151,7 +171,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Recursos\FotosVehiculos\" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\Iconos\Atras.PNG" />
     <Content Include="Assets\Iconos\Cancelar.jpg" />

@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Rentacar.Modelos
 {
@@ -16,5 +18,10 @@ namespace Rentacar.Modelos
         public string Anio { get; set; }
         public float CostoDia { get; set; }
         public string PathFoto { get; set; }
+
+        public string PathAbsolutoFoto
+        {
+            get => Application.StartupPath + PathFoto;
+        }
     }
 }

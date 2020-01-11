@@ -89,25 +89,27 @@ namespace Rentacar.Repositorio.Repositorios
         {
             string peticion = "UPDATE clientes " +
                               "SET nombre = @nombre, telefono = @telefono, " +
-                                   "domicilio = @domicilio" +
+                                   "domicilio = @domicilio " +
                               "WHERE dni = @dni";
 
             var conexion = ContextoBD.GetInstancia().GetConexion();
             conexion.Open();
 
             MySqlCommand command = new MySqlCommand(peticion, conexion);
-            command.Parameters.AddWithValue("@dni", cliente.Dni);
+            
             command.Parameters.AddWithValue("@nombre", cliente.Nombre);
             command.Parameters.AddWithValue("@telefono", cliente.Telefono);
             command.Parameters.AddWithValue("@domicilio", cliente.Domilicio);
+            command.Parameters.AddWithValue("@dni", cliente.Dni);
             command.Prepare();
-
+           
             try
             {
                 int result = await command.ExecuteNonQueryAsync();
             }
             catch (DbException ex)
             {
+                Console.WriteLine(ex.GetBaseException().Message);
                 throw ex;
             }
             finally

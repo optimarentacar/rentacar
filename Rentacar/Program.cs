@@ -4,6 +4,7 @@ using Rentacar.Interfaz.Principal;
 using Rentacar.Interfaz.Vehiculos;
 using Rentacar.Repositorio.Interfaces;
 using Rentacar.Repositorio.Repositorios;
+using Rentacar.Test;
 using SimpleInjector;
 using System;
 using System.Collections.Generic;
@@ -35,6 +36,7 @@ namespace Rentacar
             container.Register<FormPrincipal>();
             container.Register<FormGestionCliente>();
             container.Register<FormGestionVehiculos>();
+            container.Register<FormTest>();
 
 
 
@@ -45,6 +47,7 @@ namespace Rentacar
             container.Register<IRepositorioCliente, RepositorioCliente>(Lifestyle.Transient);
             container.Register<IRepositorioAccesorio, RepositorioAccesorio>(Lifestyle.Transient);
             container.Register<IRepositorioMarca, RepositorioMarca>(Lifestyle.Transient);
+            container.Register<IRepositorioFotografia, RepositorioFotografia>(Lifestyle.Transient);
         }
     }
 }

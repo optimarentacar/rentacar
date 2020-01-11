@@ -41,6 +41,7 @@
             this.informesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ayudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.button2 = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -77,39 +78,39 @@
             this.accesoriosToolStripMenuItem,
             this.marcasToolStripMenuItem});
             this.tablasToolStripMenuItem.Name = "tablasToolStripMenuItem";
-            this.tablasToolStripMenuItem.Size = new System.Drawing.Size(51, 20);
+            this.tablasToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
             this.tablasToolStripMenuItem.Text = "Tablas";
             // 
             // clienteToolStripMenuItem
             // 
             this.clienteToolStripMenuItem.Name = "clienteToolStripMenuItem";
-            this.clienteToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.clienteToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
             this.clienteToolStripMenuItem.Text = "Cliente";
             this.clienteToolStripMenuItem.Click += new System.EventHandler(this.clienteToolStripMenuItem_Click);
             // 
             // vehículosToolStripMenuItem
             // 
             this.vehículosToolStripMenuItem.Name = "vehículosToolStripMenuItem";
-            this.vehículosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.vehículosToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
             this.vehículosToolStripMenuItem.Text = "Vehículos";
             this.vehículosToolStripMenuItem.Click += new System.EventHandler(this.vehículosToolStripMenuItem_Click);
             // 
             // característicasToolStripMenuItem
             // 
             this.característicasToolStripMenuItem.Name = "característicasToolStripMenuItem";
-            this.característicasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.característicasToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
             this.característicasToolStripMenuItem.Text = "Características";
             // 
             // accesoriosToolStripMenuItem
             // 
             this.accesoriosToolStripMenuItem.Name = "accesoriosToolStripMenuItem";
-            this.accesoriosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.accesoriosToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
             this.accesoriosToolStripMenuItem.Text = "Accesorios";
             // 
             // marcasToolStripMenuItem
             // 
             this.marcasToolStripMenuItem.Name = "marcasToolStripMenuItem";
-            this.marcasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.marcasToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
             this.marcasToolStripMenuItem.Text = "Marcas";
             // 
             // operacionesToolStripMenuItem
@@ -140,11 +141,22 @@
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
             // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(95, 576);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 3;
+            this.button2.Text = "Pruebas";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // FormPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 611);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.menuStrip1);
@@ -175,5 +187,6 @@
         private System.Windows.Forms.ToolStripMenuItem accesoriosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem marcasToolStripMenuItem;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button button2;
     }
 }
