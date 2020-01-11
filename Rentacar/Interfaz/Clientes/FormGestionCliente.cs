@@ -1,6 +1,9 @@
-﻿using Rentacar.Excepciones;
+﻿using FluentValidation.Results;
+using Rentacar.Enums;
+using Rentacar.Excepciones;
 using Rentacar.Modelos;
 using Rentacar.Repositorio.Interfaces;
+using Rentacar.Validacion;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -18,7 +21,7 @@ namespace Rentacar.Interfaz.Clientes
         private IRepositorioCliente _repositorioCliente;
         private List<Cliente> Clientes;
         private Cliente cliente;
-        private int count;
+        private Operacion operacion;
 
         public FormGestionCliente(IRepositorioCliente repositorioCliente)
         {
@@ -52,123 +55,82 @@ namespace Rentacar.Interfaz.Clientes
 
         private void Tabla_SelectionChanged(object sender, EventArgs e)
         {
-            if(Tabla.SelectedRows.Count > 0)
+            if (Tabla.SelectedRows.Count > 0)
             {
                 String dni = Tabla.SelectedRows[0].Cells[0].Value.ToString();
                 cliente = Clientes.FirstOrDefault(c => c.Dni == dni);
                 textDni.Text = cliente.Dni;
                 textNombreApellido.Text = cliente.Nombre;
-                textTelefono.Text = cliente.Telefono; 
+                textTelefono.Text = cliente.Telefono;
                 textDomicilio.Text = cliente.Domilicio;
             }
         }
         private void btnAñadir_Click(object sender, EventArgs e)
         {
-            Tabla.SelectionChanged -= Tabla_SelectionChanged;
             limpiar();
             desactivar();
             textDni.Enabled = true;
-            count = 1;
+            operacion = Operacion.CREAR;
 
         }
         private void btnEliminar_Click(object sender, EventArgs e)
         {
             desactivar();
+            Tabla.Enabled = true;
+
+            btnPrimero.Enabled = true;
+            btnAtras.Enabled = true;
+            btnSiguiente.Enabled = true;
+            btnUltimo.Enabled = true;
+
             textNombreApellido.Enabled = false;
             textTelefono.Enabled = false;
             textDomicilio.Enabled = false;
-            count = 3;
+
+            operacion = Operacion.ELIMINAR;
         }
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            Tabla.SelectionChanged -= Tabla_SelectionChanged;
             desactivar();
-            count = 0;
+            operacion = Operacion.MODIFICAR;
         }
 
         private async void btnValidar_Click(object sender, EventArgs e)
         {
-            if(count == 0)
+            if (operacion == Operacion.MODIFICAR)
             {
-                bool modificado = false;
-                Cliente C = new Cliente()
-                {
-                    Dni = textDni.Text,
-                    Nombre = textNombreApellido.Text,
-                    Telefono = textTelefono.Text,
-                    Domilicio = textDomicilio.Text
-                };
-
-                //TODO validacion
-
-                try
-                {
-                    modificado = await _repositorioCliente.Modificar(C);
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine(ex.Message);
-
-                }
-                if (modificado == true)
+                if (await this.Modificar() == true)
                 {
                     await Listar();
-                }
-                activar();
-                limpiar();
+                    activar();
+                    limpiar();
+                } 
             }
-            if(count == 1)
+            if (operacion == Operacion.CREAR)
             {
-                try
+                if (await this.Crear() == true)
                 {
-                    await _repositorioCliente.Crear(new Cliente()
-                    {
-                        //TODO Validar
-
-                        Dni = textDni.Text,
-                        Nombre = textNombreApellido.Text,
-                        Domilicio = textDomicilio.Text,
-                        Telefono = textTelefono.Text
-                    });
+                    await Listar();
+                    activar();
+                    limpiar();
                 }
-                catch (DniYaExisteException dyee)
-                {
-                    MessageBox.Show(dyee.Message);
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine(ex.Message);
-                }
-                await Listar();
-                activar();
-                limpiar();
             }
-            if (count == 3)
-            {
-                String dni = textDni.Text;
-                try
+            if (operacion == Operacion.ELIMINAR)
+            {               
+                if (await this.Eliminar() == true)
                 {
-                    await _repositorioCliente.Borrar(dni);
+                    await Listar();
+                    activar();
+                    limpiar();
                 }
-                catch (Exception ex)
-                {
-                    Console.WriteLine(ex.Message);
-                }
-                await Listar();
-                activar();
-                limpiar();
             }
-            
-            Tabla.SelectionChanged += Tabla_SelectionChanged;
         }
-
+    
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            Tabla.SelectionChanged += Tabla_SelectionChanged;
             limpiar();
             activar();
-            
         }
 
         public void limpiar()
@@ -195,6 +157,7 @@ namespace Rentacar.Interfaz.Clientes
             textTelefono.Enabled = false;
             textDomicilio.Enabled = false;
             textDni.Enabled = false;
+            Tabla.Enabled = true;
         }
 
         public void desactivar()
@@ -212,8 +175,130 @@ namespace Rentacar.Interfaz.Clientes
             textNombreApellido.Enabled = true;
             textTelefono.Enabled = true;
             textDomicilio.Enabled = true;
+            Tabla.Enabled = false;
         }
 
-        //TODO Botones de movimiento
+        private void btnPrimero_Click(object sender, EventArgs e)
+        {
+            if (Tabla.Rows.Count > 0)
+            {
+                Tabla.Rows[0].Selected = true;
+            }
+        }
+
+        private void btnUltimo_Click(object sender, EventArgs e)
+        {
+            if (Tabla.Rows.Count > 0)
+            {
+                Tabla.Rows[Tabla.Rows.Count - 1].Selected = true;
+            }
+        }
+
+        private void btnAtras_Click(object sender, EventArgs e)
+        {
+            if (Tabla.Rows.Count > 0)
+            {
+                if (Tabla.SelectedRows[0].Index > 0)
+                {
+                    Tabla.Rows[Tabla.SelectedRows[0].Index - 1].Selected = true;
+                }
+            }
+        }
+
+        private void btnSiguiente_Click(object sender, EventArgs e)
+        {
+            if (Tabla.Rows.Count > 0)
+            {
+                if (Tabla.SelectedRows[0].Index < Tabla.Rows.Count - 1)
+                {
+                    Tabla.Rows[Tabla.SelectedRows[0].Index + 1].Selected = true;
+                }
+            }
+        }
+
+        private async Task<bool> Crear()
+        {
+            bool creado = false;
+            Cliente C = new Cliente()
+            {
+                Dni = textDni.Text,
+                Nombre = textNombreApellido.Text,
+                Telefono = textTelefono.Text,
+                Domilicio = textDomicilio.Text
+            };
+
+            ValidacionCliente validator = new ValidacionCliente();
+            ValidationResult results = validator.Validate(C);
+
+            if (!results.IsValid)
+            {
+                string mensaje = results.Errors[0].ErrorMessage;
+                Console.WriteLine(mensaje);
+            }
+            else
+            {
+                try
+                {
+                    creado = await _repositorioCliente.Crear(C);
+                }
+                catch (DniYaExisteException dyee)
+                {
+                    MessageBox.Show(dyee.Message);
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
+            }
+            return creado;
+        }
+
+        private async Task<bool> Modificar()
+        {
+            bool modificado = false;
+            Cliente C = new Cliente()
+            {
+                Dni = textDni.Text,
+                Nombre = textNombreApellido.Text,
+                Telefono = textTelefono.Text,
+                Domilicio = textDomicilio.Text
+            };
+
+            ValidacionCliente validator = new ValidacionCliente();
+            ValidationResult results = validator.Validate(C);
+            if (!results.IsValid)
+            {
+                string mensaje = results.Errors[0].ErrorMessage;
+                Console.WriteLine(mensaje);
+            }
+            else
+            {
+                try
+                {
+                    modificado = await _repositorioCliente.Modificar(C);
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+
+                }
+            }
+            return modificado;
+        }
+
+        private async Task<bool> Eliminar()
+        {
+            bool borrado = false;
+            String dni = textDni.Text;
+            try
+            {
+                borrado = await _repositorioCliente.Borrar(dni);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            return borrado;
+        }
     }
 }

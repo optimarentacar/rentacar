@@ -74,6 +74,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Enums\Operacion.cs" />
     <Compile Include="Enums\Orden.cs" />
     <Compile Include="Excepciones\DatosNoEncontradosException.cs" />
     <Compile Include="Excepciones\DniYaExisteException.cs" />

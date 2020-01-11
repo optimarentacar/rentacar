@@ -38,9 +38,8 @@ namespace Rentacar.Interfaz.Vehiculos
                 TablaVehiculos.Rows.Clear();
                 for (int i = 0; i < Vehiculos.Count; i++)
                 {
-                    //TODO el de marca no funciona bien
 
-                    TablaVehiculos.Rows.Add(Vehiculos[i].Matricula, Vehiculos[i].Marca, 
+                    TablaVehiculos.Rows.Add(Vehiculos[i].Matricula, Vehiculos[i].Marca.Nombre, 
                         Vehiculos[i].Modelo, Vehiculos[i].Capacidad, Vehiculos[i].Anio, Vehiculos[i].CostoDia);
                 }
 

@@ -58,6 +58,8 @@
             // 
             // Tabla
             // 
+            this.Tabla.AllowUserToAddRows = false;
+            this.Tabla.BackgroundColor = System.Drawing.Color.White;
             this.Tabla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.Tabla.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Dni,
@@ -173,6 +175,7 @@
             this.btnUltimo.Size = new System.Drawing.Size(80, 35);
             this.btnUltimo.TabIndex = 16;
             this.btnUltimo.UseVisualStyleBackColor = true;
+            this.btnUltimo.Click += new System.EventHandler(this.btnUltimo_Click);
             // 
             // btnSiguiente
             // 
@@ -183,6 +186,7 @@
             this.btnSiguiente.Size = new System.Drawing.Size(80, 35);
             this.btnSiguiente.TabIndex = 15;
             this.btnSiguiente.UseVisualStyleBackColor = true;
+            this.btnSiguiente.Click += new System.EventHandler(this.btnSiguiente_Click);
             // 
             // btnAtras
             // 
@@ -193,6 +197,7 @@
             this.btnAtras.Size = new System.Drawing.Size(80, 35);
             this.btnAtras.TabIndex = 14;
             this.btnAtras.UseVisualStyleBackColor = true;
+            this.btnAtras.Click += new System.EventHandler(this.btnAtras_Click);
             // 
             // btnPrimero
             // 
@@ -203,6 +208,7 @@
             this.btnPrimero.Size = new System.Drawing.Size(80, 35);
             this.btnPrimero.TabIndex = 13;
             this.btnPrimero.UseVisualStyleBackColor = true;
+            this.btnPrimero.Click += new System.EventHandler(this.btnPrimero_Click);
             // 
             // btnCancelar
             // 
