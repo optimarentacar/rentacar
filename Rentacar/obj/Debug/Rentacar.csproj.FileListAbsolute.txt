@@ -76,4 +76,8 @@ C:\Users\alexm_000\Desktop\Rentacar\rentacar\Rentacar\obj\Debug\Rentacar.csproj.
 C:\Users\alexm_000\Desktop\Rentacar\rentacar\Rentacar\obj\Debug\Rentacar.exe
 C:\Users\alexm_000\Desktop\Rentacar\rentacar\Rentacar\obj\Debug\Rentacar.pdb
 C:\Users\adria\Desktop\Rentacar\rentacar\Rentacar\obj\Debug\Rentacar.Interfaz.Clientes.FormGestionCliente.resources
+<<<<<<< HEAD
 C:\Users\alexm_000\Desktop\Rentacar\rentacar\Rentacar\obj\Debug\Rentacar.csprojAssemblyReference.cache
+=======
+C:\Users\adria\Desktop\Rentacar\rentacar\Rentacar\obj\Debug\Rentacar.Interfaz.Vehiculos.FormGestionVehiculos.resources
+>>>>>>> bb6cd28694dbcffadd1e151691d21d7270477d33

@@ -29,118 +29,75 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormGestionCliente));
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Tabla = new System.Windows.Forms.DataGridView();
             this.Dni = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NombreApellidos = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Domicilio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.labelPersonalizado1 = new Rentacar.Interfaz.Personalizados.LabelPersonalizado();
-            this.labelPersonalizado2 = new Rentacar.Interfaz.Personalizados.LabelPersonalizado();
-            this.labelPersonalizado3 = new Rentacar.Interfaz.Personalizados.LabelPersonalizado();
-            this.labelPersonalizado4 = new Rentacar.Interfaz.Personalizados.LabelPersonalizado();
             this.textDni = new System.Windows.Forms.TextBox();
             this.textTelefono = new System.Windows.Forms.TextBox();
             this.textNombreApellido = new System.Windows.Forms.TextBox();
             this.textDomicilio = new System.Windows.Forms.TextBox();
-            this.ValidarDni = new System.Windows.Forms.CheckBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.Primero = new System.Windows.Forms.Button();
-            this.Atras = new System.Windows.Forms.Button();
-            this.Siguiente = new System.Windows.Forms.Button();
-            this.Ultimo = new System.Windows.Forms.Button();
-            this.Añadir = new System.Windows.Forms.Button();
-            this.Eliminar = new System.Windows.Forms.Button();
-            this.Modificar = new System.Windows.Forms.Button();
+            this.btnModificar = new System.Windows.Forms.Button();
+            this.btnEliminar = new System.Windows.Forms.Button();
+            this.btnAñadir = new System.Windows.Forms.Button();
+            this.btnUltimo = new System.Windows.Forms.Button();
+            this.btnSiguiente = new System.Windows.Forms.Button();
+            this.btnAtras = new System.Windows.Forms.Button();
+            this.btnPrimero = new System.Windows.Forms.Button();
+            this.btnCancelar = new System.Windows.Forms.Button();
+            this.btnValidar = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.labelPersonalizado4 = new Rentacar.Interfaz.Personalizados.LabelPersonalizado();
+            this.labelPersonalizado3 = new Rentacar.Interfaz.Personalizados.LabelPersonalizado();
+            this.labelPersonalizado2 = new Rentacar.Interfaz.Personalizados.LabelPersonalizado();
+            this.labelPersonalizado1 = new Rentacar.Interfaz.Personalizados.LabelPersonalizado();
+            ((System.ComponentModel.ISupportInitialize)(this.Tabla)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
-            // pictureBox1
+            // Tabla
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(13, 13);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(629, 87);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Tabla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.Tabla.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Dni,
             this.NombreApellidos,
             this.Telefono,
             this.Domicilio});
-            this.dataGridView1.Location = new System.Drawing.Point(12, 106);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(630, 247);
-            this.dataGridView1.TabIndex = 1;
+            this.Tabla.Location = new System.Drawing.Point(12, 106);
+            this.Tabla.MultiSelect = false;
+            this.Tabla.Name = "Tabla";
+            this.Tabla.ReadOnly = true;
+            this.Tabla.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.Tabla.Size = new System.Drawing.Size(630, 247);
+            this.Tabla.TabIndex = 1;
+            this.Tabla.SelectionChanged += new System.EventHandler(this.Tabla_SelectionChanged);
             // 
             // Dni
             // 
             this.Dni.HeaderText = "Dni";
             this.Dni.Name = "Dni";
+            this.Dni.ReadOnly = true;
             // 
             // NombreApellidos
             // 
             this.NombreApellidos.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.NombreApellidos.HeaderText = "Nombre y Apellidos";
             this.NombreApellidos.Name = "NombreApellidos";
+            this.NombreApellidos.ReadOnly = true;
             // 
             // Telefono
             // 
             this.Telefono.HeaderText = "Teléfono";
             this.Telefono.Name = "Telefono";
+            this.Telefono.ReadOnly = true;
             // 
             // Domicilio
             // 
             this.Domicilio.HeaderText = "Domicilio";
             this.Domicilio.Name = "Domicilio";
+            this.Domicilio.ReadOnly = true;
             this.Domicilio.Width = 200;
-            // 
-            // labelPersonalizado1
-            // 
-            this.labelPersonalizado1.AutoSize = true;
-            this.labelPersonalizado1.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F);
-            this.labelPersonalizado1.Location = new System.Drawing.Point(12, 375);
-            this.labelPersonalizado1.Name = "labelPersonalizado1";
-            this.labelPersonalizado1.Size = new System.Drawing.Size(33, 16);
-            this.labelPersonalizado1.TabIndex = 2;
-            this.labelPersonalizado1.Text = "DNI:";
-            // 
-            // labelPersonalizado2
-            // 
-            this.labelPersonalizado2.AutoSize = true;
-            this.labelPersonalizado2.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F);
-            this.labelPersonalizado2.Location = new System.Drawing.Point(209, 374);
-            this.labelPersonalizado2.Name = "labelPersonalizado2";
-            this.labelPersonalizado2.Size = new System.Drawing.Size(128, 16);
-            this.labelPersonalizado2.TabIndex = 3;
-            this.labelPersonalizado2.Text = "Nombre y Apellidos:";
-            // 
-            // labelPersonalizado3
-            // 
-            this.labelPersonalizado3.AutoSize = true;
-            this.labelPersonalizado3.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F);
-            this.labelPersonalizado3.Location = new System.Drawing.Point(12, 429);
-            this.labelPersonalizado3.Name = "labelPersonalizado3";
-            this.labelPersonalizado3.Size = new System.Drawing.Size(62, 16);
-            this.labelPersonalizado3.TabIndex = 4;
-            this.labelPersonalizado3.Text = "Teléfono:";
-            // 
-            // labelPersonalizado4
-            // 
-            this.labelPersonalizado4.AutoSize = true;
-            this.labelPersonalizado4.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F);
-            this.labelPersonalizado4.Location = new System.Drawing.Point(209, 429);
-            this.labelPersonalizado4.Name = "labelPersonalizado4";
-            this.labelPersonalizado4.Size = new System.Drawing.Size(65, 16);
-            this.labelPersonalizado4.TabIndex = 5;
-            this.labelPersonalizado4.Text = "Domicilio:";
             // 
             // textDni
             // 
@@ -174,126 +131,168 @@
             this.textDomicilio.Size = new System.Drawing.Size(261, 20);
             this.textDomicilio.TabIndex = 9;
             // 
-            // ValidarDni
+            // btnModificar
             // 
-            this.ValidarDni.AutoSize = true;
-            this.ValidarDni.Enabled = false;
-            this.ValidarDni.Location = new System.Drawing.Point(516, 395);
-            this.ValidarDni.Name = "ValidarDni";
-            this.ValidarDni.Size = new System.Drawing.Size(80, 17);
-            this.ValidarDni.TabIndex = 10;
-            this.ValidarDni.Text = "Validar DNI";
-            this.ValidarDni.UseVisualStyleBackColor = true;
+            this.btnModificar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnModificar.BackgroundImage")));
+            this.btnModificar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnModificar.Location = new System.Drawing.Point(546, 490);
+            this.btnModificar.Name = "btnModificar";
+            this.btnModificar.Size = new System.Drawing.Size(80, 35);
+            this.btnModificar.TabIndex = 19;
+            this.btnModificar.UseVisualStyleBackColor = true;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
-            // button1
+            // btnEliminar
             // 
-            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button1.Enabled = false;
-            this.button1.Location = new System.Drawing.Point(501, 429);
-            this.button1.Name = "button1";
-            this.button1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.button1.Size = new System.Drawing.Size(43, 39);
-            this.button1.TabIndex = 11;
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnEliminar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnEliminar.BackgroundImage")));
+            this.btnEliminar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnEliminar.Location = new System.Drawing.Point(460, 490);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(80, 35);
+            this.btnEliminar.TabIndex = 18;
+            this.btnEliminar.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // btnAñadir
             // 
-            this.button2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button2.BackgroundImage")));
-            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button2.Enabled = false;
-            this.button2.Location = new System.Drawing.Point(553, 429);
-            this.button2.Name = "button2";
-            this.button2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.button2.Size = new System.Drawing.Size(43, 39);
-            this.button2.TabIndex = 12;
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnAñadir.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAñadir.BackgroundImage")));
+            this.btnAñadir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnAñadir.Location = new System.Drawing.Point(374, 490);
+            this.btnAñadir.Name = "btnAñadir";
+            this.btnAñadir.Size = new System.Drawing.Size(80, 35);
+            this.btnAñadir.TabIndex = 17;
+            this.btnAñadir.UseVisualStyleBackColor = true;
+            this.btnAñadir.Click += new System.EventHandler(this.btnAñadir_Click);
             // 
-            // Primero
+            // btnUltimo
             // 
-            this.Primero.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Primero.BackgroundImage")));
-            this.Primero.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Primero.Location = new System.Drawing.Point(30, 490);
-            this.Primero.Name = "Primero";
-            this.Primero.Size = new System.Drawing.Size(80, 35);
-            this.Primero.TabIndex = 13;
-            this.Primero.UseVisualStyleBackColor = true;
+            this.btnUltimo.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnUltimo.BackgroundImage")));
+            this.btnUltimo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnUltimo.Location = new System.Drawing.Point(288, 490);
+            this.btnUltimo.Name = "btnUltimo";
+            this.btnUltimo.Size = new System.Drawing.Size(80, 35);
+            this.btnUltimo.TabIndex = 16;
+            this.btnUltimo.UseVisualStyleBackColor = true;
             // 
-            // Atras
+            // btnSiguiente
             // 
-            this.Atras.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Atras.BackgroundImage")));
-            this.Atras.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Atras.Location = new System.Drawing.Point(116, 490);
-            this.Atras.Name = "Atras";
-            this.Atras.Size = new System.Drawing.Size(80, 35);
-            this.Atras.TabIndex = 14;
-            this.Atras.UseVisualStyleBackColor = true;
+            this.btnSiguiente.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSiguiente.BackgroundImage")));
+            this.btnSiguiente.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnSiguiente.Location = new System.Drawing.Point(202, 490);
+            this.btnSiguiente.Name = "btnSiguiente";
+            this.btnSiguiente.Size = new System.Drawing.Size(80, 35);
+            this.btnSiguiente.TabIndex = 15;
+            this.btnSiguiente.UseVisualStyleBackColor = true;
             // 
-            // Siguiente
+            // btnAtras
             // 
-            this.Siguiente.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Siguiente.BackgroundImage")));
-            this.Siguiente.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Siguiente.Location = new System.Drawing.Point(202, 490);
-            this.Siguiente.Name = "Siguiente";
-            this.Siguiente.Size = new System.Drawing.Size(80, 35);
-            this.Siguiente.TabIndex = 15;
-            this.Siguiente.UseVisualStyleBackColor = true;
+            this.btnAtras.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAtras.BackgroundImage")));
+            this.btnAtras.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnAtras.Location = new System.Drawing.Point(116, 490);
+            this.btnAtras.Name = "btnAtras";
+            this.btnAtras.Size = new System.Drawing.Size(80, 35);
+            this.btnAtras.TabIndex = 14;
+            this.btnAtras.UseVisualStyleBackColor = true;
             // 
-            // Ultimo
+            // btnPrimero
             // 
-            this.Ultimo.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Ultimo.BackgroundImage")));
-            this.Ultimo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Ultimo.Location = new System.Drawing.Point(288, 490);
-            this.Ultimo.Name = "Ultimo";
-            this.Ultimo.Size = new System.Drawing.Size(80, 35);
-            this.Ultimo.TabIndex = 16;
-            this.Ultimo.UseVisualStyleBackColor = true;
+            this.btnPrimero.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnPrimero.BackgroundImage")));
+            this.btnPrimero.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnPrimero.Location = new System.Drawing.Point(30, 490);
+            this.btnPrimero.Name = "btnPrimero";
+            this.btnPrimero.Size = new System.Drawing.Size(80, 35);
+            this.btnPrimero.TabIndex = 13;
+            this.btnPrimero.UseVisualStyleBackColor = true;
             // 
-            // Añadir
+            // btnCancelar
             // 
-            this.Añadir.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Añadir.BackgroundImage")));
-            this.Añadir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Añadir.Location = new System.Drawing.Point(374, 490);
-            this.Añadir.Name = "Añadir";
-            this.Añadir.Size = new System.Drawing.Size(80, 35);
-            this.Añadir.TabIndex = 17;
-            this.Añadir.UseVisualStyleBackColor = true;
+            this.btnCancelar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCancelar.BackgroundImage")));
+            this.btnCancelar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnCancelar.Enabled = false;
+            this.btnCancelar.Location = new System.Drawing.Point(556, 406);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.btnCancelar.Size = new System.Drawing.Size(43, 39);
+            this.btnCancelar.TabIndex = 12;
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
-            // Eliminar
+            // btnValidar
             // 
-            this.Eliminar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Eliminar.BackgroundImage")));
-            this.Eliminar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Eliminar.Location = new System.Drawing.Point(460, 490);
-            this.Eliminar.Name = "Eliminar";
-            this.Eliminar.Size = new System.Drawing.Size(80, 35);
-            this.Eliminar.TabIndex = 18;
-            this.Eliminar.UseVisualStyleBackColor = true;
+            this.btnValidar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnValidar.BackgroundImage")));
+            this.btnValidar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnValidar.Enabled = false;
+            this.btnValidar.Location = new System.Drawing.Point(504, 406);
+            this.btnValidar.Name = "btnValidar";
+            this.btnValidar.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.btnValidar.Size = new System.Drawing.Size(43, 39);
+            this.btnValidar.TabIndex = 11;
+            this.btnValidar.UseVisualStyleBackColor = true;
+            this.btnValidar.Click += new System.EventHandler(this.btnValidar_Click);
             // 
-            // Modificar
+            // pictureBox1
             // 
-            this.Modificar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Modificar.BackgroundImage")));
-            this.Modificar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Modificar.Location = new System.Drawing.Point(546, 490);
-            this.Modificar.Name = "Modificar";
-            this.Modificar.Size = new System.Drawing.Size(80, 35);
-            this.Modificar.TabIndex = 19;
-            this.Modificar.UseVisualStyleBackColor = true;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(13, 13);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(629, 87);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
+            // labelPersonalizado4
+            // 
+            this.labelPersonalizado4.AutoSize = true;
+            this.labelPersonalizado4.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F);
+            this.labelPersonalizado4.Location = new System.Drawing.Point(209, 429);
+            this.labelPersonalizado4.Name = "labelPersonalizado4";
+            this.labelPersonalizado4.Size = new System.Drawing.Size(65, 16);
+            this.labelPersonalizado4.TabIndex = 5;
+            this.labelPersonalizado4.Text = "Domicilio:";
+            // 
+            // labelPersonalizado3
+            // 
+            this.labelPersonalizado3.AutoSize = true;
+            this.labelPersonalizado3.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F);
+            this.labelPersonalizado3.Location = new System.Drawing.Point(12, 429);
+            this.labelPersonalizado3.Name = "labelPersonalizado3";
+            this.labelPersonalizado3.Size = new System.Drawing.Size(62, 16);
+            this.labelPersonalizado3.TabIndex = 4;
+            this.labelPersonalizado3.Text = "Teléfono:";
+            // 
+            // labelPersonalizado2
+            // 
+            this.labelPersonalizado2.AutoSize = true;
+            this.labelPersonalizado2.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F);
+            this.labelPersonalizado2.Location = new System.Drawing.Point(209, 374);
+            this.labelPersonalizado2.Name = "labelPersonalizado2";
+            this.labelPersonalizado2.Size = new System.Drawing.Size(128, 16);
+            this.labelPersonalizado2.TabIndex = 3;
+            this.labelPersonalizado2.Text = "Nombre y Apellidos:";
+            // 
+            // labelPersonalizado1
+            // 
+            this.labelPersonalizado1.AutoSize = true;
+            this.labelPersonalizado1.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F);
+            this.labelPersonalizado1.Location = new System.Drawing.Point(12, 375);
+            this.labelPersonalizado1.Name = "labelPersonalizado1";
+            this.labelPersonalizado1.Size = new System.Drawing.Size(33, 16);
+            this.labelPersonalizado1.TabIndex = 2;
+            this.labelPersonalizado1.Text = "DNI:";
             // 
             // FormGestionCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(654, 537);
-            this.Controls.Add(this.Modificar);
-            this.Controls.Add(this.Eliminar);
-            this.Controls.Add(this.Añadir);
-            this.Controls.Add(this.Ultimo);
-            this.Controls.Add(this.Siguiente);
-            this.Controls.Add(this.Atras);
-            this.Controls.Add(this.Primero);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.ValidarDni);
+            this.Controls.Add(this.btnModificar);
+            this.Controls.Add(this.btnEliminar);
+            this.Controls.Add(this.btnAñadir);
+            this.Controls.Add(this.btnUltimo);
+            this.Controls.Add(this.btnSiguiente);
+            this.Controls.Add(this.btnAtras);
+            this.Controls.Add(this.btnPrimero);
+            this.Controls.Add(this.btnCancelar);
+            this.Controls.Add(this.btnValidar);
             this.Controls.Add(this.textDomicilio);
             this.Controls.Add(this.textNombreApellido);
             this.Controls.Add(this.textTelefono);
@@ -302,14 +301,15 @@
             this.Controls.Add(this.labelPersonalizado3);
             this.Controls.Add(this.labelPersonalizado2);
             this.Controls.Add(this.labelPersonalizado1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.Tabla);
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "FormGestionCliente";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Alquiler de Vehículos 1.0";
             this.Load += new System.EventHandler(this.FormGestionCliente_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.Tabla)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -318,7 +318,7 @@
         #endregion
 
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView Tabla;
         private System.Windows.Forms.DataGridViewTextBoxColumn Dni;
         private System.Windows.Forms.DataGridViewTextBoxColumn NombreApellidos;
         private System.Windows.Forms.DataGridViewTextBoxColumn Telefono;
@@ -331,15 +331,14 @@
         private System.Windows.Forms.TextBox textTelefono;
         private System.Windows.Forms.TextBox textNombreApellido;
         private System.Windows.Forms.TextBox textDomicilio;
-        private System.Windows.Forms.CheckBox ValidarDni;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button Primero;
-        private System.Windows.Forms.Button Atras;
-        private System.Windows.Forms.Button Siguiente;
-        private System.Windows.Forms.Button Ultimo;
-        private System.Windows.Forms.Button Añadir;
-        private System.Windows.Forms.Button Eliminar;
-        private System.Windows.Forms.Button Modificar;
+        private System.Windows.Forms.Button btnValidar;
+        private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.Button btnPrimero;
+        private System.Windows.Forms.Button btnAtras;
+        private System.Windows.Forms.Button btnSiguiente;
+        private System.Windows.Forms.Button btnUltimo;
+        private System.Windows.Forms.Button btnAñadir;
+        private System.Windows.Forms.Button btnEliminar;
+        private System.Windows.Forms.Button btnModificar;
     }
 }

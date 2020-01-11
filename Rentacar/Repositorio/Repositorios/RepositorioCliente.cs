@@ -96,6 +96,7 @@ namespace Rentacar.Repositorio.Repositorios
             conexion.Open();
 
             MySqlCommand command = new MySqlCommand(peticion, conexion);
+            command.Parameters.AddWithValue("@dni", cliente.Dni);
             command.Parameters.AddWithValue("@nombre", cliente.Nombre);
             command.Parameters.AddWithValue("@telefono", cliente.Telefono);
             command.Parameters.AddWithValue("@domicilio", cliente.Domilicio);
