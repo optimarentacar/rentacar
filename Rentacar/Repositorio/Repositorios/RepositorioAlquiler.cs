@@ -243,13 +243,12 @@ namespace Rentacar.Repositorio.Repositorios
             return alquileres;
         }
 
-        public Task<List<Alquiler>> ListarPorFechaResumido(DateTime inicio, DateTime fin, Orden orden)
+        public async Task<List<Alquiler>> ListarPorFechaResumido(DateTime inicio, DateTime fin, Orden orden)
         {
-            string peticion = "SELECT al.id, al.fechaInicio, al.fechaFin, al.importe, " +
-                                       "v.matricula, v.modelo, v.capacidad, v.anio, v.pathFoto, " +
+            string peticion = "SELECT al.id, al.fechaInicio, al.fechaFin " +
+                                       "v.matricula, v.modelo," +
                                        "m.nombre, " +
-                                       "c.dni, c.nombre, c.telefono, c.domicilio " +
-                                       "SUM(ac.costo) " +
+                                       "c.dni, c.nombre " +
                               "INNER JOIN clientes c " +
                               "ON c.dni = al.dni " +
                               "AND al.fechaInicion >= @inicio " +
@@ -258,12 +257,6 @@ namespace Rentacar.Repositorio.Repositorios
                               "ON v.matricula = al.matricula " +
                               "INNER JOIN marcas m " +
                               "ON m.id = v.idMarca " +
-                              "FROM alquileres al " +
-                              "INNER JOIN accesorios_alquileres acal " +
-                              "ON acal.idAlquiler = al.id " +
-                              "INNER JOIN accesorios ac " +
-                              "ON acal.idAccesorio = ac.id " +
-                              "GROUP BY al.id " +
                               "ORDER BY @orden";
 
             var conexion = ContextoBD.GetInstancia().GetConexion();
