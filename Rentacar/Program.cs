@@ -1,6 +1,7 @@
 ﻿using Rentacar.Interfaz;
 using Rentacar.Interfaz.Clientes;
 using Rentacar.Interfaz.Principal;
+using Rentacar.Interfaz.Vehiculos;
 using Rentacar.Repositorio.Interfaces;
 using Rentacar.Repositorio.Repositorios;
 using SimpleInjector;
@@ -33,6 +34,7 @@ namespace Rentacar
 
             container.Register<FormPrincipal>();
             container.Register<FormGestionCliente>();
+            container.Register<FormGestionVehiculos>();
 
 
 

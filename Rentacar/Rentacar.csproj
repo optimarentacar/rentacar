@@ -71,6 +71,7 @@
     <Compile Include="Enums\Orden.cs" />
     <Compile Include="Excepciones\DatosNoEncontradosException.cs" />
     <Compile Include="Excepciones\DniYaExisteException.cs" />
+    <Compile Include="Excepciones\MatriculaYaExisteException.cs" />
     <Compile Include="Excepciones\ModeloVehiculoYaExisteException.cs" />
     <Compile Include="Excepciones\NombreAccesorioYaExisteException.cs" />
     <Compile Include="Excepciones\NombreCaracteristicaYaExisteException.cs" />
@@ -89,6 +90,12 @@
     </Compile>
     <Compile Include="Interfaz\Principal\FormPrincipal.Designer.cs">
       <DependentUpon>FormPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaz\Vehiculos\FormGestionVehiculos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaz\Vehiculos\FormGestionVehiculos.Designer.cs">
+      <DependentUpon>FormGestionVehiculos.cs</DependentUpon>
     </Compile>
     <Compile Include="Modelos\Accesorio.cs" />
     <Compile Include="Modelos\Alquiler.cs" />
@@ -116,6 +123,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaz\Principal\FormPrincipal.resx">
       <DependentUpon>FormPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaz\Vehiculos\FormGestionVehiculos.resx">
+      <DependentUpon>FormGestionVehiculos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -153,6 +163,7 @@
     <Content Include="Assets\Iconos\Ultimo.PNG" />
     <Content Include="Assets\Iconos\Validar.png" />
     <Content Include="Assets\Imagenes\GestionClientes.PNG" />
+    <Content Include="Assets\Imagenes\GestionVehiculos.PNG" />
     <Content Include="Assets\Imagenes\Portada.PNG" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

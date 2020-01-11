@@ -142,7 +142,7 @@
     <value>True</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="Modificar.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnModificar.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAIwAAAA5CAYAAADkx8P4AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
         wwAADsMBx2+oZAAAAudJREFUeF7t1stOE1Ecx/GxJBoThYoYH8CVC99AH0yDKFIwjZZrabmFsNCVUeOF
@@ -160,7 +160,7 @@
         IREGQyIMhkQYDIkwGBJhMCTCYEiEwZAIgyERBkMiDIZEPM/DH15bkT8jSgmoAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="Eliminar.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnEliminar.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAIgAAAA5CAYAAADtLGOCAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
         wwAADsMBx2+oZAAAAb9JREFUeF7t171OAkEUhmHiFWg0xljZmWhno9HKeD12WnlPEOj4CY1BKWDZBaIB
@@ -174,7 +174,7 @@
         gg==
 </value>
   </data>
-  <data name="Añadir.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnAñadir.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAIwAAAA8CAYAAAC0ClJLAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
         wwAADsMBx2+oZAAAAutJREFUeF7t3L1vklEUx3FsXG1trAkxcTSN0UWTtr4M6h+kDtVF/xfTAHEgQAud
@@ -193,7 +193,7 @@
         gg==
 </value>
   </data>
-  <data name="Ultimo.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnUltimo.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAI4AAAA6CAYAAABmpmFrAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
         wwAADsMBx2+oZAAAAz9JREFUeF7t2FtI02EcxvH/llChpndeRBTWjYEX3RRRGSHRfdDBLAonaQVJFKFN
@@ -213,7 +213,7 @@
         MU0T3wHBDPb4qaV0hgAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="Siguiente.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnSiguiente.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAIcAAAA5CAYAAAAcJzgPAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
         wwAADsMBx2+oZAAAAvZJREFUeF7t2U1IFHEcxvGZXSrC1TxFBWF4km5dAimIig7duphuIpq7oRiokAdr
@@ -232,7 +232,7 @@
         AAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="Atras.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnAtras.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAI0AAAA2CAYAAAD6UxoTAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
         wwAADsMBx2+oZAAAAwRJREFUeF7t2U9Ik3Ecx/FnRhcn6jG6lEbnCKIwpLp26hQoZq7NqBSsMGRmzbIS
@@ -251,7 +251,7 @@
         0ZBQAn8Al15Ef0MDXFwAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="Primero.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnPrimero.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAI4AAAA5CAYAAADgMhPFAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
         wwAADsMBx2+oZAAAAwlJREFUeF7t2U9Ik3Ecx/FnQkFMwlNEEJF0DSqIktKgW4dOFWkqmjMUOyR0SFMm

@@ -61,21 +61,10 @@ namespace Rentacar.Interfaz.Clientes
             }
         }
 
-        private void Modificar_Click(object sender, EventArgs e)
+        private void btnModificar_Click(object sender, EventArgs e)
         {
-            //TODO desactivar botones
             Tabla.SelectionChanged -= Tabla_SelectionChanged;
-            btnCancelar.Enabled = true;
-            btnValidar.Enabled = true;
-            textNombreApellido.Enabled = true;
-
-            
-             
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            Tabla.SelectionChanged += Tabla_SelectionChanged;
+            Desactivar();
         }
 
         private async void btnValidar_Click(object sender, EventArgs e)
@@ -103,6 +92,58 @@ namespace Rentacar.Interfaz.Clientes
             {
                 await Listar();
             }
+            Activar();
+            limpiar();
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            Tabla.SelectionChanged += Tabla_SelectionChanged;
+        }
+
+        public void limpiar()
+        {
+            textDni.Text = "";
+            textNombreApellido.Text = "";
+            textTelefono.Text = "";
+            textDomicilio.Text = "";
+        }
+
+        public void Activar()
+        {
+            btnCancelar.Enabled = false;
+            btnValidar.Enabled = false;
+            btnPrimero.Enabled = true;
+            btnAtras.Enabled = true;
+            btnSiguiente.Enabled = true;
+            btnUltimo.Enabled = true;
+            btnAñadir.Enabled = true;
+            btnEliminar.Enabled = true;
+
+            textNombreApellido.Enabled = false;
+            textTelefono.Enabled = false;
+            textDomicilio.Enabled = false;
+        }
+
+        public void Desactivar()
+        {
+            btnCancelar.Enabled = true;
+            btnValidar.Enabled = true;
+            btnPrimero.Enabled = false;
+            btnAtras.Enabled = false;
+            btnSiguiente.Enabled = false;
+            btnUltimo.Enabled = false;
+            btnAñadir.Enabled = false;
+            btnEliminar.Enabled = false;
+
+            textNombreApellido.Enabled = true;
+            textTelefono.Enabled = true;
+            textDomicilio.Enabled = true;
+        }
+
+        private void btnAñadir_Click(object sender, EventArgs e)
+        {
+            Desactivar();
         }
     }
 }

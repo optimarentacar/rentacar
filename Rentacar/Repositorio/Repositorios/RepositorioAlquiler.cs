@@ -243,7 +243,7 @@ namespace Rentacar.Repositorio.Repositorios
             return alquileres;
         }
 
-        public Task<List<Alquiler>> ListarPorFechaResumido(DateTime inicio, DateTime fin, Orden orden)
+        public async Task<List<Alquiler>> ListarPorFechaResumido(DateTime inicio, DateTime fin, Orden orden)
         {
             string peticion = "SELECT al.id, al.fechaInicio, al.fechaFin, al.importe, " +
                                        "v.matricula, v.modelo, v.capacidad, v.anio, v.pathFoto, " +
