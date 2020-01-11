@@ -48,3 +48,5 @@ C:\Users\adria\Desktop\Rentacar\rentacar\Rentacar\bin\Debug\MySql.Data.xml
 C:\Users\adria\Desktop\Rentacar\rentacar\Rentacar\bin\Debug\Renci.SshNet.xml
 C:\Users\adria\Desktop\Rentacar\rentacar\Rentacar\bin\Debug\SimpleInjector.xml
 C:\Users\adria\Desktop\Rentacar\rentacar\Rentacar\obj\Debug\Rentacar.csproj.CopyComplete
+C:\Users\alexm_000\Desktop\Rentacar\rentacar\Rentacar\obj\Debug\Rentacar.Interfaz.Accesorios.FormGestionAccesorios.resources
+C:\Users\alexm_000\Desktop\Rentacar\rentacar\Rentacar\obj\Debug\Rentacar.Interfaz.Caracteristicas.FormGestionCaracteristicas.resources

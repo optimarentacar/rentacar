@@ -76,6 +76,50 @@ namespace Rentacar.Repositorio.Repositorios
             return true;
         }
 
+        public async Task<List<Caracteristica>> Listar()
+        {
+            string peticion =
+               "SELECT * FROM caracteristicas " +
+               "ORDER BY nombre";
+
+            var conexion = ContextoBD.GetInstancia().GetConexion();
+            conexion.Open();
+
+            MySqlCommand command = new MySqlCommand(peticion, conexion);
+
+            List<Caracteristica> caracteristicas = new List<Caracteristica>();
+
+            try
+            {
+                DbDataReader reader = await command.ExecuteReaderAsync();
+
+                if (reader.HasRows)
+                {
+                    Caracteristica caracteristica;
+
+                    while (reader.Read())
+                    {
+                        caracteristica = new Caracteristica()
+                        {
+                            Id = reader.GetInt32(0),
+                            Nombre = reader.GetString(1)
+                        };
+                        caracteristicas.Add(caracteristica);
+                    }
+                }
+            }
+            catch (DbException ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                conexion.Close();
+            }
+
+            return caracteristicas;
+        }
+
         public async Task<bool> Modificar(Caracteristica caracteristica)
         {
             string peticion =
@@ -115,12 +159,12 @@ namespace Rentacar.Repositorio.Repositorios
         public async Task<bool> TieneAlquileresAsignados(int idCaracteristica)
         {
             string peticion =
-                "SELECT ca.id FROM caracteristicas ca" +
+                "SELECT ca.id FROM caracteristicas ca " +
                 "INNER JOIN caracteristicas_vehiculos cv " +
                     "ON ca.id = cv.idCaracteristica " +
-                    "AND ca.id = @idCaracteristica" +
+                    "AND ca.id = @idCaracteristica " +
                 "INNER JOIN vehiculos v " +
-                    "ON ca.matricula = v.matricula " +
+                    "ON cv.matricula = v.matricula " +
                 "INNER JOIN alquileres al " +
                     "ON v.matricula = al.matricula " +
                 "LIMIT 1";

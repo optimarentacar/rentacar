@@ -13,5 +13,6 @@ namespace Rentacar.Repositorio.Interfaces
         Task<bool> Modificar(Caracteristica caracteristica);
         Task<bool> Borrar(int idCaracteristica);
         Task<bool> TieneAlquileresAsignados(int idCaracteristica);
+        Task<List<Caracteristica>> Listar();
     }
 }

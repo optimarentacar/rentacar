@@ -83,6 +83,18 @@
     <Compile Include="Excepciones\NombreAccesorioYaExisteException.cs" />
     <Compile Include="Excepciones\NombreCaracteristicaYaExisteException.cs" />
     <Compile Include="Excepciones\NombreMarcaYaExisteException.cs" />
+    <Compile Include="Interfaz\Accesorios\FormGestionAccesorios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaz\Accesorios\FormGestionAccesorios.Designer.cs">
+      <DependentUpon>FormGestionAccesorios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaz\Caracteristicas\FormGestionCaracteristicas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaz\Caracteristicas\FormGestionCaracteristicas.Designer.cs">
+      <DependentUpon>FormGestionCaracteristicas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Interfaz\Clientes\FormGestionCliente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -133,9 +145,17 @@
     <Compile Include="Test\FormTest.Designer.cs">
       <DependentUpon>FormTest.cs</DependentUpon>
     </Compile>
+    <Compile Include="Validacion\ValidacionAccesorio.cs" />
+    <Compile Include="Validacion\ValidacionCaracteristica.cs" />
     <Compile Include="Validacion\ValidacionCliente.cs" />
     <Compile Include="Validacion\ValidacionMarca.cs" />
     <Compile Include="Validacion\ValidacionVehiculo.cs" />
+    <EmbeddedResource Include="Interfaz\Accesorios\FormGestionAccesorios.resx">
+      <DependentUpon>FormGestionAccesorios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaz\Caracteristicas\FormGestionCaracteristicas.resx">
+      <DependentUpon>FormGestionCaracteristicas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Interfaz\Clientes\FormGestionCliente.resx">
       <DependentUpon>FormGestionCliente.cs</DependentUpon>
     </EmbeddedResource>
@@ -182,6 +202,8 @@
     <Content Include="Assets\Iconos\siguiente.PNG" />
     <Content Include="Assets\Iconos\ultimo.jpg" />
     <Content Include="Assets\Iconos\Validar.png" />
+    <None Include="Assets\Imagenes\GestionAccesorios.png" />
+    <None Include="Assets\Imagenes\GestionCaracteristicas.png" />
     <Content Include="Assets\Imagenes\GestionClientes.PNG" />
     <Content Include="Assets\Imagenes\GestionVehiculos.PNG" />
     <Content Include="Assets\Imagenes\Portada.PNG" />

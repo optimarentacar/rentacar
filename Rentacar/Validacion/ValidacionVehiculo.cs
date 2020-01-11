@@ -48,17 +48,28 @@ namespace Rentacar.Validacion
         /// <returns></returns>
         private bool SerUnCostoValido(float costo)
         {
-            string sCosto = costo.ToString(); 
-
-            string parteDecimal = sCosto.Substring(sCosto.IndexOf("."));
-
-            int cantidadDigitos = parteDecimal.Length;
-
+            string sCosto = costo.ToString();
             bool esValido = true;
-            
-            if(cantidadDigitos > 2)
+
+            if (sCosto.Contains("."))
             {
-                esValido = false;
+                string parteDecimal = sCosto.Substring(sCosto.IndexOf("."));
+                int cantidadDigitos = parteDecimal.Length;
+
+                if (cantidadDigitos > 3)
+                {
+                    esValido = false;
+                }
+            }
+            else if (sCosto.Contains(","))
+            {
+                string parteDecimal = sCosto.Substring(sCosto.IndexOf(","));
+                int cantidadDigitos = parteDecimal.Length;
+
+                if (cantidadDigitos > 3)
+                {
+                    esValido = false;
+                }
             }
 
             return esValido;
