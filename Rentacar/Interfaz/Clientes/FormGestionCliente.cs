@@ -1,4 +1,5 @@
-﻿using Rentacar.Modelos;
+﻿using Rentacar.Excepciones;
+using Rentacar.Modelos;
 using Rentacar.Repositorio.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -17,6 +18,7 @@ namespace Rentacar.Interfaz.Clientes
         private IRepositorioCliente _repositorioCliente;
         private List<Cliente> Clientes;
         private Cliente cliente;
+        private int count;
 
         public FormGestionCliente(IRepositorioCliente repositorioCliente)
         {
@@ -60,45 +62,113 @@ namespace Rentacar.Interfaz.Clientes
                 textDomicilio.Text = cliente.Domilicio;
             }
         }
+        private void btnAñadir_Click(object sender, EventArgs e)
+        {
+            Tabla.SelectionChanged -= Tabla_SelectionChanged;
+            limpiar();
+            desactivar();
+            textDni.Enabled = true;
+            count = 1;
+
+        }
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            desactivar();
+            textNombreApellido.Enabled = false;
+            textTelefono.Enabled = false;
+            textDomicilio.Enabled = false;
+            count = 3;
+        }
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
             Tabla.SelectionChanged -= Tabla_SelectionChanged;
-            Desactivar();
+            desactivar();
+            count = 0;
         }
 
         private async void btnValidar_Click(object sender, EventArgs e)
         {
-            bool modificado = false;
-            Cliente C = new Cliente()
+            if(count == 0)
             {
-                Dni = textDni.Text,
-                Nombre = textNombreApellido.Text,
-                Telefono = textTelefono.Text,
-                Domilicio = textDomicilio.Text
-            };
+                bool modificado = false;
+                Cliente C = new Cliente()
+                {
+                    Dni = textDni.Text,
+                    Nombre = textNombreApellido.Text,
+                    Telefono = textTelefono.Text,
+                    Domilicio = textDomicilio.Text
+                };
 
-            //TODO validacion
+                //TODO validacion
 
-            try
-            {
-                modificado = await _repositorioCliente.Modificar(C);
-            }catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
+                try
+                {
+                    modificado = await _repositorioCliente.Modificar(C);
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
 
+                }
+                if (modificado == true)
+                {
+                    await Listar();
+                }
+                activar();
+                limpiar();
             }
-            if (modificado == true)
+            if(count == 1)
             {
+                try
+                {
+                    await _repositorioCliente.Crear(new Cliente()
+                    {
+                        //TODO Validar
+
+                        Dni = textDni.Text,
+                        Nombre = textNombreApellido.Text,
+                        Domilicio = textDomicilio.Text,
+                        Telefono = textTelefono.Text
+                    });
+                }
+                catch (DniYaExisteException dyee)
+                {
+                    MessageBox.Show(dyee.Message);
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
                 await Listar();
+                activar();
+                limpiar();
             }
-            Activar();
-            limpiar();
+            if (count == 3)
+            {
+                String dni = textDni.Text;
+                try
+                {
+                    await _repositorioCliente.Borrar(dni);
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
+                await Listar();
+                activar();
+                limpiar();
+            }
+            
+            Tabla.SelectionChanged += Tabla_SelectionChanged;
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             Tabla.SelectionChanged += Tabla_SelectionChanged;
+            limpiar();
+            activar();
+            
         }
 
         public void limpiar()
@@ -109,7 +179,7 @@ namespace Rentacar.Interfaz.Clientes
             textDomicilio.Text = "";
         }
 
-        public void Activar()
+        public void activar()
         {
             btnCancelar.Enabled = false;
             btnValidar.Enabled = false;
@@ -119,13 +189,15 @@ namespace Rentacar.Interfaz.Clientes
             btnUltimo.Enabled = true;
             btnAñadir.Enabled = true;
             btnEliminar.Enabled = true;
+            btnModificar.Enabled = true;
 
             textNombreApellido.Enabled = false;
             textTelefono.Enabled = false;
             textDomicilio.Enabled = false;
+            textDni.Enabled = false;
         }
 
-        public void Desactivar()
+        public void desactivar()
         {
             btnCancelar.Enabled = true;
             btnValidar.Enabled = true;
@@ -135,15 +207,13 @@ namespace Rentacar.Interfaz.Clientes
             btnUltimo.Enabled = false;
             btnAñadir.Enabled = false;
             btnEliminar.Enabled = false;
+            btnModificar.Enabled = false;
 
             textNombreApellido.Enabled = true;
             textTelefono.Enabled = true;
             textDomicilio.Enabled = true;
         }
 
-        private void btnAñadir_Click(object sender, EventArgs e)
-        {
-            Desactivar();
-        }
+        //TODO Botones de movimiento
     }
 }
