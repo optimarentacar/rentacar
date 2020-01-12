@@ -29,7 +29,16 @@ namespace Rentacar.Interfaz.Accesorios
 
         private async Task Listar()
         {
-            this.accesorios = await _repositorioAccesorio.Listar();
+            try
+            {
+                this.accesorios = await _repositorioAccesorio.Listar();
+
+
+            }
+            catch (Exception)
+            {
+
+            }
         }
 
         private void RellenarTabla()

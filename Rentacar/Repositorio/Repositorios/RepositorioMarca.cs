@@ -81,6 +81,47 @@ namespace Rentacar.Repositorio.Repositorios
             return true;
         }
 
+        public async Task<List<Marca>> Listar()
+        {
+            string peticion = "SELECT * FROM marcas ";
+
+            var conexion = ContextoBD.GetInstancia().GetConexion();
+            conexion.Open();
+
+            MySqlCommand command = new MySqlCommand(peticion, conexion);
+
+            List<Marca> marcas = new List<Marca>();
+            try
+            {
+                DbDataReader reader = await command.ExecuteReaderAsync();
+
+                if (reader.HasRows)
+                {
+                    Marca marca;
+
+                    while (reader.Read())
+                    {
+                        marca = new Marca()
+                        {
+                            Id = reader.GetInt32(0),
+                            Nombre = reader.GetString(1),
+                        };
+                        marcas.Add(marca);
+                    }
+                }
+            }
+            catch (DbException ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                conexion.Close();
+            }
+
+            return marcas;
+        }
+
         public async Task<bool> Modificar(Marca marca)
         {
             string peticion = "UPDATE marcas " +

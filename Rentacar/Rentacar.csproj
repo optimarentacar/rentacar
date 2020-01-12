@@ -101,6 +101,24 @@
     <Compile Include="Interfaz\Clientes\FormGestionCliente.Designer.cs">
       <DependentUpon>FormGestionCliente.cs</DependentUpon>
     </Compile>
+    <Compile Include="Interfaz\Operaciones\Clientes\FormBusquedaClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaz\Operaciones\Clientes\FormBusquedaClientes.Designer.cs">
+      <DependentUpon>FormBusquedaClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaz\Operaciones\Vehiculos\FormBusquedaVehiculosPorFiltros.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaz\Operaciones\Vehiculos\FormBusquedaVehiculosPorFiltros.Designer.cs">
+      <DependentUpon>FormBusquedaVehiculosPorFiltros.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaz\Operaciones\Vehiculos\FormBusquedaVehiculosPorMatricula.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaz\Operaciones\Vehiculos\FormBusquedaVehiculosPorMatricula.Designer.cs">
+      <DependentUpon>FormBusquedaVehiculosPorMatricula.cs</DependentUpon>
+    </Compile>
     <Compile Include="Interfaz\Personalizados\LabelPersonalizado.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -159,6 +177,15 @@
     <EmbeddedResource Include="Interfaz\Clientes\FormGestionCliente.resx">
       <DependentUpon>FormGestionCliente.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Interfaz\Operaciones\Clientes\FormBusquedaClientes.resx">
+      <DependentUpon>FormBusquedaClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaz\Operaciones\Vehiculos\FormBusquedaVehiculosPorFiltros.resx">
+      <DependentUpon>FormBusquedaVehiculosPorFiltros.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaz\Operaciones\Vehiculos\FormBusquedaVehiculosPorMatricula.resx">
+      <DependentUpon>FormBusquedaVehiculosPorMatricula.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Interfaz\Principal\FormPrincipal.resx">
       <DependentUpon>FormPrincipal.cs</DependentUpon>
     </EmbeddedResource>
@@ -204,6 +231,9 @@
     <Content Include="Assets\Iconos\Validar.png" />
     <None Include="Assets\Imagenes\GestionAccesorios.png" />
     <None Include="Assets\Imagenes\GestionCaracteristicas.png" />
+    <None Include="Assets\Imagenes\BusquedaClientes.png" />
+    <None Include="Assets\Imagenes\BusquedaVehiculosPorMatricula.png" />
+    <None Include="Assets\Imagenes\BusquedaVehiculosFiltros.png" />
     <Content Include="Assets\Imagenes\GestionClientes.PNG" />
     <Content Include="Assets\Imagenes\GestionVehiculos.PNG" />
     <Content Include="Assets\Imagenes\Portada.PNG" />

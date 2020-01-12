@@ -37,10 +37,14 @@
             this.accesoriosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.marcasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.operacionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.buscarClienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.buscarVehículoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.buscarPorMatrículaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.informesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ayudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button2 = new System.Windows.Forms.Button();
+            this.buscarPorFiltrosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -73,42 +77,68 @@
             // clienteToolStripMenuItem
             // 
             this.clienteToolStripMenuItem.Name = "clienteToolStripMenuItem";
-            this.clienteToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.clienteToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
             this.clienteToolStripMenuItem.Text = "Cliente";
             this.clienteToolStripMenuItem.Click += new System.EventHandler(this.clienteToolStripMenuItem_Click);
             // 
             // vehículosToolStripMenuItem
             // 
             this.vehículosToolStripMenuItem.Name = "vehículosToolStripMenuItem";
-            this.vehículosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.vehículosToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
             this.vehículosToolStripMenuItem.Text = "Vehículos";
             this.vehículosToolStripMenuItem.Click += new System.EventHandler(this.vehículosToolStripMenuItem_Click);
             // 
             // característicasToolStripMenuItem
             // 
             this.característicasToolStripMenuItem.Name = "característicasToolStripMenuItem";
-            this.característicasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.característicasToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
             this.característicasToolStripMenuItem.Text = "Características";
             this.característicasToolStripMenuItem.Click += new System.EventHandler(this.característicasToolStripMenuItem_Click);
             // 
             // accesoriosToolStripMenuItem
             // 
             this.accesoriosToolStripMenuItem.Name = "accesoriosToolStripMenuItem";
-            this.accesoriosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.accesoriosToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
             this.accesoriosToolStripMenuItem.Text = "Accesorios";
             this.accesoriosToolStripMenuItem.Click += new System.EventHandler(this.accesoriosToolStripMenuItem_Click);
             // 
             // marcasToolStripMenuItem
             // 
             this.marcasToolStripMenuItem.Name = "marcasToolStripMenuItem";
-            this.marcasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.marcasToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
             this.marcasToolStripMenuItem.Text = "Marcas";
             // 
             // operacionesToolStripMenuItem
             // 
+            this.operacionesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.buscarClienteToolStripMenuItem,
+            this.buscarVehículoToolStripMenuItem});
             this.operacionesToolStripMenuItem.Name = "operacionesToolStripMenuItem";
             this.operacionesToolStripMenuItem.Size = new System.Drawing.Size(85, 20);
             this.operacionesToolStripMenuItem.Text = "Operaciones";
+            // 
+            // buscarClienteToolStripMenuItem
+            // 
+            this.buscarClienteToolStripMenuItem.Name = "buscarClienteToolStripMenuItem";
+            this.buscarClienteToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.buscarClienteToolStripMenuItem.Text = "Buscar cliente";
+            this.buscarClienteToolStripMenuItem.Click += new System.EventHandler(this.buscarClienteToolStripMenuItem_Click);
+            // 
+            // buscarVehículoToolStripMenuItem
+            // 
+            this.buscarVehículoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.buscarPorMatrículaToolStripMenuItem,
+            this.buscarPorFiltrosToolStripMenuItem});
+            this.buscarVehículoToolStripMenuItem.Name = "buscarVehículoToolStripMenuItem";
+            this.buscarVehículoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.buscarVehículoToolStripMenuItem.Text = "Buscar Vehículo";
+            // 
+            // buscarPorMatrículaToolStripMenuItem
+            // 
+            this.buscarPorMatrículaToolStripMenuItem.Name = "buscarPorMatrículaToolStripMenuItem";
+            this.buscarPorMatrículaToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
+            this.buscarPorMatrículaToolStripMenuItem.Text = "Buscar por matrícula";
+            this.buscarPorMatrículaToolStripMenuItem.Click += new System.EventHandler(this.buscarPorMatrículaToolStripMenuItem_Click);
             // 
             // informesToolStripMenuItem
             // 
@@ -141,6 +171,13 @@
             this.button2.Text = "Pruebas";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // buscarPorFiltrosToolStripMenuItem
+            // 
+            this.buscarPorFiltrosToolStripMenuItem.Name = "buscarPorFiltrosToolStripMenuItem";
+            this.buscarPorFiltrosToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
+            this.buscarPorFiltrosToolStripMenuItem.Text = "Buscar por filtros";
+            this.buscarPorFiltrosToolStripMenuItem.Click += new System.EventHandler(this.buscarPorFiltrosToolStripMenuItem_Click);
             // 
             // FormPrincipal
             // 
@@ -176,5 +213,9 @@
         private System.Windows.Forms.ToolStripMenuItem marcasToolStripMenuItem;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.ToolStripMenuItem buscarClienteToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem buscarVehículoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem buscarPorMatrículaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem buscarPorFiltrosToolStripMenuItem;
     }
 }

@@ -96,13 +96,13 @@ namespace Rentacar.Repositorio.Repositorios
             conexion.Open();
 
             MySqlCommand command = new MySqlCommand(peticion, conexion);
-            
+
             command.Parameters.AddWithValue("@nombre", cliente.Nombre);
             command.Parameters.AddWithValue("@telefono", cliente.Telefono);
             command.Parameters.AddWithValue("@domicilio", cliente.Domilicio);
             command.Parameters.AddWithValue("@dni", cliente.Dni);
             command.Prepare();
-           
+
             try
             {
                 int result = await command.ExecuteNonQueryAsync();
@@ -120,13 +120,16 @@ namespace Rentacar.Repositorio.Repositorios
             return true;
         }
 
-        public async Task<Cliente> Obtener(string dni)
+        public async Task<Cliente> ObtenerPorDni(string dni)
         {
             string peticion = "SELECT * FROM clientes " +
                               "WHERE dni = @dni";
+
             var conexion = ContextoBD.GetInstancia().GetConexion();
             conexion.Open();
             MySqlCommand command = new MySqlCommand(peticion, conexion);
+            command.Parameters.AddWithValue("@dni", dni);
+            command.Prepare();
 
             Cliente cliente = null;
 
@@ -136,13 +139,20 @@ namespace Rentacar.Repositorio.Repositorios
 
                 if (reader.HasRows)
                 {
-                    cliente = new Cliente()
+                    while (reader.Read())
                     {
-                        Dni = reader.GetString(0),
-                        Nombre = reader.GetString(1),
-                        Telefono = reader.GetString(2),
-                        Domilicio = reader.GetString(3),
-                    };
+                        cliente = new Cliente()
+                        {
+                            Dni = reader.GetString(0),
+                            Nombre = reader.GetString(1),
+                            Telefono = reader.GetString(2),
+                            Domilicio = reader.GetString(3),
+                        };
+                    }
+                }
+                else
+                {
+                    throw new DatosNoEncontradosException("No se ha encontrado el cliente, el dni no existe.");
                 }
             }
             catch (DbException ex)
@@ -209,6 +219,9 @@ namespace Rentacar.Repositorio.Repositorios
             var conexion = ContextoBD.GetInstancia().GetConexion();
             conexion.Open();
             MySqlCommand command = new MySqlCommand(peticion, conexion);
+            command.Parameters.AddWithValue("@dni", dni);
+            command.Prepare();
+
 
             bool resultado = false;
 
@@ -231,6 +244,146 @@ namespace Rentacar.Repositorio.Repositorios
             }
 
             return resultado;
+        }
+
+        public async Task<List<Cliente>> ObtenerPorNombre(string nombre)
+        {
+            string peticion = "SELECT * FROM clientes " +
+                "WHERE nombre = @nombre";
+
+            var conexion = ContextoBD.GetInstancia().GetConexion();
+            conexion.Open();
+            MySqlCommand command = new MySqlCommand(peticion, conexion);
+            command.Parameters.AddWithValue("@nombre", nombre);
+            command.Prepare();
+
+
+            List<Cliente> clientes = new List<Cliente>();
+
+            try
+            {
+                DbDataReader reader = await command.ExecuteReaderAsync();
+
+                if (reader.HasRows)
+                {
+                    Cliente cliente;
+
+                    while (reader.Read())
+                    {
+                        cliente = new Cliente()
+                        {
+                            Dni = reader.GetString(0),
+                            Nombre = reader.GetString(1),
+                            Telefono = reader.GetString(2),
+                            Domilicio = reader.GetString(3),
+                        };
+                        clientes.Add(cliente);
+                    }
+                }
+            }
+            catch (DbException ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                conexion.Close();
+            }
+
+            return clientes;
+        }
+
+        public async Task<List<Cliente>> ObtenerParecidosANombre(string nombre)
+        {
+            Console.WriteLine("SSSSSSSS  " + nombre);
+            string peticion = "SELECT * FROM clientes " +
+                "WHERE nombre LIKE @nombre";
+
+            var conexion = ContextoBD.GetInstancia().GetConexion();
+            conexion.Open();
+            MySqlCommand command = new MySqlCommand(peticion, conexion);
+            command.Parameters.AddWithValue("@nombre", nombre + "%");
+            command.Prepare();
+
+            List<Cliente> clientes = new List<Cliente>();
+
+            try
+            {
+                DbDataReader reader = await command.ExecuteReaderAsync();
+
+                if (reader.HasRows)
+                {
+                    Cliente cliente;
+
+                    while (reader.Read())
+                    {
+                        cliente = new Cliente()
+                        {
+                            Dni = reader.GetString(0),
+                            Nombre = reader.GetString(1),
+                            Telefono = reader.GetString(2),
+                            Domilicio = reader.GetString(3),
+                        };
+                        clientes.Add(cliente);
+                    }
+                }
+            }
+            catch (DbException ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                conexion.Close();
+            }
+
+            return clientes;
+        }
+
+        public async Task<List<Cliente>> ObtenerParecidosADni(string dni)
+        {
+            string peticion = "SELECT * FROM clientes " +
+                "WHERE dni LIKE @dni";
+
+            var conexion = ContextoBD.GetInstancia().GetConexion();
+            conexion.Open();
+            MySqlCommand command = new MySqlCommand(peticion, conexion);
+            command.Parameters.AddWithValue("@dni",  dni + "%");
+            command.Prepare();
+
+            List<Cliente> clientes = new List<Cliente>();
+
+            try
+            {
+                DbDataReader reader = await command.ExecuteReaderAsync();
+
+                if (reader.HasRows)
+                {
+                    Cliente cliente;
+
+                    while (reader.Read())
+                    {
+                        cliente = new Cliente()
+                        {
+                            Dni = reader.GetString(0),
+                            Nombre = reader.GetString(1),
+                            Telefono = reader.GetString(2),
+                            Domilicio = reader.GetString(3),
+                        };
+                        clientes.Add(cliente);
+                    }
+                }
+            }
+            catch (DbException ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                conexion.Close();
+            }
+
+            return clientes;
         }
     }
 }

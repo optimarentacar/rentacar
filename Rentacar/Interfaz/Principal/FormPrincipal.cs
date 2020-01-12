@@ -2,6 +2,8 @@
 using Rentacar.Interfaz.Accesorios;
 using Rentacar.Interfaz.Caracteristicas;
 using Rentacar.Interfaz.Clientes;
+using Rentacar.Interfaz.Operaciones.Clientes;
+using Rentacar.Interfaz.Operaciones.Vehiculos;
 using Rentacar.Interfaz.Vehiculos;
 using Rentacar.Modelos;
 using Rentacar.Repositorio.Interfaces;
@@ -48,6 +50,27 @@ namespace Rentacar.Interfaz.Principal
             FormGestionCaracteristicas fgc = Program.container
                 .GetInstance<FormGestionCaracteristicas>();
             fgc.ShowDialog();
+        }
+
+        private void buscarClienteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormBusquedaClientes fbc = Program.container
+                .GetInstance<FormBusquedaClientes>();
+            fbc.ShowDialog();
+        }
+
+        private void buscarPorMatrículaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormBusquedaVehiculosPorMatricula fbvm = Program.container
+                .GetInstance<FormBusquedaVehiculosPorMatricula>();
+            fbvm.ShowDialog();
+        }
+
+        private void buscarPorFiltrosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormBusquedaVehiculosPorFiltros fbvf = Program.container
+                .GetInstance<FormBusquedaVehiculosPorFiltros>();
+            fbvf.ShowDialog();
         }
     }
 }

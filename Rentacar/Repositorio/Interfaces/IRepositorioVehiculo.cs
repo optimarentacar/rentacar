@@ -68,6 +68,14 @@ namespace Rentacar.Repositorio.Interfaces
         Task<List<Vehiculo>> ObtenerPorMarcaYModelo(int idMarca,string modelo);
 
         /// <summary>
+        ///     Obtiene la lista de vehiculos dada
+        ///     una marca 
+        /// </summary>
+        /// <param name="idMarca"></param>
+        /// <returns></returns>
+        Task<List<Vehiculo>> ObtenerPorMarca(int idMarca);
+
+        /// <summary>
         ///     Obtiene la lista de vehiculos cuyo nombres
         ///     de la marca y del modelo
         ///     empiezen por las cadenas pasadas 
@@ -76,7 +84,7 @@ namespace Rentacar.Repositorio.Interfaces
         /// <param name="idMarca"></param>
         /// <param name="modelo"></param>
         /// <returns></returns>
-        Task<List<Vehiculo>> ObtenerParecidosAMarcaYModelo(int idMarca, string modelo);
+        Task<List<Vehiculo>> ObtenerParecidosAMarcaYModelo(string marca, string modelo);
        
         /// <summary>
         ///     Obtiene la lista de vehiculos dada

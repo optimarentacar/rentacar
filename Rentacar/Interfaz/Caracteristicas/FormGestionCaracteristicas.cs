@@ -29,7 +29,15 @@ namespace Rentacar.Interfaz.Caracteristicas
 
         private async Task Listar()
         {
-            this.caracteristicas = await _repositorioCaracteristica.Listar();
+            try
+            {
+                this.caracteristicas = await _repositorioCaracteristica.Listar();
+
+            }
+            catch (Exception)
+            {
+
+            }
         }
 
         private void RellenarTabla()

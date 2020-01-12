@@ -409,7 +409,7 @@ namespace Rentacar.Repositorio.Repositorios
         public async Task<List<Vehiculo>> ObtenerAlquiladosPorVeces(int veces)
         {
             string peticion =
-              "SELECT DISTINCT v.matricula, m.id, m.nombre, v.modelo, v.anio, " +
+              "SELECT v.matricula, m.id, m.nombre, v.modelo, v.anio, " +
                      "v.capacidad, v.costoDia, v.pathFoto " +
               "FROM vehiculos v " +
               "INNER JOIN marcas m " +
@@ -424,13 +424,13 @@ namespace Rentacar.Repositorio.Repositorios
             MySqlCommand command = new MySqlCommand(peticion, conexion);
             command.Parameters.AddWithValue("@veces", veces);
             command.Prepare();
-
+            
             List<Vehiculo> vehiculos = new List<Vehiculo>();
 
             try
             {
                 DbDataReader reader = await command.ExecuteReaderAsync();
-
+                Console.WriteLine("BBBBBBBBBBBBBB");
                 if (reader.HasRows)
                 {
                     Vehiculo vehiculo;
@@ -453,6 +453,7 @@ namespace Rentacar.Repositorio.Repositorios
                         };
 
                         vehiculos.Add(vehiculo);
+                        Console.WriteLine("BBBBBBBBBBBBBB" + vehiculos.Count);
                     }
                 }
             }
@@ -512,7 +513,7 @@ namespace Rentacar.Repositorio.Repositorios
             return modelos;
         }
 
-        public async Task<List<Vehiculo>> ObtenerParecidosAMarcaYModelo(int idMarca, string modelo)
+        public async Task<List<Vehiculo>> ObtenerParecidosAMarcaYModelo(string marca, string modelo)
         {
             string peticion =
                "SELECT v.matricula, m.id, m.nombre, v.modelo, v.anio, " +
@@ -520,16 +521,16 @@ namespace Rentacar.Repositorio.Repositorios
                "FROM vehiculos v " +
                "INNER JOIN marcas m " +
                "ON v.idMarca = m.id " +
-               "AND m.id " +
-               "LIKE @idMarca " +
-               "AND v.modelo " +
+               "AND UPPER(m.nombre) " +
+               "LIKE @marca " +
+               "AND UPPER(v.modelo) " +
                "LIKE @modelo";
 
             var conexion = ContextoBD.GetInstancia().GetConexion();
             conexion.Open();
             MySqlCommand command = new MySqlCommand(peticion, conexion);
-            command.Parameters.AddWithValue("@idMarca", "%" + idMarca);
-            command.Parameters.AddWithValue("@modelo", "%" + modelo);
+            command.Parameters.AddWithValue("@marca", marca.ToUpper() + "%");
+            command.Parameters.AddWithValue("@modelo",  modelo.ToUpper() + "%");
             command.Prepare();
 
             List<Vehiculo> vehiculos = new List<Vehiculo>();
@@ -579,11 +580,11 @@ namespace Rentacar.Repositorio.Repositorios
         {
             string peticion =
                "SELECT v.matricula, m.id, m.nombre, v.modelo, v.anio, " +
-                      "v.capacidad, v.costoDia, v.pathFoto " +
+                      "v.capacidad, v.costoDia " +
                "FROM vehiculos v " +
                "INNER JOIN marcas m " +
                "ON v.idMarca = m.id " +
-               "INNER JOIN caracteristicas_vehiculos cv" +
+               "INNER JOIN caracteristicas_vehiculos cv " +
                "ON v.matricula = cv.matricula " +
                "AND cv.idCaracteristica = @idCaracteristica";
 
@@ -616,8 +617,65 @@ namespace Rentacar.Repositorio.Repositorios
                             Modelo = reader.GetString(3),
                             Anio = reader.GetString(4),
                             Capacidad = reader.GetInt16(5),
-                            CostoDia = reader.GetFloat(6),
-                            PathFoto = reader.GetString(7),
+                            CostoDia = reader.GetFloat(6)
+                        };
+
+                        vehiculos.Add(vehiculo);
+                    }
+                }
+            }
+            catch (DbException ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                conexion.Close();
+            }
+
+            return vehiculos;
+        }
+
+        public async Task<List<Vehiculo>> ObtenerPorMarca(int idMarca)
+        {
+            string peticion =
+               "SELECT v.matricula, m.id, m.nombre, v.modelo, v.anio, " +
+                      "v.capacidad, v.costoDia " +
+               "FROM vehiculos v " +
+               "INNER JOIN marcas m " +
+               "ON v.idMarca = m.id " +
+               "AND m.id = @idMarca ";
+
+            var conexion = ContextoBD.GetInstancia().GetConexion();
+            conexion.Open();
+            MySqlCommand command = new MySqlCommand(peticion, conexion);
+            command.Parameters.AddWithValue("@idMarca", idMarca);
+            command.Prepare();
+
+            List<Vehiculo> vehiculos = new List<Vehiculo>();
+
+            try
+            {
+                DbDataReader reader = await command.ExecuteReaderAsync();
+
+                if (reader.HasRows)
+                {
+                    Vehiculo vehiculo;
+
+                    while (reader.Read())
+                    {
+                        vehiculo = new Vehiculo()
+                        {
+                            Matricula = reader.GetString(0),
+                            Marca = new Marca()
+                            {
+                                Id = reader.GetInt16(1),
+                                Nombre = reader.GetString(2)
+                            },
+                            Modelo = reader.GetString(3),
+                            Anio = reader.GetString(4),
+                            Capacidad = reader.GetInt16(5),
+                            CostoDia = reader.GetFloat(6)
                         };
 
                         vehiculos.Add(vehiculo);
