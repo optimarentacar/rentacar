@@ -66,21 +66,34 @@ namespace Rentacar.Test
                 //Lanza una excepcion, en tal caso no se guarda el vehiculo
                  rutaRelativa = _repositorioFotografia.Guardar(pictureBox1.Image);
 
+                List<Caracteristica> caracteristicas = new List<Caracteristica>();
+                caracteristicas.Add(new Caracteristica()
+                {
+                    Id = 2
+                });
+                caracteristicas.Add(new Caracteristica()
+                {
+                    Id = 3
+                });
+
+
+
                 Vehiculo vehiculo = new Vehiculo()
                 {
-                    Matricula = "gtit154",
+                    Matricula = "atit154",
                     Marca = new Marca
                     {
                         Id = 1
                     },
-                    Modelo = "ddwd",
+                    Modelo = "aaaa",
                     Anio = "2015",
                     Capacidad = 5,
                     CostoDia = 45.99f,
-                    PathFoto = rutaRelativa                  
+                    PathFoto = rutaRelativa ,
+                    Caracteristicas = caracteristicas
                 };
 
-                 guardado = await _repositorioVehiculo.Crear(vehiculo);
+                 guardado = await _repositorioVehiculo.Modificar(vehiculo);
             }
             catch (MatriculaYaExisteException matriculaYaExisteException)
             {
@@ -108,6 +121,12 @@ namespace Rentacar.Test
 
 
             pictureBox2.Image = Image.FromFile(vehiculo.PathAbsolutoFoto);
+        }
+
+        private async  void button4_Click(object sender, EventArgs e)
+        {
+            if(!await _repositorioVehiculo.TieneAlquileresAsignados("JHJ9127"))
+            await _repositorioVehiculo.Borrar("JHJ9127");
         }
     }
     }

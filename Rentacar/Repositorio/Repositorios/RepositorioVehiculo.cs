@@ -15,54 +15,6 @@ namespace Rentacar.Repositorio.Repositorios
     {
 
 
-        public async Task<bool> AsignarCaracteristicas(string matricula, List<int> idsCaracteristica)
-        {
-            string peticion = "";
-
-            var conexion = ContextoBD.GetInstancia().GetConexion();
-            conexion.Open();
-
-            MySqlTransaction transaction = conexion.BeginTransaction();
-
-            peticion = "DELETE FROM caracteristicas_vehiculos " +
-                       "WHERE matricula = @matricula";
-
-            MySqlCommand command = new MySqlCommand(peticion, conexion);
-            command.Parameters.AddWithValue("@matricula", matricula);
-            command.Prepare();
-
-            try
-            {
-                int result = await command.ExecuteNonQueryAsync();
-
-                peticion = "INSERT INTO caracteristicas_vehiculos " +
-                             "VALUES (@caracteristica,@matricula)";
-
-                foreach (int idCaracteristica in idsCaracteristica)
-                {
-                    command = new MySqlCommand(peticion, conexion);
-                    command.Parameters.AddWithValue("@caracteristica", idCaracteristica);
-                    command.Parameters.AddWithValue("@matricula", matricula);
-                    command.Prepare();
-
-                    result = await command.ExecuteNonQueryAsync();
-                };
-
-                transaction.Commit();
-            }
-            catch (DbException ex)
-            {
-                transaction.Rollback();
-                throw ex;
-            }
-            finally
-            {
-                conexion.Close();
-            }
-
-            return true;
-        }
-
         public async Task<bool> Borrar(string matricula)
         {
             string peticion = "DELETE FROM vehiculos " +
@@ -106,6 +58,8 @@ namespace Rentacar.Repositorio.Repositorios
             var conexion = ContextoBD.GetInstancia().GetConexion();
             conexion.Open();
 
+            MySqlTransaction transaction = conexion.BeginTransaction();
+
             MySqlCommand command = new MySqlCommand(peticion, conexion);
             command.Parameters.AddWithValue("@matricula", vehiculo.Matricula);
             command.Parameters.AddWithValue("@idMarca", vehiculo.Marca.Id);
@@ -119,9 +73,26 @@ namespace Rentacar.Repositorio.Repositorios
             try
             {
                 int result = await command.ExecuteNonQueryAsync();
+
+                peticion = "INSERT INTO caracteristicas_vehiculos " +
+                             "VALUES (@idCaracteristica,@matricula)";
+
+                foreach (Caracteristica caracteristica in vehiculo.Caracteristicas)
+                {
+                    command = new MySqlCommand(peticion, conexion);
+                    command.Parameters.AddWithValue("@idCaracteristica", caracteristica.Id);
+                    command.Parameters.AddWithValue("@matricula", vehiculo.Matricula);
+                    command.Prepare();
+
+                    result = await command.ExecuteNonQueryAsync();
+                };
+
+                transaction.Commit();
             }
             catch (DbException ex)
             {
+                transaction.Rollback();
+
                 if (ex.Message.Contains("Duplicate entry"))
                 {
                     throw new MatriculaYaExisteException();
@@ -150,6 +121,7 @@ namespace Rentacar.Repositorio.Repositorios
 
             var conexion = ContextoBD.GetInstancia().GetConexion();
             conexion.Open();
+
             MySqlCommand command = new MySqlCommand(peticion, conexion);
 
             List<Vehiculo> vehiculos = new List<Vehiculo>();
@@ -199,16 +171,17 @@ namespace Rentacar.Repositorio.Repositorios
         {
             string peticion =
                 "UPDATE vehiculos " +
-                "SET idMarca = @idMarca,modelo = @modelo, capacidad = @capacidad, " +
+                "SET idMarca = @idMarca, modelo = @modelo, capacidad = @capacidad, " +
                      " anio = @anio, costoDia = @costoDia, pathFoto = @pathFoto " +
-                "WHERE matricula " +
-                "LIKE @matricula";
+                "WHERE matricula = @matricula";
 
             var conexion = ContextoBD.GetInstancia().GetConexion();
             conexion.Open();
 
+            MySqlTransaction transaction = conexion.BeginTransaction();
+
             MySqlCommand command = new MySqlCommand(peticion, conexion);
-            command.Parameters.AddWithValue("@matricula", "%" + vehiculo.Matricula);
+            command.Parameters.AddWithValue("@matricula", vehiculo.Matricula);
             command.Parameters.AddWithValue("@idMarca", vehiculo.Marca.Id);
             command.Parameters.AddWithValue("@modelo", vehiculo.Modelo);
             command.Parameters.AddWithValue("@anio", vehiculo.Anio);
@@ -220,6 +193,30 @@ namespace Rentacar.Repositorio.Repositorios
             try
             {
                 int result = await command.ExecuteNonQueryAsync();
+
+                peticion = "DELETE FROM caracteristicas_vehiculos " +
+                            "WHERE matricula = @matricula";
+
+                command = new MySqlCommand(peticion, conexion);
+                command.Parameters.AddWithValue("@matricula", vehiculo.Matricula);
+                command.Prepare();
+
+                result = await command.ExecuteNonQueryAsync();
+
+                peticion = "INSERT INTO caracteristicas_vehiculos " +
+                            "VALUES (@idCaracteristica,@matricula)";
+
+                foreach (Caracteristica caracteristica in vehiculo.Caracteristicas)
+                {
+                    command = new MySqlCommand(peticion, conexion);
+                    command.Parameters.AddWithValue("@idCaracteristica", caracteristica.Id);
+                    command.Parameters.AddWithValue("@matricula", vehiculo.Matricula);
+                    command.Prepare();
+
+                    result = await command.ExecuteNonQueryAsync();
+                };
+
+                transaction.Commit();
             }
             catch (DbException ex)
             {
@@ -424,7 +421,7 @@ namespace Rentacar.Repositorio.Repositorios
             MySqlCommand command = new MySqlCommand(peticion, conexion);
             command.Parameters.AddWithValue("@veces", veces);
             command.Prepare();
-            
+
             List<Vehiculo> vehiculos = new List<Vehiculo>();
 
             try
@@ -530,7 +527,7 @@ namespace Rentacar.Repositorio.Repositorios
             conexion.Open();
             MySqlCommand command = new MySqlCommand(peticion, conexion);
             command.Parameters.AddWithValue("@marca", marca.ToUpper() + "%");
-            command.Parameters.AddWithValue("@modelo",  modelo.ToUpper() + "%");
+            command.Parameters.AddWithValue("@modelo", modelo.ToUpper() + "%");
             command.Prepare();
 
             List<Vehiculo> vehiculos = new List<Vehiculo>();
@@ -755,6 +752,44 @@ namespace Rentacar.Repositorio.Repositorios
             return vehiculos;
         }
 
+        public async Task<bool> TieneAlquileresAsignados(string matricula)
+        {
+            string peticion =
+               "SELECT v.matricula " +
+               "FROM vehiculos v " +
+               "INNER JOIN alquileres a " +
+               "ON v.matricula = a.matricula " +
+               "AND v.matricula = @matricula " +
+               "LIMIT 1";
 
+            var conexion = ContextoBD.GetInstancia().GetConexion();
+            conexion.Open();
+
+            MySqlCommand command = new MySqlCommand(peticion, conexion);
+            command.Parameters.AddWithValue("@matricula", matricula);
+            command.Prepare();
+
+            bool resultado = false;
+
+            try
+            {
+                DbDataReader reader = await command.ExecuteReaderAsync();
+
+                if (reader.HasRows)
+                {
+                    resultado = true;
+                }
+            }
+            catch (DbException ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                conexion.Close();
+            }
+
+            return resultado;
+        }
     }
 }

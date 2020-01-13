@@ -18,10 +18,10 @@ namespace Rentacar.Modelos
         public string Anio { get; set; }
         public float CostoDia { get; set; }
         public string PathFoto { get; set; }
-
         public string PathAbsolutoFoto
         {
             get => Application.StartupPath + PathFoto;
         }
+        public List<Caracteristica> Caracteristicas { get; set; }
     }
 }

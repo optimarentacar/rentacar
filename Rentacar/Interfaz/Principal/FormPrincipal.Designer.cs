@@ -40,11 +40,11 @@
             this.buscarClienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.buscarVehículoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.buscarPorMatrículaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.buscarPorFiltrosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.informesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ayudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button2 = new System.Windows.Forms.Button();
-            this.buscarPorFiltrosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -120,7 +120,7 @@
             // buscarClienteToolStripMenuItem
             // 
             this.buscarClienteToolStripMenuItem.Name = "buscarClienteToolStripMenuItem";
-            this.buscarClienteToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.buscarClienteToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
             this.buscarClienteToolStripMenuItem.Text = "Buscar cliente";
             this.buscarClienteToolStripMenuItem.Click += new System.EventHandler(this.buscarClienteToolStripMenuItem_Click);
             // 
@@ -130,7 +130,7 @@
             this.buscarPorMatrículaToolStripMenuItem,
             this.buscarPorFiltrosToolStripMenuItem});
             this.buscarVehículoToolStripMenuItem.Name = "buscarVehículoToolStripMenuItem";
-            this.buscarVehículoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.buscarVehículoToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
             this.buscarVehículoToolStripMenuItem.Text = "Buscar Vehículo";
             // 
             // buscarPorMatrículaToolStripMenuItem
@@ -139,6 +139,13 @@
             this.buscarPorMatrículaToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
             this.buscarPorMatrículaToolStripMenuItem.Text = "Buscar por matrícula";
             this.buscarPorMatrículaToolStripMenuItem.Click += new System.EventHandler(this.buscarPorMatrículaToolStripMenuItem_Click);
+            // 
+            // buscarPorFiltrosToolStripMenuItem
+            // 
+            this.buscarPorFiltrosToolStripMenuItem.Name = "buscarPorFiltrosToolStripMenuItem";
+            this.buscarPorFiltrosToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
+            this.buscarPorFiltrosToolStripMenuItem.Text = "Buscar por filtros";
+            this.buscarPorFiltrosToolStripMenuItem.Click += new System.EventHandler(this.buscarPorFiltrosToolStripMenuItem_Click);
             // 
             // informesToolStripMenuItem
             // 
@@ -172,18 +179,11 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // buscarPorFiltrosToolStripMenuItem
-            // 
-            this.buscarPorFiltrosToolStripMenuItem.Name = "buscarPorFiltrosToolStripMenuItem";
-            this.buscarPorFiltrosToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
-            this.buscarPorFiltrosToolStripMenuItem.Text = "Buscar por filtros";
-            this.buscarPorFiltrosToolStripMenuItem.Click += new System.EventHandler(this.buscarPorFiltrosToolStripMenuItem_Click);
-            // 
             // FormPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(784, 575);
+            this.ClientSize = new System.Drawing.Size(784, 633);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.menuStrip1);

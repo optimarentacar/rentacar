@@ -49,14 +49,6 @@ namespace Rentacar.Repositorio.Interfaces
         /// <returns></returns>
         Task<List<Vehiculo>> Listar();
 
-        /// <summary>
-        ///     Asigna una lista de caracteristicas
-        ///     a un vehiculo dada su matrícula
-        /// </summary>
-        /// <param name="matricula"></param>
-        /// <param name="idsCaracteristica"></param>
-        /// <returns></returns>
-        Task<bool> AsignarCaracteristicas(string matricula, List<int> idsCaracteristica);
        
         /// <summary>
         ///     Obtiene la lista de vehiculos dados
@@ -122,6 +114,14 @@ namespace Rentacar.Repositorio.Interfaces
         /// <param name="idMarca"></param>
         /// <returns></returns>
         Task<List<string>> ObtenerModelosPorMarca(int idMarca);
+
+        /// <summary>
+        ///     Comprueba si un vehiculo tiene alquileres
+        ///     asignados
+        /// </summary>
+        /// <param name="matricula"></param>
+        /// <returns></returns>
+        Task<bool> TieneAlquileresAsignados(string matricula);
 
     }
 }
