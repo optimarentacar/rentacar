@@ -80,7 +80,7 @@ namespace Rentacar.Test
 
                 Vehiculo vehiculo = new Vehiculo()
                 {
-                    Matricula = "atit154",
+                    Matricula = "JHJ9127",
                     Marca = new Marca
                     {
                         Id = 1

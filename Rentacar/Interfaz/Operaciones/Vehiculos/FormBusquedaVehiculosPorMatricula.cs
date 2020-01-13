@@ -80,6 +80,7 @@ namespace Rentacar.Interfaz.Operaciones.Vehiculos
 
                 try
                 {
+                    Console.WriteLine(vehiculo.PathAbsolutoFoto);
                     pbFoto.Image = Image.FromFile(vehiculo.PathAbsolutoFoto);
                 }
                 catch (Exception)
