@@ -288,11 +288,15 @@ namespace Rentacar.Interfaz.Clientes
 
         private async Task<bool> Eliminar()
         {
+            
             bool borrado = false;
             String dni = textDni.Text;
             try
             {
-                borrado = await _repositorioCliente.Borrar(dni);
+                if(! (await _repositorioCliente.TieneAlquileresAsignados(dni)))
+                {
+                    borrado = await _repositorioCliente.Borrar(dni);
+                }
             }
             catch (Exception ex)
             {
