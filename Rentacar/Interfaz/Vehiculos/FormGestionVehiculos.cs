@@ -15,18 +15,22 @@ namespace Rentacar.Interfaz.Vehiculos
     public partial class FormGestionVehiculos : Form
     {
         private IRepositorioVehiculo _repositorioVehiculo;
+        private IRepositorioMarca _repositorioMarca;
         private List<Vehiculo> Vehiculos;
         private Vehiculo vehiculo;
 
-        public FormGestionVehiculos(IRepositorioVehiculo repositorioVehiculo)
+        public FormGestionVehiculos(IRepositorioVehiculo repositorioVehiculo, IRepositorioMarca repositorioMarca)
         {
             _repositorioVehiculo = repositorioVehiculo;
+            _repositorioMarca = repositorioMarca;
             InitializeComponent();
         }
 
         private async void FormGestionVehiculos_Load(object sender, EventArgs e)
         {
+            await cargarComboBox();
             await Listar();
+
         }
 
         private async Task Listar()
@@ -39,7 +43,7 @@ namespace Rentacar.Interfaz.Vehiculos
                 for (int i = 0; i < Vehiculos.Count; i++)
                 {
 
-                    TablaVehiculos.Rows.Add(Vehiculos[i].Matricula, Vehiculos[i].Marca.Nombre, 
+                    TablaVehiculos.Rows.Add(Vehiculos[i].Matricula, Vehiculos[i].Marca.Nombre,
                         Vehiculos[i].Modelo, Vehiculos[i].Capacidad, Vehiculos[i].Anio, Vehiculos[i].CostoDia);
                 }
 
@@ -50,6 +54,24 @@ namespace Rentacar.Interfaz.Vehiculos
             }
         }
 
+        private async Task cargarComboBox()
+        {
+            try
+            {
+                List<Marca> marcas = await _repositorioMarca.Listar();
+
+                comboBoxMarca.DataSource = marcas;
+                comboBoxMarca.DisplayMember = "Nombre";
+                comboBoxMarca.ValueMember = "Id";
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+
+        }
+
         private void TablaVehiculos_SelectionChanged(object sender, EventArgs e)
         {
             if (TablaVehiculos.SelectedRows.Count > 0)
@@ -57,13 +79,12 @@ namespace Rentacar.Interfaz.Vehiculos
                 String matricula = TablaVehiculos.SelectedRows[0].Cells[0].Value.ToString();
                 vehiculo = Vehiculos.FirstOrDefault(v => v.Matricula == matricula);
                 textMatricula.Text = vehiculo.Matricula;
-                
-                //TODO comboBoxMarcas
-
+                comboBoxMarca.SelectedValue = vehiculo.Marca.Id;
                 textModelo.Text = vehiculo.Modelo;
                 textAño.Text = vehiculo.Anio;
                 textCapacidad.Text = vehiculo.Capacidad.ToString();
                 textCosto.Text = vehiculo.CostoDia.ToString();
+                FotoVehiculo.Image = Image.FromFile(vehiculo.PathAbsolutoFoto);
             }
         }
     }

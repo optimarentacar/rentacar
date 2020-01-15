@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormGestionVehiculos));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.TablaVehiculos = new System.Windows.Forms.DataGridView();
             this.Matricula = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -77,6 +78,19 @@
             // 
             // TablaVehiculos
             // 
+            this.TablaVehiculos.AllowUserToAddRows = false;
+            this.TablaVehiculos.AllowUserToDeleteRows = false;
+            this.TablaVehiculos.AllowUserToResizeColumns = false;
+            this.TablaVehiculos.AllowUserToResizeRows = false;
+            this.TablaVehiculos.BackgroundColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.TablaVehiculos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.TablaVehiculos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.TablaVehiculos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Matricula,
@@ -85,8 +99,12 @@
             this.Plazas,
             this.Año,
             this.CosteDia});
+            this.TablaVehiculos.GridColor = System.Drawing.Color.White;
             this.TablaVehiculos.Location = new System.Drawing.Point(12, 141);
             this.TablaVehiculos.Name = "TablaVehiculos";
+            this.TablaVehiculos.ReadOnly = true;
+            this.TablaVehiculos.RowHeadersVisible = false;
+            this.TablaVehiculos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.TablaVehiculos.Size = new System.Drawing.Size(763, 270);
             this.TablaVehiculos.TabIndex = 1;
             this.TablaVehiculos.SelectionChanged += new System.EventHandler(this.TablaVehiculos_SelectionChanged);
@@ -95,12 +113,14 @@
             // 
             this.Matricula.HeaderText = "Matrícula";
             this.Matricula.Name = "Matricula";
+            this.Matricula.ReadOnly = true;
             this.Matricula.Width = 120;
             // 
             // Marca
             // 
             this.Marca.HeaderText = "Marca";
             this.Marca.Name = "Marca";
+            this.Marca.ReadOnly = true;
             this.Marca.Width = 150;
             // 
             // Modelo
@@ -108,21 +128,25 @@
             this.Modelo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Modelo.HeaderText = "Modelo";
             this.Modelo.Name = "Modelo";
+            this.Modelo.ReadOnly = true;
             // 
             // Plazas
             // 
             this.Plazas.HeaderText = "Plazas";
             this.Plazas.Name = "Plazas";
+            this.Plazas.ReadOnly = true;
             // 
             // Año
             // 
             this.Año.HeaderText = "Año";
             this.Año.Name = "Año";
+            this.Año.ReadOnly = true;
             // 
             // CosteDia
             // 
             this.CosteDia.HeaderText = "Coste / Día";
             this.CosteDia.Name = "CosteDia";
+            this.CosteDia.ReadOnly = true;
             // 
             // labelPersonalizado1
             // 
@@ -232,6 +256,7 @@
             this.FotoVehiculo.Location = new System.Drawing.Point(781, 183);
             this.FotoVehiculo.Name = "FotoVehiculo";
             this.FotoVehiculo.Size = new System.Drawing.Size(213, 138);
+            this.FotoVehiculo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.FotoVehiculo.TabIndex = 14;
             this.FotoVehiculo.TabStop = false;
             // 
