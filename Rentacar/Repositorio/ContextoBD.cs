@@ -8,7 +8,7 @@ namespace Rentacar.Repositorio
         private static readonly string Server = "localhost";
         private static readonly string Database = "rentacar";
         private static readonly string User = "root";
-        private static readonly string Password = "root";
+        private static readonly string Password = "";
 
         private MySqlConnection conexion;
         private static ContextoBD contextoBD = null;
