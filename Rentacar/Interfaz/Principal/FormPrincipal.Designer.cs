@@ -71,42 +71,43 @@
             this.accesoriosToolStripMenuItem,
             this.marcasToolStripMenuItem});
             this.tablasToolStripMenuItem.Name = "tablasToolStripMenuItem";
-            this.tablasToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
+            this.tablasToolStripMenuItem.Size = new System.Drawing.Size(51, 20);
             this.tablasToolStripMenuItem.Text = "Tablas";
             // 
             // clienteToolStripMenuItem
             // 
             this.clienteToolStripMenuItem.Name = "clienteToolStripMenuItem";
-            this.clienteToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
+            this.clienteToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.clienteToolStripMenuItem.Text = "Cliente";
             this.clienteToolStripMenuItem.Click += new System.EventHandler(this.clienteToolStripMenuItem_Click);
             // 
             // vehículosToolStripMenuItem
             // 
             this.vehículosToolStripMenuItem.Name = "vehículosToolStripMenuItem";
-            this.vehículosToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
+            this.vehículosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.vehículosToolStripMenuItem.Text = "Vehículos";
             this.vehículosToolStripMenuItem.Click += new System.EventHandler(this.vehículosToolStripMenuItem_Click);
             // 
             // característicasToolStripMenuItem
             // 
             this.característicasToolStripMenuItem.Name = "característicasToolStripMenuItem";
-            this.característicasToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
+            this.característicasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.característicasToolStripMenuItem.Text = "Características";
             this.característicasToolStripMenuItem.Click += new System.EventHandler(this.característicasToolStripMenuItem_Click);
             // 
             // accesoriosToolStripMenuItem
             // 
             this.accesoriosToolStripMenuItem.Name = "accesoriosToolStripMenuItem";
-            this.accesoriosToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
+            this.accesoriosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.accesoriosToolStripMenuItem.Text = "Accesorios";
             this.accesoriosToolStripMenuItem.Click += new System.EventHandler(this.accesoriosToolStripMenuItem_Click);
             // 
             // marcasToolStripMenuItem
             // 
             this.marcasToolStripMenuItem.Name = "marcasToolStripMenuItem";
-            this.marcasToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
+            this.marcasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.marcasToolStripMenuItem.Text = "Marcas";
+            this.marcasToolStripMenuItem.Click += new System.EventHandler(this.marcasToolStripMenuItem_Click);
             // 
             // operacionesToolStripMenuItem
             // 
@@ -120,7 +121,7 @@
             // buscarClienteToolStripMenuItem
             // 
             this.buscarClienteToolStripMenuItem.Name = "buscarClienteToolStripMenuItem";
-            this.buscarClienteToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
+            this.buscarClienteToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
             this.buscarClienteToolStripMenuItem.Text = "Buscar cliente";
             this.buscarClienteToolStripMenuItem.Click += new System.EventHandler(this.buscarClienteToolStripMenuItem_Click);
             // 
@@ -130,7 +131,7 @@
             this.buscarPorMatrículaToolStripMenuItem,
             this.buscarPorFiltrosToolStripMenuItem});
             this.buscarVehículoToolStripMenuItem.Name = "buscarVehículoToolStripMenuItem";
-            this.buscarVehículoToolStripMenuItem.Size = new System.Drawing.Size(158, 22);
+            this.buscarVehículoToolStripMenuItem.Size = new System.Drawing.Size(157, 22);
             this.buscarVehículoToolStripMenuItem.Text = "Buscar Vehículo";
             // 
             // buscarPorMatrículaToolStripMenuItem
