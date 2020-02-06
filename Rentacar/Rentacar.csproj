@@ -83,6 +83,12 @@
     <Compile Include="Excepciones\NombreAccesorioYaExisteException.cs" />
     <Compile Include="Excepciones\NombreCaracteristicaYaExisteException.cs" />
     <Compile Include="Excepciones\NombreMarcaYaExisteException.cs" />
+    <Compile Include="Interfaz\Accesorios\FormAlquilerAccesorios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaz\Accesorios\FormAlquilerAccesorios.Designer.cs">
+      <DependentUpon>FormAlquilerAccesorios.cs</DependentUpon>
+    </Compile>
     <Compile Include="Interfaz\Accesorios\FormGestionAccesorios.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -119,6 +125,12 @@
     <Compile Include="Interfaz\Operaciones\Vehiculos\FormBusquedaVehiculosPorMatricula.Designer.cs">
       <DependentUpon>FormBusquedaVehiculosPorMatricula.cs</DependentUpon>
     </Compile>
+    <Compile Include="Interfaz\Operaciones\Alquiler\FormDetallesAlquiler.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaz\Operaciones\Alquiler\FormDetallesAlquiler.Designer.cs">
+      <DependentUpon>FormDetallesAlquiler.cs</DependentUpon>
+    </Compile>
     <Compile Include="Interfaz\Personalizados\LabelPersonalizado.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -127,6 +139,18 @@
     </Compile>
     <Compile Include="Interfaz\Principal\FormPrincipal.Designer.cs">
       <DependentUpon>FormPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaz\Vehiculos\FormCaracteristicas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaz\Vehiculos\FormCaracteristicas.Designer.cs">
+      <DependentUpon>FormCaracteristicas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaz\Vehiculos\FormGestionMarcas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaz\Vehiculos\FormGestionMarcas.Designer.cs">
+      <DependentUpon>FormGestionMarcas.cs</DependentUpon>
     </Compile>
     <Compile Include="Interfaz\Vehiculos\FormGestionVehiculos.cs">
       <SubType>Form</SubType>
@@ -168,6 +192,9 @@
     <Compile Include="Validacion\ValidacionCliente.cs" />
     <Compile Include="Validacion\ValidacionMarca.cs" />
     <Compile Include="Validacion\ValidacionVehiculo.cs" />
+    <EmbeddedResource Include="Interfaz\Accesorios\FormAlquilerAccesorios.resx">
+      <DependentUpon>FormAlquilerAccesorios.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Interfaz\Accesorios\FormGestionAccesorios.resx">
       <DependentUpon>FormGestionAccesorios.cs</DependentUpon>
     </EmbeddedResource>
@@ -186,8 +213,17 @@
     <EmbeddedResource Include="Interfaz\Operaciones\Vehiculos\FormBusquedaVehiculosPorMatricula.resx">
       <DependentUpon>FormBusquedaVehiculosPorMatricula.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Interfaz\Operaciones\Alquiler\FormDetallesAlquiler.resx">
+      <DependentUpon>FormDetallesAlquiler.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Interfaz\Principal\FormPrincipal.resx">
       <DependentUpon>FormPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaz\Vehiculos\FormCaracteristicas.resx">
+      <DependentUpon>FormCaracteristicas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaz\Vehiculos\FormGestionMarcas.resx">
+      <DependentUpon>FormGestionMarcas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaz\Vehiculos\FormGestionVehiculos.resx">
       <DependentUpon>FormGestionVehiculos.cs</DependentUpon>
@@ -225,6 +261,9 @@
   <ItemGroup>
     <Content Include="Assets\Iconos\Atras.PNG" />
     <Content Include="Assets\Iconos\Cancelar.jpg" />
+    <Content Include="Assets\Iconos\FlechaDerecha.JPG" />
+    <Content Include="Assets\Iconos\FlechaIzquierda.JPG" />
+    <None Include="Assets\Iconos\Guardar.JPG" />
     <Content Include="Assets\Iconos\primero.jpg" />
     <Content Include="Assets\Iconos\siguiente.PNG" />
     <Content Include="Assets\Iconos\ultimo.jpg" />
@@ -234,7 +273,11 @@
     <None Include="Assets\Imagenes\BusquedaClientes.png" />
     <None Include="Assets\Imagenes\BusquedaVehiculosPorMatricula.png" />
     <None Include="Assets\Imagenes\BusquedaVehiculosFiltros.png" />
+    <None Include="Assets\Imagenes\AlquilerAccesorios.JPG" />
+    <Content Include="Assets\Imagenes\CaracteristicasVehiculo.JPG" />
+    <None Include="Assets\Imagenes\DetallesAlquiler.JPG" />
     <Content Include="Assets\Imagenes\GestionClientes.PNG" />
+    <Content Include="Assets\Imagenes\GestionMarcas.JPG" />
     <Content Include="Assets\Imagenes\GestionVehiculos.PNG" />
     <Content Include="Assets\Imagenes\Portada.PNG" />
   </ItemGroup>

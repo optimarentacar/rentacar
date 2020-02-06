@@ -76,7 +76,8 @@
             this.NombreApellidos,
             this.Telefono,
             this.Domicilio});
-            this.Tabla.Location = new System.Drawing.Point(12, 106);
+            this.Tabla.GridColor = System.Drawing.Color.White;
+            this.Tabla.Location = new System.Drawing.Point(15, 106);
             this.Tabla.MultiSelect = false;
             this.Tabla.Name = "Tabla";
             this.Tabla.ReadOnly = true;

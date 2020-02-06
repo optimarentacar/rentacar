@@ -72,5 +72,11 @@ namespace Rentacar.Interfaz.Principal
                 .GetInstance<FormBusquedaVehiculosPorFiltros>();
             fbvf.ShowDialog();
         }
+
+        private void marcasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormGestionMarcas gm = Program.container.GetInstance<FormGestionMarcas>();
+            gm.ShowDialog();
+        }
     }
 }

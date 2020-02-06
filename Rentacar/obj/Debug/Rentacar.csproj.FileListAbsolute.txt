@@ -139,3 +139,5 @@ C:\Users\optima\Desktop\rentacar\rentacar\Rentacar\obj\Debug\Rentacar.csproj.Gen
 C:\Users\optima\Desktop\rentacar\rentacar\Rentacar\obj\Debug\Rentacar.csproj.CopyComplete
 C:\Users\optima\Desktop\rentacar\rentacar\Rentacar\obj\Debug\Rentacar.exe
 C:\Users\optima\Desktop\rentacar\rentacar\Rentacar\obj\Debug\Rentacar.pdb
+C:\Users\optima\Desktop\rentacar\rentacar\Rentacar\obj\Debug\Rentacar.Interfaz.Vehiculos.FormCaracteristicas.resources
+C:\Users\optima\Desktop\rentacar\rentacar\Rentacar\obj\Debug\Rentacar.Interfaz.Vehiculos.FormGestionMarcas.resources
