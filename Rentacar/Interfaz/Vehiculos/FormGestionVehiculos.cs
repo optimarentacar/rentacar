@@ -284,5 +284,11 @@ namespace Rentacar.Interfaz.Vehiculos
             }
             return borrado;
         }
+
+        private void btnCaracteristicas_Click(object sender, EventArgs e)
+        {
+            FormCaracteristicas fc = new FormCaracteristicas();
+            fc.Show();
+        }
     }
 }

@@ -44,11 +44,13 @@ namespace Rentacar
             container.Register<FormGestionAccesorios>();
             container.Register<FormGestionCaracteristicas>();
             container.Register<FormGestionMarcas>();
+            container.Register<FormAlquilerAccesorios>();
 
             //OPERACIONES
             container.Register<FormBusquedaClientes>();
             container.Register<FormBusquedaVehiculosPorMatricula>();
             container.Register<FormBusquedaVehiculosPorFiltros>();
+            container.Register<FormDetallesAlquiler>();
 
 
             container.Register<FormTest>();
