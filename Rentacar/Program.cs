@@ -2,6 +2,7 @@
 using Rentacar.Interfaz.Accesorios;
 using Rentacar.Interfaz.Caracteristicas;
 using Rentacar.Interfaz.Clientes;
+using Rentacar.Interfaz.Operaciones.Alquiler;
 using Rentacar.Interfaz.Operaciones.Clientes;
 using Rentacar.Interfaz.Operaciones.Vehiculos;
 using Rentacar.Interfaz.Principal;
@@ -50,6 +51,7 @@ namespace Rentacar
             container.Register<FormBusquedaClientes>();
             container.Register<FormBusquedaVehiculosPorMatricula>();
             container.Register<FormBusquedaVehiculosPorFiltros>();
+            container.Register<FormAlquilerVehiculos>();
             container.Register<FormDetallesAlquiler>();
 
 
