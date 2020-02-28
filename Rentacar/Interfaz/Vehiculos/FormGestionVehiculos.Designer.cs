@@ -29,20 +29,15 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormGestionVehiculos));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.TablaVehiculos = new System.Windows.Forms.DataGridView();
+            this.Tabla = new System.Windows.Forms.DataGridView();
             this.Matricula = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Marca = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Modelo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Plazas = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Año = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CosteDia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.labelPersonalizado1 = new Rentacar.Interfaz.Personalizados.LabelPersonalizado();
-            this.labelPersonalizado2 = new Rentacar.Interfaz.Personalizados.LabelPersonalizado();
-            this.labelPersonalizado3 = new Rentacar.Interfaz.Personalizados.LabelPersonalizado();
-            this.labelPersonalizado4 = new Rentacar.Interfaz.Personalizados.LabelPersonalizado();
-            this.labelPersonalizado5 = new Rentacar.Interfaz.Personalizados.LabelPersonalizado();
-            this.labelPersonalizado6 = new Rentacar.Interfaz.Personalizados.LabelPersonalizado();
             this.textMatricula = new System.Windows.Forms.TextBox();
             this.comboBoxMarca = new System.Windows.Forms.ComboBox();
             this.textModelo = new System.Windows.Forms.TextBox();
@@ -60,8 +55,14 @@
             this.btnAtras = new System.Windows.Forms.Button();
             this.btnPrimero = new System.Windows.Forms.Button();
             this.btnCaracteristicas = new System.Windows.Forms.Button();
+            this.labelPersonalizado6 = new Rentacar.Interfaz.Personalizados.LabelPersonalizado();
+            this.labelPersonalizado5 = new Rentacar.Interfaz.Personalizados.LabelPersonalizado();
+            this.labelPersonalizado4 = new Rentacar.Interfaz.Personalizados.LabelPersonalizado();
+            this.labelPersonalizado3 = new Rentacar.Interfaz.Personalizados.LabelPersonalizado();
+            this.labelPersonalizado2 = new Rentacar.Interfaz.Personalizados.LabelPersonalizado();
+            this.labelPersonalizado1 = new Rentacar.Interfaz.Personalizados.LabelPersonalizado();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TablaVehiculos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Tabla)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.FotoVehiculo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -75,32 +76,50 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // TablaVehiculos
+            // Tabla
             // 
-            this.TablaVehiculos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.TablaVehiculos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Tabla.AllowUserToAddRows = false;
+            this.Tabla.BackgroundColor = System.Drawing.Color.White;
+            this.Tabla.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Tai Le", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.Tabla.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.Tabla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.Tabla.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Matricula,
             this.Marca,
             this.Modelo,
             this.Plazas,
             this.Año,
             this.CosteDia});
-            this.TablaVehiculos.Location = new System.Drawing.Point(12, 141);
-            this.TablaVehiculos.Name = "TablaVehiculos";
-            this.TablaVehiculos.Size = new System.Drawing.Size(763, 270);
-            this.TablaVehiculos.TabIndex = 1;
-            this.TablaVehiculos.SelectionChanged += new System.EventHandler(this.TablaVehiculos_SelectionChanged);
+            this.Tabla.GridColor = System.Drawing.Color.White;
+            this.Tabla.Location = new System.Drawing.Point(12, 141);
+            this.Tabla.MultiSelect = false;
+            this.Tabla.Name = "Tabla";
+            this.Tabla.ReadOnly = true;
+            this.Tabla.RowHeadersVisible = false;
+            this.Tabla.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.Tabla.Size = new System.Drawing.Size(763, 270);
+            this.Tabla.TabIndex = 1;
+            this.Tabla.SelectionChanged += new System.EventHandler(this.TablaVehiculos_SelectionChanged);
             // 
             // Matricula
             // 
             this.Matricula.HeaderText = "Matrícula";
             this.Matricula.Name = "Matricula";
+            this.Matricula.ReadOnly = true;
             this.Matricula.Width = 120;
             // 
             // Marca
             // 
             this.Marca.HeaderText = "Marca";
             this.Marca.Name = "Marca";
+            this.Marca.ReadOnly = true;
             this.Marca.Width = 150;
             // 
             // Modelo
@@ -108,84 +127,29 @@
             this.Modelo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Modelo.HeaderText = "Modelo";
             this.Modelo.Name = "Modelo";
+            this.Modelo.ReadOnly = true;
             // 
             // Plazas
             // 
             this.Plazas.HeaderText = "Plazas";
             this.Plazas.Name = "Plazas";
+            this.Plazas.ReadOnly = true;
             // 
             // Año
             // 
             this.Año.HeaderText = "Año";
             this.Año.Name = "Año";
+            this.Año.ReadOnly = true;
             // 
             // CosteDia
             // 
             this.CosteDia.HeaderText = "Coste / Día";
             this.CosteDia.Name = "CosteDia";
-            // 
-            // labelPersonalizado1
-            // 
-            this.labelPersonalizado1.AutoSize = true;
-            this.labelPersonalizado1.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F);
-            this.labelPersonalizado1.Location = new System.Drawing.Point(13, 428);
-            this.labelPersonalizado1.Name = "labelPersonalizado1";
-            this.labelPersonalizado1.Size = new System.Drawing.Size(62, 16);
-            this.labelPersonalizado1.TabIndex = 2;
-            this.labelPersonalizado1.Text = "Matrícula";
-            // 
-            // labelPersonalizado2
-            // 
-            this.labelPersonalizado2.AutoSize = true;
-            this.labelPersonalizado2.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F);
-            this.labelPersonalizado2.Location = new System.Drawing.Point(548, 428);
-            this.labelPersonalizado2.Name = "labelPersonalizado2";
-            this.labelPersonalizado2.Size = new System.Drawing.Size(70, 16);
-            this.labelPersonalizado2.TabIndex = 3;
-            this.labelPersonalizado2.Text = "Capacidad";
-            // 
-            // labelPersonalizado3
-            // 
-            this.labelPersonalizado3.AutoSize = true;
-            this.labelPersonalizado3.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F);
-            this.labelPersonalizado3.Location = new System.Drawing.Point(421, 428);
-            this.labelPersonalizado3.Name = "labelPersonalizado3";
-            this.labelPersonalizado3.Size = new System.Drawing.Size(31, 16);
-            this.labelPersonalizado3.TabIndex = 4;
-            this.labelPersonalizado3.Text = "Año";
-            // 
-            // labelPersonalizado4
-            // 
-            this.labelPersonalizado4.AutoSize = true;
-            this.labelPersonalizado4.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F);
-            this.labelPersonalizado4.Location = new System.Drawing.Point(144, 428);
-            this.labelPersonalizado4.Name = "labelPersonalizado4";
-            this.labelPersonalizado4.Size = new System.Drawing.Size(45, 16);
-            this.labelPersonalizado4.TabIndex = 5;
-            this.labelPersonalizado4.Text = "Marca";
-            // 
-            // labelPersonalizado5
-            // 
-            this.labelPersonalizado5.AutoSize = true;
-            this.labelPersonalizado5.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F);
-            this.labelPersonalizado5.Location = new System.Drawing.Point(293, 428);
-            this.labelPersonalizado5.Name = "labelPersonalizado5";
-            this.labelPersonalizado5.Size = new System.Drawing.Size(54, 16);
-            this.labelPersonalizado5.TabIndex = 6;
-            this.labelPersonalizado5.Text = "Modelo";
-            // 
-            // labelPersonalizado6
-            // 
-            this.labelPersonalizado6.AutoSize = true;
-            this.labelPersonalizado6.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F);
-            this.labelPersonalizado6.Location = new System.Drawing.Point(667, 428);
-            this.labelPersonalizado6.Name = "labelPersonalizado6";
-            this.labelPersonalizado6.Size = new System.Drawing.Size(73, 16);
-            this.labelPersonalizado6.TabIndex = 7;
-            this.labelPersonalizado6.Text = "Coste / Día";
+            this.CosteDia.ReadOnly = true;
             // 
             // textMatricula
             // 
+            this.textMatricula.Enabled = false;
             this.textMatricula.Location = new System.Drawing.Point(12, 447);
             this.textMatricula.Name = "textMatricula";
             this.textMatricula.Size = new System.Drawing.Size(100, 20);
@@ -193,6 +157,7 @@
             // 
             // comboBoxMarca
             // 
+            this.comboBoxMarca.Enabled = false;
             this.comboBoxMarca.FormattingEnabled = true;
             this.comboBoxMarca.Location = new System.Drawing.Point(147, 447);
             this.comboBoxMarca.Name = "comboBoxMarca";
@@ -201,6 +166,7 @@
             // 
             // textModelo
             // 
+            this.textModelo.Enabled = false;
             this.textModelo.Location = new System.Drawing.Point(296, 447);
             this.textModelo.Name = "textModelo";
             this.textModelo.Size = new System.Drawing.Size(100, 20);
@@ -208,6 +174,7 @@
             // 
             // textAño
             // 
+            this.textAño.Enabled = false;
             this.textAño.Location = new System.Drawing.Point(424, 448);
             this.textAño.Name = "textAño";
             this.textAño.Size = new System.Drawing.Size(100, 20);
@@ -215,6 +182,7 @@
             // 
             // textCapacidad
             // 
+            this.textCapacidad.Enabled = false;
             this.textCapacidad.Location = new System.Drawing.Point(551, 447);
             this.textCapacidad.Name = "textCapacidad";
             this.textCapacidad.Size = new System.Drawing.Size(100, 20);
@@ -222,6 +190,7 @@
             // 
             // textCosto
             // 
+            this.textCosto.Enabled = false;
             this.textCosto.Location = new System.Drawing.Point(670, 447);
             this.textCosto.Name = "textCosto";
             this.textCosto.Size = new System.Drawing.Size(100, 20);
@@ -232,6 +201,7 @@
             this.FotoVehiculo.Location = new System.Drawing.Point(781, 183);
             this.FotoVehiculo.Name = "FotoVehiculo";
             this.FotoVehiculo.Size = new System.Drawing.Size(213, 138);
+            this.FotoVehiculo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.FotoVehiculo.TabIndex = 14;
             this.FotoVehiculo.TabStop = false;
             // 
@@ -246,6 +216,7 @@
             this.btnCancelar.Size = new System.Drawing.Size(43, 39);
             this.btnCancelar.TabIndex = 16;
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnValidar
             // 
@@ -258,6 +229,7 @@
             this.btnValidar.Size = new System.Drawing.Size(43, 39);
             this.btnValidar.TabIndex = 15;
             this.btnValidar.UseVisualStyleBackColor = true;
+            this.btnValidar.Click += new System.EventHandler(this.btnValidar_Click);
             // 
             // btnModificar
             // 
@@ -268,6 +240,7 @@
             this.btnModificar.Size = new System.Drawing.Size(99, 35);
             this.btnModificar.TabIndex = 26;
             this.btnModificar.UseVisualStyleBackColor = true;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // btnEliminar
             // 
@@ -278,6 +251,7 @@
             this.btnEliminar.Size = new System.Drawing.Size(99, 35);
             this.btnEliminar.TabIndex = 25;
             this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnAñadir
             // 
@@ -288,6 +262,7 @@
             this.btnAñadir.Size = new System.Drawing.Size(99, 35);
             this.btnAñadir.TabIndex = 24;
             this.btnAñadir.UseVisualStyleBackColor = true;
+            this.btnAñadir.Click += new System.EventHandler(this.btnAñadir_Click);
             // 
             // btnUltimo
             // 
@@ -298,6 +273,7 @@
             this.btnUltimo.Size = new System.Drawing.Size(99, 35);
             this.btnUltimo.TabIndex = 23;
             this.btnUltimo.UseVisualStyleBackColor = true;
+            this.btnUltimo.Click += new System.EventHandler(this.btnUltimo_Click);
             // 
             // btnSiguiente
             // 
@@ -308,6 +284,7 @@
             this.btnSiguiente.Size = new System.Drawing.Size(99, 35);
             this.btnSiguiente.TabIndex = 22;
             this.btnSiguiente.UseVisualStyleBackColor = true;
+            this.btnSiguiente.Click += new System.EventHandler(this.btnSiguiente_Click);
             // 
             // btnAtras
             // 
@@ -318,6 +295,7 @@
             this.btnAtras.Size = new System.Drawing.Size(99, 35);
             this.btnAtras.TabIndex = 21;
             this.btnAtras.UseVisualStyleBackColor = true;
+            this.btnAtras.Click += new System.EventHandler(this.btnAtras_Click);
             // 
             // btnPrimero
             // 
@@ -328,6 +306,7 @@
             this.btnPrimero.Size = new System.Drawing.Size(99, 35);
             this.btnPrimero.TabIndex = 20;
             this.btnPrimero.UseVisualStyleBackColor = true;
+            this.btnPrimero.Click += new System.EventHandler(this.btnPrimero_Click);
             // 
             // btnCaracteristicas
             // 
@@ -337,6 +316,67 @@
             this.btnCaracteristicas.TabIndex = 27;
             this.btnCaracteristicas.Text = "Características";
             this.btnCaracteristicas.UseVisualStyleBackColor = true;
+            this.btnCaracteristicas.Click += new System.EventHandler(this.btnCaracteristicas_Click);
+            // 
+            // labelPersonalizado6
+            // 
+            this.labelPersonalizado6.AutoSize = true;
+            this.labelPersonalizado6.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F);
+            this.labelPersonalizado6.Location = new System.Drawing.Point(667, 428);
+            this.labelPersonalizado6.Name = "labelPersonalizado6";
+            this.labelPersonalizado6.Size = new System.Drawing.Size(73, 16);
+            this.labelPersonalizado6.TabIndex = 7;
+            this.labelPersonalizado6.Text = "Coste / Día";
+            // 
+            // labelPersonalizado5
+            // 
+            this.labelPersonalizado5.AutoSize = true;
+            this.labelPersonalizado5.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F);
+            this.labelPersonalizado5.Location = new System.Drawing.Point(293, 428);
+            this.labelPersonalizado5.Name = "labelPersonalizado5";
+            this.labelPersonalizado5.Size = new System.Drawing.Size(54, 16);
+            this.labelPersonalizado5.TabIndex = 6;
+            this.labelPersonalizado5.Text = "Modelo";
+            // 
+            // labelPersonalizado4
+            // 
+            this.labelPersonalizado4.AutoSize = true;
+            this.labelPersonalizado4.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F);
+            this.labelPersonalizado4.Location = new System.Drawing.Point(144, 428);
+            this.labelPersonalizado4.Name = "labelPersonalizado4";
+            this.labelPersonalizado4.Size = new System.Drawing.Size(45, 16);
+            this.labelPersonalizado4.TabIndex = 5;
+            this.labelPersonalizado4.Text = "Marca";
+            // 
+            // labelPersonalizado3
+            // 
+            this.labelPersonalizado3.AutoSize = true;
+            this.labelPersonalizado3.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F);
+            this.labelPersonalizado3.Location = new System.Drawing.Point(421, 428);
+            this.labelPersonalizado3.Name = "labelPersonalizado3";
+            this.labelPersonalizado3.Size = new System.Drawing.Size(31, 16);
+            this.labelPersonalizado3.TabIndex = 4;
+            this.labelPersonalizado3.Text = "Año";
+            // 
+            // labelPersonalizado2
+            // 
+            this.labelPersonalizado2.AutoSize = true;
+            this.labelPersonalizado2.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F);
+            this.labelPersonalizado2.Location = new System.Drawing.Point(548, 428);
+            this.labelPersonalizado2.Name = "labelPersonalizado2";
+            this.labelPersonalizado2.Size = new System.Drawing.Size(70, 16);
+            this.labelPersonalizado2.TabIndex = 3;
+            this.labelPersonalizado2.Text = "Capacidad";
+            // 
+            // labelPersonalizado1
+            // 
+            this.labelPersonalizado1.AutoSize = true;
+            this.labelPersonalizado1.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F);
+            this.labelPersonalizado1.Location = new System.Drawing.Point(13, 428);
+            this.labelPersonalizado1.Name = "labelPersonalizado1";
+            this.labelPersonalizado1.Size = new System.Drawing.Size(62, 16);
+            this.labelPersonalizado1.TabIndex = 2;
+            this.labelPersonalizado1.Text = "Matrícula";
             // 
             // FormGestionVehiculos
             // 
@@ -366,7 +406,7 @@
             this.Controls.Add(this.labelPersonalizado3);
             this.Controls.Add(this.labelPersonalizado2);
             this.Controls.Add(this.labelPersonalizado1);
-            this.Controls.Add(this.TablaVehiculos);
+            this.Controls.Add(this.Tabla);
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "FormGestionVehiculos";
@@ -374,7 +414,7 @@
             this.Text = "Alquiler de Vehículos 1.0";
             this.Load += new System.EventHandler(this.FormGestionVehiculos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.TablaVehiculos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Tabla)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.FotoVehiculo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -384,7 +424,7 @@
         #endregion
 
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.DataGridView TablaVehiculos;
+        private System.Windows.Forms.DataGridView Tabla;
         private System.Windows.Forms.DataGridViewTextBoxColumn Matricula;
         private System.Windows.Forms.DataGridViewTextBoxColumn Marca;
         private System.Windows.Forms.DataGridViewTextBoxColumn Modelo;
