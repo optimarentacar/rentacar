@@ -175,3 +175,14 @@ C:\Users\alexm_000\Desktop\rentacar-master\Rentacar\obj\Debug\Rentacar.csproj.Ge
 C:\Users\alexm_000\Desktop\rentacar-master\Rentacar\obj\Debug\Rentacar.csproj.CopyComplete
 C:\Users\alexm_000\Desktop\rentacar-master\Rentacar\obj\Debug\Rentacar.exe
 C:\Users\alexm_000\Desktop\rentacar-master\Rentacar\obj\Debug\Rentacar.pdb
+C:\Users\adria\Desktop\Rentacar\rentacar\Rentacar\obj\Debug\Rentacar.Interfaz.Accesorios.FormAlquilerAccesorios.resources
+C:\Users\adria\Desktop\Rentacar\rentacar\Rentacar\obj\Debug\Rentacar.Interfaz.Accesorios.FormGestionAccesorios.resources
+C:\Users\adria\Desktop\Rentacar\rentacar\Rentacar\obj\Debug\Rentacar.Interfaz.Caracteristicas.FormGestionCaracteristicas.resources
+C:\Users\adria\Desktop\Rentacar\rentacar\Rentacar\obj\Debug\Rentacar.Interfaz.Operaciones.Alquiler.FormAlquilerVehiculos.resources
+C:\Users\adria\Desktop\Rentacar\rentacar\Rentacar\obj\Debug\Rentacar.Interfaz.Operaciones.Alquiler.FormVehiculosAlquiler.resources
+C:\Users\adria\Desktop\Rentacar\rentacar\Rentacar\obj\Debug\Rentacar.Interfaz.Operaciones.Clientes.FormBusquedaClientes.resources
+C:\Users\adria\Desktop\Rentacar\rentacar\Rentacar\obj\Debug\Rentacar.Interfaz.Operaciones.Vehiculos.FormBusquedaVehiculosPorFiltros.resources
+C:\Users\adria\Desktop\Rentacar\rentacar\Rentacar\obj\Debug\Rentacar.Interfaz.Operaciones.Vehiculos.FormBusquedaVehiculosPorMatricula.resources
+C:\Users\adria\Desktop\Rentacar\rentacar\Rentacar\obj\Debug\Rentacar.Interfaz.Operaciones.Vehiculos.FormDetallesAlquiler.resources
+C:\Users\adria\Desktop\Rentacar\rentacar\Rentacar\obj\Debug\Rentacar.Interfaz.Vehiculos.FormCaracteristicas.resources
+C:\Users\adria\Desktop\Rentacar\rentacar\Rentacar\obj\Debug\Rentacar.Interfaz.Vehiculos.FormGestionMarcas.resources

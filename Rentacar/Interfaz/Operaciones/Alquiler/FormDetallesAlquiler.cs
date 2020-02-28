@@ -39,7 +39,7 @@ namespace Rentacar.Interfaz.Operaciones.Vehiculos
 
         }
 
-        public async Task CargarDatosAlquiler(Alquiler alquiler)
+        public async Task CargarDatosAlquiler(Modelos.Alquiler alquiler)
         {
             
             try

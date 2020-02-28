@@ -2,6 +2,7 @@
 using Rentacar.Interfaz.Accesorios;
 using Rentacar.Interfaz.Caracteristicas;
 using Rentacar.Interfaz.Clientes;
+using Rentacar.Interfaz.Operaciones.Alquiler;
 using Rentacar.Interfaz.Operaciones.Clientes;
 using Rentacar.Interfaz.Operaciones.Vehiculos;
 using Rentacar.Interfaz.Vehiculos;
@@ -35,23 +36,7 @@ namespace Rentacar.Interfaz.Principal
 
         private async void button2_Click(object sender, EventArgs e)
         {
-            FormDetallesAlquiler test = Program.container.GetInstance<FormDetallesAlquiler>();
-            
-            await test.CargarDatosAlquiler(new Alquiler()
-            {
-                Id = 1,
-                Vehiculo = new Vehiculo()
-                {
-                    Matricula = "4781TYU"
-                },
-                Cliente = new Cliente()
-                {
-                    Dni = "12345678E"
-                }
-
-            });
-
-            test.ShowDialog();
+        
         }
 
         private void accesoriosToolStripMenuItem_Click(object sender, EventArgs e)
@@ -91,6 +76,12 @@ namespace Rentacar.Interfaz.Principal
         private void marcasToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FormGestionMarcas gm = Program.container.GetInstance<FormGestionMarcas>();
+            gm.ShowDialog();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            FormVehiculosAlquiler gm = Program.container.GetInstance<FormVehiculosAlquiler>();
             gm.ShowDialog();
         }
     }

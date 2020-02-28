@@ -113,6 +113,12 @@
     <Compile Include="Interfaz\Operaciones\Alquiler\FormAlquilerVehiculos.Designer.cs">
       <DependentUpon>FormAlquilerVehiculos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Interfaz\Operaciones\Alquiler\FormVehiculosAlquiler.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaz\Operaciones\Alquiler\FormVehiculosAlquiler.Designer.cs">
+      <DependentUpon>FormVehiculosAlquiler.cs</DependentUpon>
+    </Compile>
     <Compile Include="Interfaz\Operaciones\Clientes\FormBusquedaClientes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -213,6 +219,9 @@
     <EmbeddedResource Include="Interfaz\Operaciones\Alquiler\FormAlquilerVehiculos.resx">
       <DependentUpon>FormAlquilerVehiculos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Interfaz\Operaciones\Alquiler\FormVehiculosAlquiler.resx">
+      <DependentUpon>FormVehiculosAlquiler.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Interfaz\Operaciones\Clientes\FormBusquedaClientes.resx">
       <DependentUpon>FormBusquedaClientes.cs</DependentUpon>
     </EmbeddedResource>
@@ -283,6 +292,7 @@
     <None Include="Assets\Imagenes\BusquedaVehiculosPorMatricula.png" />
     <None Include="Assets\Imagenes\BusquedaVehiculosFiltros.png" />
     <None Include="Assets\Imagenes\AlquilerAccesorios.JPG" />
+    <None Include="Assets\Imagenes\AlquilerVehiculosCalendario.PNG" />
     <Content Include="Assets\Imagenes\AlquilerVehículos.PNG" />
     <Content Include="Assets\Imagenes\CaracteristicasVehiculo.JPG" />
     <None Include="Assets\Imagenes\DetallesAlquiler.JPG" />
