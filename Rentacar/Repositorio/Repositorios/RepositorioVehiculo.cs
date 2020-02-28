@@ -74,19 +74,22 @@ namespace Rentacar.Repositorio.Repositorios
             {
                 int result = await command.ExecuteNonQueryAsync();
 
-                peticion = "INSERT INTO caracteristicas_vehiculos " +
-                             "VALUES (@idCaracteristica,@matricula)";
-
-                foreach (Caracteristica caracteristica in vehiculo.Caracteristicas)
+                if (!(vehiculo.Caracteristicas is null))
                 {
-                    command = new MySqlCommand(peticion, conexion);
-                    command.Parameters.AddWithValue("@idCaracteristica", caracteristica.Id);
-                    command.Parameters.AddWithValue("@matricula", vehiculo.Matricula);
-                    command.Prepare();
 
-                    result = await command.ExecuteNonQueryAsync();
-                };
+                    peticion = "INSERT INTO caracteristicas_vehiculos " +
+                                 "VALUES (@idCaracteristica,@matricula)";
 
+                    foreach (Caracteristica caracteristica in vehiculo.Caracteristicas)
+                    {
+                        command = new MySqlCommand(peticion, conexion);
+                        command.Parameters.AddWithValue("@idCaracteristica", caracteristica.Id);
+                        command.Parameters.AddWithValue("@matricula", vehiculo.Matricula);
+                        command.Prepare();
+
+                        result = await command.ExecuteNonQueryAsync();
+                    };
+                }
                 transaction.Commit();
             }
             catch (DbException ex)
@@ -194,28 +197,33 @@ namespace Rentacar.Repositorio.Repositorios
             {
                 int result = await command.ExecuteNonQueryAsync();
 
-                peticion = "DELETE FROM caracteristicas_vehiculos " +
+
+                if (!(vehiculo.Caracteristicas is null))
+                {
+
+
+                    peticion = "DELETE FROM caracteristicas_vehiculos " +
                             "WHERE matricula = @matricula";
 
-                command = new MySqlCommand(peticion, conexion);
-                command.Parameters.AddWithValue("@matricula", vehiculo.Matricula);
-                command.Prepare();
-
-                result = await command.ExecuteNonQueryAsync();
-
-                peticion = "INSERT INTO caracteristicas_vehiculos " +
-                            "VALUES (@idCaracteristica,@matricula)";
-
-                foreach (Caracteristica caracteristica in vehiculo.Caracteristicas)
-                {
                     command = new MySqlCommand(peticion, conexion);
-                    command.Parameters.AddWithValue("@idCaracteristica", caracteristica.Id);
                     command.Parameters.AddWithValue("@matricula", vehiculo.Matricula);
                     command.Prepare();
 
                     result = await command.ExecuteNonQueryAsync();
-                };
 
+                    peticion = "INSERT INTO caracteristicas_vehiculos " +
+                                "VALUES (@idCaracteristica,@matricula)";
+
+                    foreach (Caracteristica caracteristica in vehiculo.Caracteristicas)
+                    {
+                        command = new MySqlCommand(peticion, conexion);
+                        command.Parameters.AddWithValue("@idCaracteristica", caracteristica.Id);
+                        command.Parameters.AddWithValue("@matricula", vehiculo.Matricula);
+                        command.Prepare();
+
+                        result = await command.ExecuteNonQueryAsync();
+                    };
+                }
                 transaction.Commit();
             }
             catch (DbException ex)

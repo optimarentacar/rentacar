@@ -123,6 +123,56 @@ namespace Rentacar.Repositorio.Repositorios
             return accesorios;
         }
 
+        public async Task<List<Accesorio>> ListarPorAlquiler(int idAlquiler)
+        {
+            string peticion =
+                "SELECT * FROM accesorios a " +
+                "INNER JOIN accesorios_alquileres aa " + 
+                "ON a.id = aa.idAccesorio " +
+                "AND aa.idAlquiler = @idAlquiler " +
+                "ORDER BY nombre";
+
+            var conexion = ContextoBD.GetInstancia().GetConexion();
+            conexion.Open();
+
+            MySqlCommand command = new MySqlCommand(peticion, conexion);
+            command.Parameters.AddWithValue("@idAlquiler", idAlquiler);
+            command.Prepare();
+
+            List<Accesorio> accesorios = new List<Accesorio>();
+
+            try
+            {
+                DbDataReader reader = await command.ExecuteReaderAsync();
+
+                if (reader.HasRows)
+                {
+                    Accesorio accesorio;
+
+                    while (reader.Read())
+                    {
+                        accesorio = new Accesorio()
+                        {
+                            Id = reader.GetInt32(0),
+                            Nombre = reader.GetString(1),
+                            Costo = reader.GetFloat(2)
+                        };
+                        accesorios.Add(accesorio);
+                    }
+                }
+            }
+            catch (DbException ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                conexion.Close();
+            }
+
+            return accesorios;
+        }
+
         public async Task<bool> Modificar(Accesorio accesorio)
         {
             string peticion = "UPDATE accesorios " +

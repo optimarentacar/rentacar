@@ -13,5 +13,6 @@ namespace Rentacar.Repositorio.Interfaces
         Task<bool> Modificar(Marca marca);
         Task<bool> Borrar(int idMarca);
         Task<List<Marca>> Listar();
+        Task<bool> TieneVehiculosAsignados(int id);
     }
 }

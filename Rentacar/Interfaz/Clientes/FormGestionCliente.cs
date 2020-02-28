@@ -297,6 +297,11 @@ namespace Rentacar.Interfaz.Clientes
                 {
                     borrado = await _repositorioCliente.Borrar(dni);
                 }
+                else
+                {
+                    MessageBox.Show("Este cliente no se puede borrar " +
+                        "porque tiene alquileres asignador");
+                }
             }
             catch (Exception ex)
             {

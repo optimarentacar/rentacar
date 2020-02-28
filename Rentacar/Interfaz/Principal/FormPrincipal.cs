@@ -33,9 +33,24 @@ namespace Rentacar.Interfaz.Principal
             fgv.ShowDialog();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private async void button2_Click(object sender, EventArgs e)
         {
-            FormTest test = Program.container.GetInstance<FormTest>();
+            FormDetallesAlquiler test = Program.container.GetInstance<FormDetallesAlquiler>();
+            
+            await test.CargarDatosAlquiler(new Alquiler()
+            {
+                Id = 1,
+                Vehiculo = new Vehiculo()
+                {
+                    Matricula = "4781TYU"
+                },
+                Cliente = new Cliente()
+                {
+                    Dni = "12345678E"
+                }
+
+            });
+
             test.ShowDialog();
         }
 
