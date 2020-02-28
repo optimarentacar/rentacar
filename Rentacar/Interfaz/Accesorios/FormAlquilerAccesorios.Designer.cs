@@ -31,9 +31,11 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnDerecha = new System.Windows.Forms.Button();
             this.btnIzquierda = new System.Windows.Forms.Button();
-            this.listBoxAccesorios = new System.Windows.Forms.ListBox();
-            this.listBoxAccesoriosVehiculo = new System.Windows.Forms.ListBox();
+            this.dgvAccesorios = new System.Windows.Forms.DataGridView();
+            this.dgvAccesoriosVehiculo = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAccesorios)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAccesoriosVehiculo)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -66,35 +68,42 @@
             this.btnIzquierda.UseVisualStyleBackColor = true;
             this.btnIzquierda.Click += new System.EventHandler(this.btnIzquierda_Click);
             // 
-            // listBoxAccesorios
+            // dgvAccesorios
             // 
-            this.listBoxAccesorios.FormattingEnabled = true;
-            this.listBoxAccesorios.Location = new System.Drawing.Point(13, 123);
-            this.listBoxAccesorios.Name = "listBoxAccesorios";
-            this.listBoxAccesorios.Size = new System.Drawing.Size(381, 147);
-            this.listBoxAccesorios.TabIndex = 6;
+            this.dgvAccesorios.AllowUserToAddRows = false;
+            this.dgvAccesorios.AllowUserToDeleteRows = false;
+            this.dgvAccesorios.AllowUserToResizeColumns = false;
+            this.dgvAccesorios.AllowUserToResizeRows = false;
+            this.dgvAccesorios.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvAccesorios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvAccesorios.Location = new System.Drawing.Point(13, 123);
+            this.dgvAccesorios.Name = "dgvAccesorios";
+            this.dgvAccesorios.Size = new System.Drawing.Size(381, 150);
+            this.dgvAccesorios.TabIndex = 8;
             // 
-            // listBoxAccesoriosVehiculo
+            // dgvAccesoriosVehiculo
             // 
-            this.listBoxAccesoriosVehiculo.FormattingEnabled = true;
-            this.listBoxAccesoriosVehiculo.Location = new System.Drawing.Point(481, 123);
-            this.listBoxAccesoriosVehiculo.Name = "listBoxAccesoriosVehiculo";
-            this.listBoxAccesoriosVehiculo.Size = new System.Drawing.Size(145, 147);
-            this.listBoxAccesoriosVehiculo.TabIndex = 7;
+            this.dgvAccesoriosVehiculo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvAccesoriosVehiculo.Location = new System.Drawing.Point(481, 123);
+            this.dgvAccesoriosVehiculo.Name = "dgvAccesoriosVehiculo";
+            this.dgvAccesoriosVehiculo.Size = new System.Drawing.Size(370, 150);
+            this.dgvAccesoriosVehiculo.TabIndex = 9;
             // 
             // FormAlquilerAccesorios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(863, 279);
-            this.Controls.Add(this.listBoxAccesoriosVehiculo);
-            this.Controls.Add(this.listBoxAccesorios);
+            this.Controls.Add(this.dgvAccesoriosVehiculo);
+            this.Controls.Add(this.dgvAccesorios);
             this.Controls.Add(this.btnIzquierda);
             this.Controls.Add(this.btnDerecha);
             this.Controls.Add(this.pictureBox1);
             this.Name = "FormAlquilerAccesorios";
             this.Text = "Alquiler de Vehículos 1.0";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAccesorios)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAccesoriosVehiculo)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -104,7 +113,7 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnDerecha;
         private System.Windows.Forms.Button btnIzquierda;
-        private System.Windows.Forms.ListBox listBoxAccesorios;
-        private System.Windows.Forms.ListBox listBoxAccesoriosVehiculo;
+        private System.Windows.Forms.DataGridView dgvAccesorios;
+        private System.Windows.Forms.DataGridView dgvAccesoriosVehiculo;
     }
 }

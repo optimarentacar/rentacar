@@ -170,6 +170,72 @@ namespace Rentacar.Repositorio.Repositorios
             return vehiculos;
         }
 
+        public async Task<List<Vehiculo>> ListarDisponibles(DateTime inicio, DateTime fin)
+        {
+            string peticion =
+              "SELECT v.matricula, m.id, m.nombre, v.modelo, v.anio, " +
+                     "v.capacidad, v.costoDia, v.pathFoto " +
+              "FROM vehiculos v " +
+              "INNER JOIN marcas m " +
+              "ON v.idMarca = m.id " +
+              "AND(v.matricula  not in " +
+              "(SELECT matricula FROM alquileres " +
+               "WHERE " +
+               "(fechaInicio < @fin AND fechaFin > @inicio) " +
+                "OR " +
+                "(fechaFin > @incio AND fechaInicio < @fin))) " +
+                "GROUP by v.matricula";
+
+
+
+            var conexion = ContextoBD.GetInstancia().GetConexion();
+            conexion.Open();
+
+            MySqlCommand command = new MySqlCommand(peticion, conexion);
+
+            List<Vehiculo> vehiculos = new List<Vehiculo>();
+
+            try
+            {
+                DbDataReader reader = await command.ExecuteReaderAsync();
+
+                if (reader.HasRows)
+                {
+                    Vehiculo vehiculo;
+
+                    while (reader.Read())
+                    {
+                        vehiculo = new Vehiculo()
+                        {
+                            Matricula = reader.GetString(0),
+                            Marca = new Marca()
+                            {
+                                Id = reader.GetInt16(1),
+                                Nombre = reader.GetString(2)
+                            },
+                            Modelo = reader.GetString(3),
+                            Anio = reader.GetString(4),
+                            Capacidad = reader.GetInt16(5),
+                            CostoDia = reader.GetFloat(6),
+                            PathFoto = reader.GetString(7),
+                        };
+
+                        vehiculos.Add(vehiculo);
+                    }
+                }
+            }
+            catch (DbException ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                conexion.Close();
+            }
+
+            return vehiculos;
+        }
+
         public async Task<bool> Modificar(Vehiculo vehiculo)
         {
             string peticion =

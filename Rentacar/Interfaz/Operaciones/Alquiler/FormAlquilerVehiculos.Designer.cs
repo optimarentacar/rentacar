@@ -36,6 +36,7 @@
             this.btnVerDetalles = new System.Windows.Forms.Button();
             this.btnImprimir = new System.Windows.Forms.Button();
             this.Tabla = new System.Windows.Forms.DataGridView();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Matricula = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DNI = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -91,6 +92,7 @@
             this.btnVerDetalles.TabIndex = 4;
             this.btnVerDetalles.Text = "Ver Detalles";
             this.btnVerDetalles.UseVisualStyleBackColor = true;
+            this.btnVerDetalles.Click += new System.EventHandler(this.btnVerDetalles_Click);
             // 
             // btnImprimir
             // 
@@ -116,6 +118,7 @@
             this.Tabla.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.Tabla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.Tabla.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Id,
             this.Matricula,
             this.DNI,
             this.Fecha,
@@ -131,6 +134,14 @@
             this.Tabla.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.Tabla.Size = new System.Drawing.Size(655, 209);
             this.Tabla.TabIndex = 6;
+            this.Tabla.SelectionChanged += new System.EventHandler(this.Tabla_SelectionChanged);
+            // 
+            // Id
+            // 
+            this.Id.HeaderText = "ID";
+            this.Id.Name = "Id";
+            this.Id.ReadOnly = true;
+            this.Id.Visible = false;
             // 
             // Matricula
             // 
@@ -170,7 +181,7 @@
             this.TotalAccesorios.Name = "TotalAccesorios";
             this.TotalAccesorios.ReadOnly = true;
             // 
-            // FormAlquilerVehículos
+            // FormAlquilerVehiculos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -182,8 +193,9 @@
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnAlquilar);
             this.Controls.Add(this.pictureBox1);
-            this.Name = "FormAlquilerVehículos";
+            this.Name = "FormAlquilerVehiculos";
             this.Text = "FormAlquilerVehículos";
+            this.Load += new System.EventHandler(this.FormAlquilerVehiculos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Tabla)).EndInit();
             this.ResumeLayout(false);
@@ -199,6 +211,7 @@
         private System.Windows.Forms.Button btnVerDetalles;
         private System.Windows.Forms.Button btnImprimir;
         private System.Windows.Forms.DataGridView Tabla;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
         private System.Windows.Forms.DataGridViewTextBoxColumn Matricula;
         private System.Windows.Forms.DataGridViewTextBoxColumn DNI;
         private System.Windows.Forms.DataGridViewTextBoxColumn Fecha;

@@ -30,6 +30,7 @@
         {
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.DatosVehículo = new System.Windows.Forms.GroupBox();
+            this.listBoxCaracteristicas = new System.Windows.Forms.ListBox();
             this.pictureBoxFoto = new System.Windows.Forms.PictureBox();
             this.btnCaracteristicas = new System.Windows.Forms.Button();
             this.btnFoto = new System.Windows.Forms.Button();
@@ -54,17 +55,16 @@
             this.label6 = new System.Windows.Forms.Label();
             this.DatosAlquiler = new System.Windows.Forms.GroupBox();
             this.textTotal = new System.Windows.Forms.TextBox();
+            this.labelPersonalizado1 = new Rentacar.Interfaz.Personalizados.LabelPersonalizado();
             this.textImporteAccesorios = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.textImporte = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
+            this.labelDias = new System.Windows.Forms.Label();
             this.textFechaFin = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.textFechaInicio = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.listBoxAccesorios = new System.Windows.Forms.ListBox();
-            this.listBoxCaracteristicas = new System.Windows.Forms.ListBox();
-            this.labelPersonalizado1 = new Rentacar.Interfaz.Personalizados.LabelPersonalizado();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.DatosVehículo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFoto)).BeginInit();
@@ -104,6 +104,16 @@
             this.DatosVehículo.TabIndex = 1;
             this.DatosVehículo.TabStop = false;
             this.DatosVehículo.Text = "Datos del Vehículo";
+            // 
+            // listBoxCaracteristicas
+            // 
+            this.listBoxCaracteristicas.FormattingEnabled = true;
+            this.listBoxCaracteristicas.Location = new System.Drawing.Point(231, 82);
+            this.listBoxCaracteristicas.Name = "listBoxCaracteristicas";
+            this.listBoxCaracteristicas.SelectionMode = System.Windows.Forms.SelectionMode.None;
+            this.listBoxCaracteristicas.Size = new System.Drawing.Size(293, 147);
+            this.listBoxCaracteristicas.TabIndex = 13;
+            this.listBoxCaracteristicas.Visible = false;
             // 
             // pictureBoxFoto
             // 
@@ -311,7 +321,7 @@
             this.DatosAlquiler.Controls.Add(this.textImporteAccesorios);
             this.DatosAlquiler.Controls.Add(this.label13);
             this.DatosAlquiler.Controls.Add(this.textImporte);
-            this.DatosAlquiler.Controls.Add(this.label12);
+            this.DatosAlquiler.Controls.Add(this.labelDias);
             this.DatosAlquiler.Controls.Add(this.textFechaFin);
             this.DatosAlquiler.Controls.Add(this.label11);
             this.DatosAlquiler.Controls.Add(this.textFechaInicio);
@@ -331,6 +341,16 @@
             this.textTotal.Name = "textTotal";
             this.textTotal.Size = new System.Drawing.Size(91, 22);
             this.textTotal.TabIndex = 18;
+            // 
+            // labelPersonalizado1
+            // 
+            this.labelPersonalizado1.AutoSize = true;
+            this.labelPersonalizado1.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelPersonalizado1.Location = new System.Drawing.Point(54, 182);
+            this.labelPersonalizado1.Name = "labelPersonalizado1";
+            this.labelPersonalizado1.Size = new System.Drawing.Size(115, 16);
+            this.labelPersonalizado1.TabIndex = 17;
+            this.labelPersonalizado1.Text = "IMPORTE TOTAL:";
             // 
             // textImporteAccesorios
             // 
@@ -357,14 +377,13 @@
             this.textImporte.Size = new System.Drawing.Size(91, 20);
             this.textImporte.TabIndex = 14;
             // 
-            // label12
+            // labelDias
             // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(87, 90);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(84, 13);
-            this.label12.TabIndex = 13;
-            this.label12.Text = "Importe (8 días):";
+            this.labelDias.AutoSize = true;
+            this.labelDias.Location = new System.Drawing.Point(87, 90);
+            this.labelDias.Name = "labelDias";
+            this.labelDias.Size = new System.Drawing.Size(0, 13);
+            this.labelDias.TabIndex = 13;
             // 
             // textFechaFin
             // 
@@ -408,26 +427,6 @@
             this.listBoxAccesorios.SelectionMode = System.Windows.Forms.SelectionMode.None;
             this.listBoxAccesorios.Size = new System.Drawing.Size(371, 212);
             this.listBoxAccesorios.TabIndex = 4;
-            // 
-            // listBoxCaracteristicas
-            // 
-            this.listBoxCaracteristicas.FormattingEnabled = true;
-            this.listBoxCaracteristicas.Location = new System.Drawing.Point(231, 82);
-            this.listBoxCaracteristicas.Name = "listBoxCaracteristicas";
-            this.listBoxCaracteristicas.SelectionMode = System.Windows.Forms.SelectionMode.None;
-            this.listBoxCaracteristicas.Size = new System.Drawing.Size(293, 147);
-            this.listBoxCaracteristicas.TabIndex = 13;
-            this.listBoxCaracteristicas.Visible = false;
-            // 
-            // labelPersonalizado1
-            // 
-            this.labelPersonalizado1.AutoSize = true;
-            this.labelPersonalizado1.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelPersonalizado1.Location = new System.Drawing.Point(54, 182);
-            this.labelPersonalizado1.Name = "labelPersonalizado1";
-            this.labelPersonalizado1.Size = new System.Drawing.Size(115, 16);
-            this.labelPersonalizado1.TabIndex = 17;
-            this.labelPersonalizado1.Text = "IMPORTE TOTAL:";
             // 
             // FormDetallesAlquiler
             // 
@@ -483,7 +482,7 @@
         private System.Windows.Forms.TextBox textImporteAccesorios;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TextBox textImporte;
-        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label labelDias;
         private System.Windows.Forms.TextBox textFechaFin;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox textFechaInicio;

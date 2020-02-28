@@ -123,5 +123,7 @@ namespace Rentacar.Repositorio.Interfaces
         /// <returns></returns>
         Task<bool> TieneAlquileresAsignados(string matricula);
 
+        Task<List<Vehiculo>> ListarDisponibles(DateTime inicio,DateTime fin);
+
     }
 }

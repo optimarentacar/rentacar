@@ -96,8 +96,13 @@ namespace Rentacar.Repositorio.Repositorios
 
         public async Task<List<Alquiler>> Listar()
         {
-            string peticion = "SELECT id, matricula, dni, fechaInicio, fechaFin, importe " +
-                              "FROM alquileres";
+            string peticion = "SELECT a.*, IFNULL(SUM(ac.costo),0) " +
+                              "FROM alquileres a " +
+                              "LEFT JOIN accesorios_alquileres aa " +
+                              "ON a.id = aa.idAlquiler " +
+                              "LEFT JOIN accesorios ac " +
+                              "ON aa.idAccesorio = ac.id " +
+                              "GROUP BY a.id";
 
             var conexion = ContextoBD.GetInstancia().GetConexion();
             conexion.Open();
@@ -123,14 +128,17 @@ namespace Rentacar.Repositorio.Repositorios
                             FechaInicio = reader.GetDateTime(3),
                             FechaFin = reader.GetDateTime(4),
                             Importe = reader.GetFloat(5),
+                            CostoTotalAccesorios = (float)reader.GetDecimal(6)
                         };
 
+                        
                         alquileres.Add(alquiler);
                     }
                 }
             }
             catch (DbException ex)
             {
+                Console.WriteLine(ex);
                 throw ex;
             }
             finally

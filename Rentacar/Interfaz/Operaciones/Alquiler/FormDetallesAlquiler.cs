@@ -1,4 +1,5 @@
-﻿using Rentacar.Modelos;
+﻿
+using Rentacar.Modelos;
 using Rentacar.Repositorio.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -39,7 +40,7 @@ namespace Rentacar.Interfaz.Operaciones.Vehiculos
 
         }
 
-        public async Task CargarDatosAlquiler(Alquiler alquiler)
+        public async Task CargarDatosAlquiler(Modelos.Alquiler alquiler)
         {
             
             try
@@ -71,11 +72,9 @@ namespace Rentacar.Interfaz.Operaciones.Vehiculos
                 textFechaFin.Text = alquiler.FechaFin.ToString("dd/MM/yyyy");
                 textTotal.Text = alquiler.Importe.ToString();
 
-                float importeAccesorios = 0f;
-                accesorios.ForEach(a => {
-                    importeAccesorios += a.Costo;
-                });
-
+                int dias = (alquiler.FechaFin - alquiler.FechaInicio).Days;
+                labelDias.Text = "Importe(" + dias + " días.)";
+                float importeAccesorios = alquiler.CostoTotalAccesorios;
                 textImporteAccesorios.Text = importeAccesorios.ToString();
 
                 textImporte.Text = (alquiler.Importe - importeAccesorios).ToString();

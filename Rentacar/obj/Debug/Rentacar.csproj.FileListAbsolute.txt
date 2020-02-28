@@ -175,3 +175,8 @@ C:\Users\alexm_000\Desktop\rentacar-master\Rentacar\obj\Debug\Rentacar.csproj.Ge
 C:\Users\alexm_000\Desktop\rentacar-master\Rentacar\obj\Debug\Rentacar.csproj.CopyComplete
 C:\Users\alexm_000\Desktop\rentacar-master\Rentacar\obj\Debug\Rentacar.exe
 C:\Users\alexm_000\Desktop\rentacar-master\Rentacar\obj\Debug\Rentacar.pdb
+F:\Rentacar\rentacar\Rentacar\obj\Debug\Rentacar.Interfaz.Accesorios.FormAlquilerAccesorios.resources
+F:\Rentacar\rentacar\Rentacar\obj\Debug\Rentacar.Interfaz.Operaciones.Alquiler.FormAlquilerVehiculos.resources
+F:\Rentacar\rentacar\Rentacar\obj\Debug\Rentacar.Interfaz.Operaciones.Vehiculos.FormDetallesAlquiler.resources
+F:\Rentacar\rentacar\Rentacar\obj\Debug\Rentacar.Interfaz.Vehiculos.FormCaracteristicas.resources
+F:\Rentacar\rentacar\Rentacar\obj\Debug\Rentacar.Interfaz.Vehiculos.FormGestionMarcas.resources

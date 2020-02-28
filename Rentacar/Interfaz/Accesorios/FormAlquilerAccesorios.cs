@@ -27,20 +27,7 @@ namespace Rentacar.Interfaz.Accesorios
 
         private void btnDerecha_Click(object sender, EventArgs e)
         {
-            int id = (int)listBoxAccesorios.SelectedValue;
-
-            Alquiler.Accesorios.RemoveAll(c => c.Id == id);
-
-            listBoxAccesoriosVehiculo.DataSource = null;
-            listBoxAccesoriosVehiculo.Items.Clear();
-            listBoxAccesoriosVehiculo.DataSource = Alquiler.Accesorios;
-            listBoxAccesoriosVehiculo.DisplayMember = "Nombre";
-            listBoxAccesoriosVehiculo.ValueMember = "Id";
-
-            if (Vehiculo.Caracteristicas.Count == 0)
-            {
-                btnIzquierda.Enabled = false;
-            }
+            
         }
 
         private void btnIzquierda_Click(object sender, EventArgs e)
