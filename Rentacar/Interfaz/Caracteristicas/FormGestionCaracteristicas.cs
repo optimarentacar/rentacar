@@ -18,8 +18,9 @@ namespace Rentacar.Interfaz.Caracteristicas
     public partial class FormGestionCaracteristicas : Form
     {
         private IRepositorioCaracteristica _repositorioCaracteristica;
-        private List<Caracteristica> caracteristicas;
+        public List<Caracteristica> caracteristicas;
         private Caracteristica caracteristica;
+        public bool Cerrado { get; set; }
 
         public FormGestionCaracteristicas(IRepositorioCaracteristica repositorioCaracteristica)
         {
@@ -213,6 +214,11 @@ namespace Rentacar.Interfaz.Caracteristicas
 
 
 
+        }
+
+        private void FormGestionCaracteristicas_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Cerrado = true;
         }
     }
 }

@@ -13,6 +13,7 @@ namespace Rentacar.Repositorio.Interfaces
         Task<bool> Modificar(Accesorio accesorio);
         Task<bool> Borrar(int idAccesorio);
         Task<List<Accesorio>> Listar();
+        Task<List<Accesorio>> ListarPorAlquiler(int idAlquiler);
         Task<bool> TieneAlquileresAsignados(int idAccesorio);
     }
 }

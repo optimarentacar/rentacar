@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnGuardar = new System.Windows.Forms.Button();
-            this.ContenidoTodas = new System.Windows.Forms.TextBox();
+            this.listBoxTodas = new System.Windows.Forms.ListBox();
+            this.btnCaracteristicas = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.ContenidoAdquiridas = new System.Windows.Forms.TextBox();
+            this.listBoxVehiculo = new System.Windows.Forms.ListBox();
             this.btnIzquierda = new System.Windows.Forms.Button();
             this.btnDerecha = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -43,8 +43,8 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.btnGuardar);
-            this.groupBox1.Controls.Add(this.ContenidoTodas);
+            this.groupBox1.Controls.Add(this.listBoxTodas);
+            this.groupBox1.Controls.Add(this.btnCaracteristicas);
             this.groupBox1.Location = new System.Drawing.Point(13, 131);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(249, 221);
@@ -52,26 +52,27 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Todas";
             // 
-            // btnGuardar
+            // listBoxTodas
             // 
-            this.btnGuardar.Image = global::Rentacar.Properties.Resources.Guardar;
-            this.btnGuardar.Location = new System.Drawing.Point(197, 177);
-            this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(35, 38);
-            this.btnGuardar.TabIndex = 1;
-            this.btnGuardar.UseVisualStyleBackColor = true;
+            this.listBoxTodas.FormattingEnabled = true;
+            this.listBoxTodas.Location = new System.Drawing.Point(17, 37);
+            this.listBoxTodas.Name = "listBoxTodas";
+            this.listBoxTodas.Size = new System.Drawing.Size(215, 134);
+            this.listBoxTodas.TabIndex = 2;
             // 
-            // ContenidoTodas
+            // btnCaracteristicas
             // 
-            this.ContenidoTodas.Location = new System.Drawing.Point(18, 34);
-            this.ContenidoTodas.Multiline = true;
-            this.ContenidoTodas.Name = "ContenidoTodas";
-            this.ContenidoTodas.Size = new System.Drawing.Size(214, 137);
-            this.ContenidoTodas.TabIndex = 0;
+            this.btnCaracteristicas.Image = global::Rentacar.Properties.Resources.Guardar;
+            this.btnCaracteristicas.Location = new System.Drawing.Point(197, 177);
+            this.btnCaracteristicas.Name = "btnCaracteristicas";
+            this.btnCaracteristicas.Size = new System.Drawing.Size(35, 38);
+            this.btnCaracteristicas.TabIndex = 1;
+            this.btnCaracteristicas.UseVisualStyleBackColor = true;
+            this.btnCaracteristicas.Click += new System.EventHandler(this.btnCaracteristicas_Click);
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.ContenidoAdquiridas);
+            this.groupBox2.Controls.Add(this.listBoxVehiculo);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(349, 131);
             this.groupBox2.Name = "groupBox2";
@@ -80,13 +81,14 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Matrícula: ";
             // 
-            // ContenidoAdquiridas
+            // listBoxVehiculo
             // 
-            this.ContenidoAdquiridas.Location = new System.Drawing.Point(19, 33);
-            this.ContenidoAdquiridas.Multiline = true;
-            this.ContenidoAdquiridas.Name = "ContenidoAdquiridas";
-            this.ContenidoAdquiridas.Size = new System.Drawing.Size(201, 166);
-            this.ContenidoAdquiridas.TabIndex = 2;
+            this.listBoxVehiculo.FormattingEnabled = true;
+            this.listBoxVehiculo.ItemHeight = 16;
+            this.listBoxVehiculo.Location = new System.Drawing.Point(19, 37);
+            this.listBoxVehiculo.Name = "listBoxVehiculo";
+            this.listBoxVehiculo.Size = new System.Drawing.Size(202, 132);
+            this.listBoxVehiculo.TabIndex = 0;
             // 
             // btnIzquierda
             // 
@@ -96,6 +98,7 @@
             this.btnIzquierda.Size = new System.Drawing.Size(75, 44);
             this.btnIzquierda.TabIndex = 4;
             this.btnIzquierda.UseVisualStyleBackColor = true;
+            this.btnIzquierda.Click += new System.EventHandler(this.btnIzquierda_Click);
             // 
             // btnDerecha
             // 
@@ -105,6 +108,7 @@
             this.btnDerecha.Size = new System.Drawing.Size(75, 43);
             this.btnDerecha.TabIndex = 3;
             this.btnDerecha.UseVisualStyleBackColor = true;
+            this.btnDerecha.Click += new System.EventHandler(this.btnDerecha_Click);
             // 
             // pictureBox1
             // 
@@ -128,10 +132,9 @@
             this.Controls.Add(this.pictureBox1);
             this.Name = "FormCaracteristicas";
             this.Text = "Alquiler de Vehiculos 1.0";
+            this.Load += new System.EventHandler(this.FormCaracteristicas_Load);
             this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
@@ -144,8 +147,8 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button btnDerecha;
         private System.Windows.Forms.Button btnIzquierda;
-        private System.Windows.Forms.Button btnGuardar;
-        private System.Windows.Forms.TextBox ContenidoTodas;
-        private System.Windows.Forms.TextBox ContenidoAdquiridas;
+        private System.Windows.Forms.Button btnCaracteristicas;
+        private System.Windows.Forms.ListBox listBoxTodas;
+        private System.Windows.Forms.ListBox listBoxVehiculo;
     }
 }

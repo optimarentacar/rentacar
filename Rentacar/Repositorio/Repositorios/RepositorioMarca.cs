@@ -13,6 +13,45 @@ namespace Rentacar.Repositorio.Repositorios
 {
     public class RepositorioMarca : IRepositorioMarca
     {
+        public async Task<bool> TieneVehiculosAsignados(int id)
+        {
+            string peticion =
+               "SELECT v.matricula " +
+               "FROM vehiculos v " +
+               "INNER JOIN marcas m " +
+               "ON v.idMarca = m.id " +
+               "AND m.id = @id " +
+               "LIMIT 1";
+
+            var conexion = ContextoBD.GetInstancia().GetConexion();
+            conexion.Open();
+
+            MySqlCommand command = new MySqlCommand(peticion, conexion);
+            command.Parameters.AddWithValue("@id", id);
+            command.Prepare();
+
+            bool resultado = false;
+
+            try
+            {
+                DbDataReader reader = await command.ExecuteReaderAsync();
+
+                if (reader.HasRows)
+                {
+                    resultado = true;
+                }
+            }
+            catch (DbException ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                conexion.Close();
+            }
+
+            return resultado;
+        }
         public async Task<bool> Borrar(int idMarca)
         {
             string peticion = "DELETE FROM marcas " +
@@ -36,6 +75,7 @@ namespace Rentacar.Repositorio.Repositorios
             }
             catch (DbException ex)
             {
+                Console.WriteLine(ex);
                 throw ex;
             }
             finally

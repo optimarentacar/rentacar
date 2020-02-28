@@ -185,6 +185,7 @@
             this.Name = "FormGestionCaracteristicas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Alquiler de vehículos 1.0";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormGestionCaracteristicas_FormClosed);
             this.Load += new System.EventHandler(this.FormGestionAccesorios_Load);
             ((System.ComponentModel.ISupportInitialize)(this.tabla)).EndInit();
             this.groupBox1.ResumeLayout(false);

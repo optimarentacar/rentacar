@@ -120,6 +120,57 @@ namespace Rentacar.Repositorio.Repositorios
             return caracteristicas;
         }
 
+        public async Task<List<Caracteristica>> ListarPorMatricula(string matricula)
+        {
+            string peticion =
+               "SELECT * FROM caracteristicas c " +
+               "INNER JOIN caracteristicas_vehiculos cv " + 
+               "ON c.id = cv.idCaracteristica " +
+               "INNER JOIN vehiculos v " + 
+               "ON cv.matricula = v.matricula " +
+               "AND v.matricula = @matricula " +
+               "ORDER BY nombre";
+
+            var conexion = ContextoBD.GetInstancia().GetConexion();
+            conexion.Open();
+
+            MySqlCommand command = new MySqlCommand(peticion, conexion);
+            command.Parameters.AddWithValue("@matricula", matricula);
+            command.Prepare();
+
+            List<Caracteristica> caracteristicas = new List<Caracteristica>();
+
+            try
+            {
+                DbDataReader reader = await command.ExecuteReaderAsync();
+
+                if (reader.HasRows)
+                {
+                    Caracteristica caracteristica;
+
+                    while (reader.Read())
+                    {
+                        caracteristica = new Caracteristica()
+                        {
+                            Id = reader.GetInt32(0),
+                            Nombre = reader.GetString(1)
+                        };
+                        caracteristicas.Add(caracteristica);
+                    }
+                }
+            }
+            catch (DbException ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                conexion.Close();
+            }
+
+            return caracteristicas;
+        }
+
         public async Task<bool> Modificar(Caracteristica caracteristica)
         {
             string peticion =

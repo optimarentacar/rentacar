@@ -1,9 +1,13 @@
-﻿using Rentacar.Enums;
+﻿using FluentValidation.Results;
+using Rentacar.Enums;
+using Rentacar.Excepciones;
 using Rentacar.Modelos;
 using Rentacar.Repositorio.Interfaces;
+using Rentacar.Validacion;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+
 using System.Data;
 using System.Drawing;
 using System.Linq;
@@ -17,14 +21,19 @@ namespace Rentacar.Interfaz.Vehiculos
     {
         private IRepositorioVehiculo _repositorioVehiculo;
         private IRepositorioMarca _repositorioMarca;
+        private IRepositorioFotografia _repositorioFotografia;
         private List<Vehiculo> Vehiculos;
         private Vehiculo vehiculo;
         private Operacion operacion;
+        private bool FotoCambiada;
 
-        public FormGestionVehiculos(IRepositorioVehiculo repositorioVehiculo, IRepositorioMarca repositorioMarca)
+        public FormGestionVehiculos(IRepositorioVehiculo repositorioVehiculo,
+            IRepositorioMarca repositorioMarca,
+            IRepositorioFotografia repositorioFotografia)
         {
             _repositorioVehiculo = repositorioVehiculo;
             _repositorioMarca = repositorioMarca;
+            _repositorioFotografia = repositorioFotografia;
             InitializeComponent();
         }
 
@@ -32,7 +41,7 @@ namespace Rentacar.Interfaz.Vehiculos
         {
             await cargarComboBox();
             await Listar();
-
+            btnCaracteristicas.Enabled = false;
         }
 
         private async Task Listar()
@@ -87,6 +96,8 @@ namespace Rentacar.Interfaz.Vehiculos
                 textCapacidad.Text = vehiculo.Capacidad.ToString();
                 textCosto.Text = vehiculo.CostoDia.ToString();
                 FotoVehiculo.Image = Image.FromFile(vehiculo.PathAbsolutoFoto);
+                FotoCambiada = false;
+                btnCaracteristicas.Enabled = false;
             }
         }
         public void limpiar()
@@ -124,12 +135,13 @@ namespace Rentacar.Interfaz.Vehiculos
         {
             Tabla.Enabled = false;
 
-            textMatricula.Enabled = true;
+
             comboBoxMarca.Enabled = true;
             textModelo.Enabled = true;
             textAño.Enabled = true;
             textCapacidad.Enabled = true;
             textCosto.Enabled = true;
+
 
             btnAtras.Enabled = false;
             btnPrimero.Enabled = false;
@@ -185,8 +197,12 @@ namespace Rentacar.Interfaz.Vehiculos
         {
             limpiar();
             desactivar();
+            textMatricula.Enabled = true;
             btnCaracteristicas.Enabled = true;
-            operacion = Operacion.CREAR;
+            operacion = Operacion.CREAR;           
+            Graphics graphic = Graphics.FromImage(FotoVehiculo.Image);
+            graphic.Clear(Color.White);
+            FotoVehiculo.Refresh();
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -212,6 +228,7 @@ namespace Rentacar.Interfaz.Vehiculos
         private void btnModificar_Click(object sender, EventArgs e)
         {
             desactivar();
+            btnCaracteristicas.Enabled = true;
             operacion = Operacion.MODIFICAR;
         }
 
@@ -219,11 +236,12 @@ namespace Rentacar.Interfaz.Vehiculos
         {
             if (operacion == Operacion.MODIFICAR)
             {
+
                 if (await this.Modificar() == true)
                 {
                     await Listar();
                     activar();
-                    limpiar();
+                    btnCaracteristicas.Enabled = false;
                 }
             }
             if (operacion == Operacion.CREAR)
@@ -243,20 +261,121 @@ namespace Rentacar.Interfaz.Vehiculos
                     await Listar();
                     activar();
                     limpiar();
+                    btnCaracteristicas.Enabled = false;
                 }
             }
+            
         }
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             limpiar();
             btnCaracteristicas.Enabled = false;
             activar();
+
         }
 
         private async Task<bool> Crear()
         {
+            
             bool creado = false;
+            Vehiculo v = new Vehiculo()
+            {
+                Matricula = textMatricula.Text,
+                Marca = new Marca()
+                {
+                    Id = 0
+                },
+                Modelo = textModelo.Text,
+                Capacidad = -1,
+                Anio = textAño.Text,
+                CostoDia = -1,
+                Caracteristicas = vehiculo.Caracteristicas
 
+            };
+            try
+            {
+
+                int capacidad = Int16.Parse(textCapacidad.Text);
+                v.Capacidad = capacidad;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("La capacidad no es correcta.");
+            }
+            try
+            {
+                float costoDia = float.Parse(textCosto.Text);
+                v.CostoDia = costoDia;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("El costo no es correcto");
+            }
+            try
+            {
+                Marca marca = new Marca()
+                {
+                    Id = (int)comboBoxMarca.SelectedValue
+                };
+                v.Marca = marca;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("El costo no es correcto");
+            }
+            
+
+
+
+            ValidacionVehiculo validator = new ValidacionVehiculo();
+            ValidationResult results = validator.Validate(v);
+            if (!results.IsValid)
+            {
+                string mensaje = results.Errors[0].ErrorMessage;
+                MessageBox.Show(mensaje);
+            }
+            else
+            {
+                string rutaRelativa = "";
+
+               
+
+                try
+                {
+                    //Guarda la imagen en la carpeta y retorna la ruta relativa de la imagen
+                    //para guardarla en la base de datos
+                    //Lanza una excepcion, en tal caso no se guarda el vehiculo
+
+
+                    if (FotoCambiada)
+                    {
+                        rutaRelativa = _repositorioFotografia.Guardar(pictureBox1.Image);
+                        v.PathFoto = rutaRelativa;
+                        creado = await _repositorioVehiculo.Crear(v);
+                    }
+                    else
+                    {
+                        MessageBox.Show("El vehiculo debe tener una fotografia");
+                    }
+
+
+
+
+                }
+                catch (MatriculaYaExisteException matriculaYaExisteException)
+                {
+                    Console.WriteLine(matriculaYaExisteException.Message);
+                    MessageBox.Show("La matrícula ya es usada por otro vehículo");
+                    //si falla el insert se borra la imagen
+                    _repositorioFotografia.Borrar(rutaRelativa);
+                }
+                catch (Exception)
+                {
+                    //si falla el insert se borra la imagen
+                    _repositorioFotografia.Borrar(rutaRelativa);
+                    Console.WriteLine("Ocurrió un error");
+                }
+            }
             return creado;
         }
 
@@ -264,7 +383,61 @@ namespace Rentacar.Interfaz.Vehiculos
         {
             bool modificado = false;
 
+
+            Vehiculo v = new Vehiculo()
+            {
+                Matricula = textMatricula.Text,
+                Marca = new Marca()
+                {
+                    Id = (int)comboBoxMarca.SelectedValue
+                },
+                Modelo = textModelo.Text,
+                Capacidad = Int32.Parse(textCapacidad.Text),
+                Anio = textAño.Text,
+                CostoDia = float.Parse(textCosto.Text),
+                Caracteristicas = vehiculo.Caracteristicas
+
+
+            };
+
+            ValidacionVehiculo validator = new ValidacionVehiculo();
+            ValidationResult results = validator.Validate(v);
+            if (!results.IsValid)
+            {
+                string mensaje = results.Errors[0].ErrorMessage;
+                MessageBox.Show(mensaje);
+            }
+            else
+            {
+                string rutaRelativa = "";
+
+
+                try
+                {
+                    //Guarda la imagen en la carpeta y retorna la ruta relativa de la imagen
+                    //para guardarla en la base de datos
+                    //Lanza una excepcion, en tal caso no se guarda el vehiculo
+
+
+                    if (FotoCambiada)
+                        rutaRelativa = _repositorioFotografia.Guardar(pictureBox1.Image);
+                    else
+                        rutaRelativa = vehiculo.PathFoto;
+
+                    v.PathFoto = rutaRelativa;
+                    modificado = await _repositorioVehiculo.Modificar(v);
+                }
+
+                catch (Exception)
+                {
+                    //si falla el insert se borra la imagen
+                    _repositorioFotografia.Borrar(rutaRelativa);
+                    Console.WriteLine("Ocurrió un error");
+                }
+            }
             return modificado;
+
+
         }
 
         private async Task<bool> Eliminar()
@@ -277,6 +450,11 @@ namespace Rentacar.Interfaz.Vehiculos
                 {
                     borrado = await _repositorioVehiculo.Borrar(matricula);
                 }
+                else
+                {
+                    MessageBox.Show("No se puede borrar este vehículo" +
+                        " porque tiene alquileres asignados");
+                }
             }
             catch (Exception ex)
             {
@@ -285,10 +463,40 @@ namespace Rentacar.Interfaz.Vehiculos
             return borrado;
         }
 
-        private void btnCaracteristicas_Click(object sender, EventArgs e)
+        private async void btnCaracteristicas_Click(object sender, EventArgs e)
         {
-            FormCaracteristicas fc = new FormCaracteristicas();
+
+            FormCaracteristicas fc = Program.container.GetInstance<FormCaracteristicas>();
+            await fc.ListarCaracteristicasVehiculo(vehiculo);
             fc.Show();
+
+
+
+        }
+
+        private void FotoVehiculo_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog1 = new OpenFileDialog();
+            openFileDialog1.InitialDirectory = "C:\\";
+            openFileDialog1.Filter = "JPG(*.jpg)|*.jpg|PNG(*.png)|*.png|GIF(*… *.Png, *.Gif, *.Tiff, *.Jpeg, *.Bmp)|*.Jpg; *.Png; *.Gif; *.Tiff; *.Jpeg; *.Bmp";
+            openFileDialog1.FilterIndex = 4;
+            openFileDialog1.RestoreDirectory = true;
+
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                string ruta = openFileDialog1.FileName;
+                Bitmap foto = new Bitmap(ruta);
+                FotoVehiculo.Image = (Image)foto;
+                FotoCambiada = true;
+            }
+            else
+            {
+                if (string.IsNullOrEmpty(openFileDialog1.FileName))
+                {
+                    MessageBox.Show("No ha Seleccionado ninguna Imagen");
+                    return;
+                }
+            }
         }
     }
 }

@@ -60,6 +60,8 @@
             // Tabla
             // 
             this.Tabla.AllowUserToAddRows = false;
+            this.Tabla.AllowUserToResizeColumns = false;
+            this.Tabla.AllowUserToResizeRows = false;
             this.Tabla.BackgroundColor = System.Drawing.Color.White;
             this.Tabla.BorderStyle = System.Windows.Forms.BorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;

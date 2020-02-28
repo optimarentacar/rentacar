@@ -13,7 +13,7 @@ namespace Rentacar.Validacion
         public ValidacionVehiculo()
         {
             RuleFor(vehiculo => vehiculo.Matricula)
-                  .Matches("^[a-zA-Z]{3}[0-9]{3}$")
+                  .Matches("^[0-9]{4}[a-zA-Z]{3}$")
                     .WithMessage("La matrícula es incorrecta.");
 
             RuleFor(vehiculo => vehiculo.Modelo)
