@@ -194,3 +194,5 @@ C:\Users\adria\Desktop\Rentacar\rentacar\Rentacar\obj\Debug\Rentacar.Interfaz.Op
 C:\Users\adria\Desktop\Rentacar\rentacar\Rentacar\obj\Debug\Rentacar.Interfaz.Vehiculos.FormCaracteristicas.resources
 C:\Users\adria\Desktop\Rentacar\rentacar\Rentacar\obj\Debug\Rentacar.Interfaz.Vehiculos.FormGestionMarcas.resources
 >>>>>>> 29a429c740ffd8bcca001791a3314dcdb394d011
+F:\Rentacar\rentacar\Rentacar\obj\Debug\Rentacar.Interfaz.Operaciones.Alquiler.FormAlquilerFecha.resources
+F:\Rentacar\rentacar\Rentacar\obj\Debug\Rentacar.Interfaz.Operaciones.Alquiler.FormVehiculosAlquiler.resources

@@ -45,11 +45,11 @@
             this.ayudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button2 = new System.Windows.Forms.Button();
-<<<<<<< HEAD
+
             this.vehículosAlquiladosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-=======
+
             this.button1 = new System.Windows.Forms.Button();
->>>>>>> 29a429c740ffd8bcca001791a3314dcdb394d011
+
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -186,14 +186,14 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-<<<<<<< HEAD
+
             // vehículosAlquiladosToolStripMenuItem
             // 
             this.vehículosAlquiladosToolStripMenuItem.Name = "vehículosAlquiladosToolStripMenuItem";
             this.vehículosAlquiladosToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
             this.vehículosAlquiladosToolStripMenuItem.Text = "Vehículos alquilados";
             this.vehículosAlquiladosToolStripMenuItem.Click += new System.EventHandler(this.vehículosAlquiladosToolStripMenuItem_Click);
-=======
+
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(637, 575);
@@ -203,7 +203,7 @@
             this.button1.Text = "prueba2";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
->>>>>>> 29a429c740ffd8bcca001791a3314dcdb394d011
+
             // 
             // FormPrincipal
             // 
@@ -244,10 +244,10 @@
         private System.Windows.Forms.ToolStripMenuItem buscarVehículoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem buscarPorMatrículaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem buscarPorFiltrosToolStripMenuItem;
-<<<<<<< HEAD
+
         private System.Windows.Forms.ToolStripMenuItem vehículosAlquiladosToolStripMenuItem;
-=======
+
         private System.Windows.Forms.Button button1;
->>>>>>> 29a429c740ffd8bcca001791a3314dcdb394d011
+
     }
 }

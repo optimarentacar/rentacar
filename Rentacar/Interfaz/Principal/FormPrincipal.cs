@@ -36,11 +36,7 @@ namespace Rentacar.Interfaz.Principal
 
         private async void button2_Click(object sender, EventArgs e)
         {
-<<<<<<< HEAD
-            
-=======
-        
->>>>>>> 29a429c740ffd8bcca001791a3314dcdb394d011
+
         }
 
         private void accesoriosToolStripMenuItem_Click(object sender, EventArgs e)
@@ -83,17 +79,17 @@ namespace Rentacar.Interfaz.Principal
             gm.ShowDialog();
         }
 
-<<<<<<< HEAD
+
         private void vehículosAlquiladosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FormAlquilerVehiculos fav = Program.container.GetInstance<FormAlquilerVehiculos>();
             fav.ShowDialog();
-=======
+        }
         private void button1_Click(object sender, EventArgs e)
         {
             FormVehiculosAlquiler gm = Program.container.GetInstance<FormVehiculosAlquiler>();
             gm.ShowDialog();
->>>>>>> 29a429c740ffd8bcca001791a3314dcdb394d011
+
         }
     }
 }

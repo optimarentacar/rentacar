@@ -183,15 +183,18 @@ namespace Rentacar.Repositorio.Repositorios
                "WHERE " +
                "(fechaInicio < @fin AND fechaFin > @inicio) " +
                 "OR " +
-                "(fechaFin > @incio AND fechaInicio < @fin))) " +
+                "(fechaFin > @inicio AND fechaInicio < @fin))) " +
                 "GROUP by v.matricula";
 
 
 
             var conexion = ContextoBD.GetInstancia().GetConexion();
             conexion.Open();
-
             MySqlCommand command = new MySqlCommand(peticion, conexion);
+            command.Parameters.AddWithValue("@inicio", inicio);
+            command.Parameters.AddWithValue("@fin", fin);
+            command.Prepare();
+          
 
             List<Vehiculo> vehiculos = new List<Vehiculo>();
 
@@ -226,6 +229,7 @@ namespace Rentacar.Repositorio.Repositorios
             }
             catch (DbException ex)
             {
+                Console.WriteLine(ex);
                 throw ex;
             }
             finally

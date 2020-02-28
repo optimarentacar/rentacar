@@ -18,7 +18,7 @@ namespace Rentacar.Interfaz.Operaciones.Alquiler
         private IRepositorioVehiculo _repositorioVehiculo;
         private IRepositorioAlquiler _repositorioAlquiler;
         private List<Cliente> Cliente;
-        private List<Vehiculo> Vehiculo;
+        private List<Vehiculo> Vehiculos;
         private List<Modelos.Alquiler> Alquiler;
         private DateTime inicio;
         private DateTime final;
@@ -55,8 +55,8 @@ namespace Rentacar.Interfaz.Operaciones.Alquiler
         {
             try
             {//Cambiar listar
-                Vehiculo = await _repositorioVehiculo.Listar();
-                comboBoxVehiculo.DataSource = Vehiculo;
+                Vehiculos = await _repositorioVehiculo.ListarDisponibles(inicio,final);
+                comboBoxVehiculo.DataSource = Vehiculos;
                 comboBoxVehiculo.DisplayMember = "Matricula";
                 comboBoxVehiculo.ValueMember = "Id";
 
@@ -73,11 +73,12 @@ namespace Rentacar.Interfaz.Operaciones.Alquiler
             final = monthCalendar1.SelectionRange.End.Date;
 
             int dias = (final - inicio).Days;
+            await listarVehiculo();
             float total = dias * ((comboBoxVehiculo.SelectedItem as Vehiculo).CostoDia);
             textPrecioDia.Text = ((comboBoxVehiculo.SelectedItem as Vehiculo).CostoDia).ToString();
             textDias.Text = dias.ToString();
             textTotal.Text = total.ToString();
-            await listarVehiculo();
+            
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
