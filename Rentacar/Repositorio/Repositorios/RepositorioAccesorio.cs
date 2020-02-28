@@ -24,7 +24,7 @@ namespace Rentacar.Repositorio.Repositorios
 
             try
             {
-                int result = await command.ExecuteNonQueryAsync();
+                int result =  await command.ExecuteNonQueryAsync();
 
                 if (result == 0)
                 {
