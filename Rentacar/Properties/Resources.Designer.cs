@@ -73,9 +73,29 @@ namespace Rentacar.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap AlquilerFecha {
+            get {
+                object obj = ResourceManager.GetObject("AlquilerFecha", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap AlquilerVehículos {
             get {
                 object obj = ResourceManager.GetObject("AlquilerVehículos", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap AlquilerVehiculosCalendario {
+            get {
+                object obj = ResourceManager.GetObject("AlquilerVehiculosCalendario", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -107,11 +107,23 @@
     <Compile Include="Interfaz\Clientes\FormGestionCliente.Designer.cs">
       <DependentUpon>FormGestionCliente.cs</DependentUpon>
     </Compile>
+    <Compile Include="Interfaz\Operaciones\Alquiler\FormAlquilerFecha.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaz\Operaciones\Alquiler\FormAlquilerFecha.Designer.cs">
+      <DependentUpon>FormAlquilerFecha.cs</DependentUpon>
+    </Compile>
     <Compile Include="Interfaz\Operaciones\Alquiler\FormAlquilerVehiculos.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Interfaz\Operaciones\Alquiler\FormAlquilerVehiculos.Designer.cs">
       <DependentUpon>FormAlquilerVehiculos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaz\Operaciones\Alquiler\FormVehiculosAlquiler.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaz\Operaciones\Alquiler\FormVehiculosAlquiler.Designer.cs">
+      <DependentUpon>FormVehiculosAlquiler.cs</DependentUpon>
     </Compile>
     <Compile Include="Interfaz\Operaciones\Clientes\FormBusquedaClientes.cs">
       <SubType>Form</SubType>
@@ -210,8 +222,14 @@
     <EmbeddedResource Include="Interfaz\Clientes\FormGestionCliente.resx">
       <DependentUpon>FormGestionCliente.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Interfaz\Operaciones\Alquiler\FormAlquilerFecha.resx">
+      <DependentUpon>FormAlquilerFecha.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Interfaz\Operaciones\Alquiler\FormAlquilerVehiculos.resx">
       <DependentUpon>FormAlquilerVehiculos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaz\Operaciones\Alquiler\FormVehiculosAlquiler.resx">
+      <DependentUpon>FormVehiculosAlquiler.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaz\Operaciones\Clientes\FormBusquedaClientes.resx">
       <DependentUpon>FormBusquedaClientes.cs</DependentUpon>
@@ -283,6 +301,8 @@
     <None Include="Assets\Imagenes\BusquedaVehiculosPorMatricula.png" />
     <None Include="Assets\Imagenes\BusquedaVehiculosFiltros.png" />
     <None Include="Assets\Imagenes\AlquilerAccesorios.JPG" />
+    <None Include="Assets\Imagenes\AlquilerVehiculosCalendario.PNG" />
+    <Content Include="Assets\Imagenes\AlquilerFecha.PNG" />
     <Content Include="Assets\Imagenes\AlquilerVehículos.PNG" />
     <Content Include="Assets\Imagenes\CaracteristicasVehiculo.JPG" />
     <None Include="Assets\Imagenes\DetallesAlquiler.JPG" />

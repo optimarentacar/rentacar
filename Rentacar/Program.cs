@@ -53,6 +53,8 @@ namespace Rentacar
             container.Register<FormBusquedaVehiculosPorFiltros>();
             container.Register<FormAlquilerVehiculos>();
             container.Register<FormDetallesAlquiler>();
+            container.Register<FormVehiculosAlquiler>();
+            container.Register<FormAlquilerFecha>();
 
 
             container.Register<FormTest>();
