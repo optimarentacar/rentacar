@@ -113,6 +113,18 @@
     <Compile Include="Interfaz\Informes\FormAlquilerFecha.Designer.cs">
       <DependentUpon>FormAlquilerFecha.cs</DependentUpon>
     </Compile>
+    <Compile Include="Interfaz\Informes\FormListadoClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaz\Informes\FormListadoClientes.Designer.cs">
+      <DependentUpon>FormListadoClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaz\Informes\FormListadoResumidoVehiculos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaz\Informes\FormListadoResumidoVehiculos.Designer.cs">
+      <DependentUpon>FormListadoResumidoVehiculos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Interfaz\Operaciones\Alquiler\FormAlquilerVehiculos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -225,6 +237,12 @@
     <EmbeddedResource Include="Interfaz\Informes\FormAlquilerFecha.resx">
       <DependentUpon>FormAlquilerFecha.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Interfaz\Informes\FormListadoClientes.resx">
+      <DependentUpon>FormListadoClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaz\Informes\FormListadoResumidoVehiculos.resx">
+      <DependentUpon>FormListadoResumidoVehiculos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Interfaz\Operaciones\Alquiler\FormAlquilerVehiculos.resx">
       <DependentUpon>FormAlquilerVehiculos.cs</DependentUpon>
     </EmbeddedResource>
@@ -309,6 +327,8 @@
     <Content Include="Assets\Imagenes\GestionClientes.PNG" />
     <Content Include="Assets\Imagenes\GestionMarcas.JPG" />
     <Content Include="Assets\Imagenes\GestionVehiculos.PNG" />
+    <Content Include="Assets\Imagenes\ListadoClientes.PNG" />
+    <Content Include="Assets\Imagenes\ListadoVehiculos.PNG" />
     <Content Include="Assets\Imagenes\Portada.PNG" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

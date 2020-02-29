@@ -78,7 +78,7 @@
             this.accesoriosToolStripMenuItem,
             this.marcasToolStripMenuItem});
             this.tablasToolStripMenuItem.Name = "tablasToolStripMenuItem";
-            this.tablasToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
+            this.tablasToolStripMenuItem.Size = new System.Drawing.Size(51, 20);
             this.tablasToolStripMenuItem.Text = "Tablas";
             // 
             // clienteToolStripMenuItem
@@ -129,7 +129,7 @@
             // buscarClienteToolStripMenuItem
             // 
             this.buscarClienteToolStripMenuItem.Name = "buscarClienteToolStripMenuItem";
-            this.buscarClienteToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
+            this.buscarClienteToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
             this.buscarClienteToolStripMenuItem.Text = "Buscar cliente";
             this.buscarClienteToolStripMenuItem.Click += new System.EventHandler(this.buscarClienteToolStripMenuItem_Click);
             // 
@@ -139,7 +139,7 @@
             this.buscarPorMatrículaToolStripMenuItem,
             this.buscarPorFiltrosToolStripMenuItem});
             this.buscarVehículoToolStripMenuItem.Name = "buscarVehículoToolStripMenuItem";
-            this.buscarVehículoToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
+            this.buscarVehículoToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
             this.buscarVehículoToolStripMenuItem.Text = "Buscar Vehículo";
             // 
             // buscarPorMatrículaToolStripMenuItem
@@ -159,7 +159,7 @@
             // vehículosAlquiladosToolStripMenuItem
             // 
             this.vehículosAlquiladosToolStripMenuItem.Name = "vehículosAlquiladosToolStripMenuItem";
-            this.vehículosAlquiladosToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
+            this.vehículosAlquiladosToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
             this.vehículosAlquiladosToolStripMenuItem.Text = "Vehículos alquilados";
             this.vehículosAlquiladosToolStripMenuItem.Click += new System.EventHandler(this.vehículosAlquiladosToolStripMenuItem_Click);
             // 
@@ -180,12 +180,14 @@
             this.listadoDeClientesToolStripMenuItem.Name = "listadoDeClientesToolStripMenuItem";
             this.listadoDeClientesToolStripMenuItem.Size = new System.Drawing.Size(255, 22);
             this.listadoDeClientesToolStripMenuItem.Text = "Listado de clientes";
+            this.listadoDeClientesToolStripMenuItem.Click += new System.EventHandler(this.listadoDeClientesToolStripMenuItem_Click);
             // 
             // listadoResumidoDeVehículosToolStripMenuItem
             // 
             this.listadoResumidoDeVehículosToolStripMenuItem.Name = "listadoResumidoDeVehículosToolStripMenuItem";
             this.listadoResumidoDeVehículosToolStripMenuItem.Size = new System.Drawing.Size(255, 22);
             this.listadoResumidoDeVehículosToolStripMenuItem.Text = "Listado resumido de vehículos";
+            this.listadoResumidoDeVehículosToolStripMenuItem.Click += new System.EventHandler(this.listadoResumidoDeVehículosToolStripMenuItem_Click);
             // 
             // listadoDetalladoDeVehículosToolStripMenuItem
             // 

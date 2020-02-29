@@ -131,5 +131,17 @@ namespace Rentacar.Interfaz.Principal
                 MessageBox.Show("Ocurrió un error");
             }
         }
+
+        private void listadoDeClientesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormListadoClientes lc = Program.container.GetInstance<FormListadoClientes>();
+            lc.Show();
+        }
+
+        private void listadoResumidoDeVehículosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormListadoResumidoVehiculos Lrv = Program.container.GetInstance<FormListadoResumidoVehiculos>();
+            Lrv.Show();
+        }
     }
 }

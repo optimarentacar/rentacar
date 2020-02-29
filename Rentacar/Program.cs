@@ -60,7 +60,9 @@ namespace Rentacar
 
             container.Register<FormTest>();
 
-
+            //Informes
+            container.Register<FormListadoClientes>();
+            container.Register<FormListadoResumidoVehiculos>();
 
             //Repositorios
             container.Register<IRepositorioVehiculo, RepositorioVehiculo>(Lifestyle.Transient);
