@@ -93,10 +93,11 @@
             // comboBoxVehiculo
             // 
             this.comboBoxVehiculo.FormattingEnabled = true;
-            this.comboBoxVehiculo.Location = new System.Drawing.Point(7, 24);
+            this.comboBoxVehiculo.Location = new System.Drawing.Point(7, 25);
             this.comboBoxVehiculo.Name = "comboBoxVehiculo";
             this.comboBoxVehiculo.Size = new System.Drawing.Size(339, 21);
             this.comboBoxVehiculo.TabIndex = 0;
+            this.comboBoxVehiculo.SelectedIndexChanged += new System.EventHandler(this.comboBoxVehiculo_SelectedIndexChanged);
             // 
             // groupBox3
             // 

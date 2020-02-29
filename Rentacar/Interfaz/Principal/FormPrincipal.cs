@@ -86,6 +86,7 @@ namespace Rentacar.Interfaz.Principal
             FormAlquilerVehiculos fav = Program.container.GetInstance<FormAlquilerVehiculos>();
             fav.ShowDialog();
         }
+<<<<<<< HEAD
         private void button1_Click(object sender, EventArgs e)
         {
             FormVehiculosAlquiler gm = Program.container.GetInstance<FormVehiculosAlquiler>();
@@ -98,5 +99,7 @@ namespace Rentacar.Interfaz.Principal
             FormAlquilerFecha faf = Program.container.GetInstance<FormAlquilerFecha>();
             faf.Show();
         }
+=======
+>>>>>>> b9ae0a9e2120f6fec01761c424097e6e89b9627e
     }
 }

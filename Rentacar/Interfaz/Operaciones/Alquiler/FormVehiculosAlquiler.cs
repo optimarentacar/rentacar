@@ -54,7 +54,7 @@ namespace Rentacar.Interfaz.Operaciones.Alquiler
         private async Task listarVehiculo()
         {
             try
-            {//Cambiar listar
+            {
                 Vehiculos = await _repositorioVehiculo.ListarDisponibles(inicio,final);
                 comboBoxVehiculo.DataSource = Vehiculos;
                 comboBoxVehiculo.DisplayMember = "Matricula";
@@ -126,6 +126,21 @@ namespace Rentacar.Interfaz.Operaciones.Alquiler
             textDias.Text = "";
             textPrecioDia.Text = "";
             textTotal.Text = "";
+        }
+
+        private void comboBoxVehiculo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBoxVehiculo.DataSource != null && comboBoxVehiculo.Items.Count >0)
+            {
+                inicio = monthCalendar1.SelectionRange.Start.Date;
+                final = monthCalendar1.SelectionRange.End.Date;
+
+                int dias = (final - inicio).Days;
+                float total = dias * ((comboBoxVehiculo.SelectedItem as Vehiculo).CostoDia);
+                textPrecioDia.Text = ((comboBoxVehiculo.SelectedItem as Vehiculo).CostoDia).ToString();
+                textDias.Text = dias.ToString();
+                textTotal.Text = total.ToString();
+            }
         }
     }
 }

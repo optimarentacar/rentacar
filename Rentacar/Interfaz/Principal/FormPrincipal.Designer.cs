@@ -46,12 +46,15 @@
             this.ayudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button2 = new System.Windows.Forms.Button();
+<<<<<<< HEAD
             this.button1 = new System.Windows.Forms.Button();
             this.listadoDeClientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listadoResumidoDeVehículosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listadoDetalladoDeVehículosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listadoDeAlquileresPorFechaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listadoDeAlquileresPorVehículosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+=======
+>>>>>>> b9ae0a9e2120f6fec01761c424097e6e89b9627e
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -78,7 +81,7 @@
             this.accesoriosToolStripMenuItem,
             this.marcasToolStripMenuItem});
             this.tablasToolStripMenuItem.Name = "tablasToolStripMenuItem";
-            this.tablasToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
+            this.tablasToolStripMenuItem.Size = new System.Drawing.Size(51, 20);
             this.tablasToolStripMenuItem.Text = "Tablas";
             // 
             // clienteToolStripMenuItem
@@ -129,7 +132,7 @@
             // buscarClienteToolStripMenuItem
             // 
             this.buscarClienteToolStripMenuItem.Name = "buscarClienteToolStripMenuItem";
-            this.buscarClienteToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
+            this.buscarClienteToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
             this.buscarClienteToolStripMenuItem.Text = "Buscar cliente";
             this.buscarClienteToolStripMenuItem.Click += new System.EventHandler(this.buscarClienteToolStripMenuItem_Click);
             // 
@@ -139,7 +142,7 @@
             this.buscarPorMatrículaToolStripMenuItem,
             this.buscarPorFiltrosToolStripMenuItem});
             this.buscarVehículoToolStripMenuItem.Name = "buscarVehículoToolStripMenuItem";
-            this.buscarVehículoToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
+            this.buscarVehículoToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
             this.buscarVehículoToolStripMenuItem.Text = "Buscar Vehículo";
             // 
             // buscarPorMatrículaToolStripMenuItem
@@ -159,7 +162,11 @@
             // vehículosAlquiladosToolStripMenuItem
             // 
             this.vehículosAlquiladosToolStripMenuItem.Name = "vehículosAlquiladosToolStripMenuItem";
+<<<<<<< HEAD
             this.vehículosAlquiladosToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
+=======
+            this.vehículosAlquiladosToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
+>>>>>>> b9ae0a9e2120f6fec01761c424097e6e89b9627e
             this.vehículosAlquiladosToolStripMenuItem.Text = "Vehículos alquilados";
             this.vehículosAlquiladosToolStripMenuItem.Click += new System.EventHandler(this.vehículosAlquiladosToolStripMenuItem_Click);
             // 
@@ -201,6 +208,7 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+<<<<<<< HEAD
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(637, 575);
@@ -242,12 +250,13 @@
             this.listadoDeAlquileresPorVehículosToolStripMenuItem.Size = new System.Drawing.Size(255, 22);
             this.listadoDeAlquileresPorVehículosToolStripMenuItem.Text = "Listado de alquileres por vehículos";
             // 
+=======
+>>>>>>> b9ae0a9e2120f6fec01761c424097e6e89b9627e
             // FormPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 633);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.menuStrip1);
@@ -284,11 +293,14 @@
 
         private System.Windows.Forms.ToolStripMenuItem vehículosAlquiladosToolStripMenuItem;
 
+<<<<<<< HEAD
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ToolStripMenuItem listadoDeClientesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem listadoResumidoDeVehículosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem listadoDetalladoDeVehículosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem listadoDeAlquileresPorFechaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem listadoDeAlquileresPorVehículosToolStripMenuItem;
+=======
+>>>>>>> b9ae0a9e2120f6fec01761c424097e6e89b9627e
     }
 }
