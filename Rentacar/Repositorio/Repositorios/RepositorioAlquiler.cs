@@ -22,15 +22,38 @@ namespace Rentacar.Repositorio.Repositorios
 
             MySqlTransaction transaction = conexion.BeginTransaction();
 
-            peticion = "DELETE FROM accesorios_alquileres " +
-                       "WHERE idAlquiler = @idAlquiler)";
+            peticion = "SELECT IFNULL(SUM(acc.costo),0) " +
+                    "FROM accesorios acc " +
+                    "INNER JOIN accesorios_alquileres aa " +
+                    "ON acc.id = aa.idAccesorio " +
+                    "AND aa.idAlquiler = @idAlquiler ";
 
             MySqlCommand command = new MySqlCommand(peticion, conexion);
             command.Parameters.AddWithValue("@idAlquiler", idAlquiler);
             command.Prepare();
 
+            
+
             try
             {
+                DbDataReader reader1 = await command.ExecuteReaderAsync();
+
+                float antiguoCosto = 0f;
+
+                if (reader1.HasRows)
+                {
+                    while (reader1.Read())
+                    {
+                        antiguoCosto = (float)reader1.GetDecimal(0);
+                    }
+                }
+                reader1.Close();
+                peticion = "DELETE FROM accesorios_alquileres " +
+                       "WHERE idAlquiler = @idAlquiler";
+
+                 command = new MySqlCommand(peticion, conexion);
+                command.Parameters.AddWithValue("@idAlquiler", idAlquiler);
+                command.Prepare();
                 int result = await command.ExecuteNonQueryAsync();
 
                 peticion = "INSERT INTO accesorios_alquileres " +
@@ -43,13 +66,47 @@ namespace Rentacar.Repositorio.Repositorios
                     command.Parameters.AddWithValue("@idAlquiler", idAlquiler);
                     command.Prepare();
 
-                    result = await command.ExecuteNonQueryAsync();
+                     result = await command.ExecuteNonQueryAsync();
                 };
+
+                peticion = "SELECT IFNULL(SUM(acc.costo),0) " +
+                    "FROM accesorios acc " +
+                    "INNER JOIN accesorios_alquileres aa " +
+                    "ON acc.id = aa.idAccesorio " +
+                    "AND aa.idAlquiler = @idAlquiler ";
+
+                 command = new MySqlCommand(peticion, conexion);
+                command.Parameters.AddWithValue("@idAlquiler", idAlquiler);
+                command.Prepare();
+
+                DbDataReader reader2 = await command.ExecuteReaderAsync();
+
+                float nuevoCosto = 0f;
+
+                if (reader2.HasRows)
+                {
+                    while (reader2.Read())
+                    {
+                        nuevoCosto = (float)reader2.GetDecimal(0);
+                    }
+                }
+                reader2.Close();
+                
+                peticion = "UPDATE alquileres SET importe = (importe - " +
+                    "@antiguoCosto) + @nuevoCosto where id = @idAlquiler";
+
+                command = new MySqlCommand(peticion, conexion);
+                command.Parameters.AddWithValue("@idAlquiler", idAlquiler);
+                command.Parameters.AddWithValue("@nuevoCosto", nuevoCosto);
+                command.Parameters.AddWithValue("@antiguoCosto", antiguoCosto);
+                command.Prepare();
+                 result = await command.ExecuteNonQueryAsync();
 
                 transaction.Commit();
             }
             catch (DbException ex)
             {
+                Console.WriteLine(ex);
                 transaction.Rollback();
                 throw ex;
             }
@@ -60,6 +117,35 @@ namespace Rentacar.Repositorio.Repositorios
 
             return true;
 
+        }
+
+        public async Task<bool> Borrar(int id)
+        {
+            string peticion = "DELETE FROM alquileres " +
+                             "WHERE id = @id";
+
+            var conexion = ContextoBD.GetInstancia().GetConexion();
+            conexion.Open();
+
+            MySqlCommand command = new MySqlCommand(peticion, conexion);
+            command.Parameters.AddWithValue("@id", id);
+            command.Prepare();
+
+            try
+            {
+                int result = await command.ExecuteNonQueryAsync();
+            }
+            catch (DbException ex)
+            {
+                Console.WriteLine(ex);
+                throw ex;
+            }
+            finally
+            {
+                conexion.Close();
+            }
+
+            return true;
         }
 
         public async Task<bool> Crear(Alquiler alquiler)
@@ -131,7 +217,7 @@ namespace Rentacar.Repositorio.Repositorios
                             CostoTotalAccesorios = (float)reader.GetDecimal(6)
                         };
 
-                        
+
                         alquileres.Add(alquiler);
                     }
                 }
@@ -148,10 +234,10 @@ namespace Rentacar.Repositorio.Repositorios
 
             return alquileres;
         }
-       
+
         public async Task<List<Alquiler>> ListarPorFechaDetallado(DateTime inicio, DateTime fin, Orden orden)
         {
-            string peticion = 
+            string peticion =
                 "SELECT al.id, al.fechaInicio, al.fechaFin, al.importe, " +
                         "v.matricula, v.modelo, v.capacidad, v.anio, v.pathFoto, " +
                         "m.nombre, " +
@@ -165,7 +251,7 @@ namespace Rentacar.Repositorio.Repositorios
                 "INNER JOIN vehiculos v " +
                     "ON v.matricula = al.matricula " +
                 "INNER JOIN marcas m " +
-                    "ON m.id = v.idMarca " +                              
+                    "ON m.id = v.idMarca " +
                 "INNER JOIN accesorios_alquileres acal " +
                     "ON acal.idAlquiler = al.id " +
                 "INNER JOIN accesorios ac " +
@@ -177,7 +263,7 @@ namespace Rentacar.Repositorio.Repositorios
             conexion.Open();
             MySqlCommand command = new MySqlCommand(peticion, conexion);
             string ordenarPor = "";
- ;
+            ;
             switch (orden)
             {
                 case Orden.CLIENTE:
@@ -190,8 +276,8 @@ namespace Rentacar.Repositorio.Repositorios
                     ordenarPor = "v.matricula";
                     break;
             }
-            
-            command.Parameters.AddWithValue("@orden", ordenarPor);      
+
+            command.Parameters.AddWithValue("@orden", ordenarPor);
             command.Parameters.AddWithValue("@inicio", inicio);
             command.Parameters.AddWithValue("@fin", fin);
             command.Prepare();
@@ -337,6 +423,7 @@ namespace Rentacar.Repositorio.Repositorios
             }
             catch (DbException ex)
             {
+                Console.WriteLine(ex);
                 throw ex;
             }
             finally

@@ -11,6 +11,7 @@ namespace Rentacar.Repositorio.Interfaces
     public interface IRepositorioAlquiler
     {
         Task<bool> Crear(Alquiler alquiler);
+        Task<bool> Borrar(int id);
         Task<List<Alquiler>> ListarPorFechaDetallado(DateTime inicio, DateTime fin, Orden orden);
         Task<List<Alquiler>> ListarPorFechaResumido(DateTime inicio, DateTime fin, Orden orden);
         Task<List<Alquiler>> Listar();

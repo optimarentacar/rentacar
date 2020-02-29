@@ -174,17 +174,17 @@ namespace Rentacar.Repositorio.Repositorios
         {
             string peticion =
               "SELECT v.matricula, m.id, m.nombre, v.modelo, v.anio, " +
-                     "v.capacidad, v.costoDia, v.pathFoto " +
+                "v.capacidad, v.costoDia, v.pathFoto " +
               "FROM vehiculos v " +
               "INNER JOIN marcas m " +
               "ON v.idMarca = m.id " +
               "AND(v.matricula  not in " +
               "(SELECT matricula FROM alquileres " +
-               "WHERE " +
-               "(fechaInicio < @fin AND fechaFin > @inicio) " +
-                "OR " +
+              "WHERE " +
+                "(fechaInicio < @fin AND fechaFin > @inicio) " +
+              "OR " +
                 "(fechaFin > @inicio AND fechaInicio < @fin))) " +
-                "GROUP by v.matricula";
+              "GROUP by v.matricula";
 
 
 

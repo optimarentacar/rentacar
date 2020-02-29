@@ -1,4 +1,4 @@
-﻿namespace Rentacar.Interfaz.Operaciones.Alquiler
+﻿namespace Rentacar.Interfaz.Informes
 {
     partial class FormAlquilerFecha
     {
@@ -30,17 +30,17 @@
         {
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.checkBoxDesde = new System.Windows.Forms.CheckBox();
-            this.checkBoxHasta = new System.Windows.Forms.CheckBox();
-            this.dateTimePickerDesde = new System.Windows.Forms.DateTimePicker();
             this.dateTimePickerHasta = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePickerDesde = new System.Windows.Forms.DateTimePicker();
+            this.checkBoxHasta = new System.Windows.Forms.CheckBox();
+            this.checkBoxDesde = new System.Windows.Forms.CheckBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.rbFecha = new System.Windows.Forms.RadioButton();
-            this.rbMatricula = new System.Windows.Forms.RadioButton();
             this.rbCliente = new System.Windows.Forms.RadioButton();
+            this.rbMatricula = new System.Windows.Forms.RadioButton();
+            this.rbFecha = new System.Windows.Forms.RadioButton();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.rbResumido = new System.Windows.Forms.RadioButton();
             this.rbDetallado = new System.Windows.Forms.RadioButton();
+            this.rbResumido = new System.Windows.Forms.RadioButton();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnAceptar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -72,15 +72,21 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Rango de Fechas:";
             // 
-            // checkBoxDesde
+            // dateTimePickerHasta
             // 
-            this.checkBoxDesde.AutoSize = true;
-            this.checkBoxDesde.Location = new System.Drawing.Point(6, 28);
-            this.checkBoxDesde.Name = "checkBoxDesde";
-            this.checkBoxDesde.Size = new System.Drawing.Size(60, 17);
-            this.checkBoxDesde.TabIndex = 0;
-            this.checkBoxDesde.Text = "Desde:";
-            this.checkBoxDesde.UseVisualStyleBackColor = true;
+            this.dateTimePickerHasta.Enabled = false;
+            this.dateTimePickerHasta.Location = new System.Drawing.Point(90, 56);
+            this.dateTimePickerHasta.Name = "dateTimePickerHasta";
+            this.dateTimePickerHasta.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePickerHasta.TabIndex = 3;
+            // 
+            // dateTimePickerDesde
+            // 
+            this.dateTimePickerDesde.Enabled = false;
+            this.dateTimePickerDesde.Location = new System.Drawing.Point(90, 23);
+            this.dateTimePickerDesde.Name = "dateTimePickerDesde";
+            this.dateTimePickerDesde.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePickerDesde.TabIndex = 2;
             // 
             // checkBoxHasta
             // 
@@ -92,19 +98,15 @@
             this.checkBoxHasta.Text = "Hasta:";
             this.checkBoxHasta.UseVisualStyleBackColor = true;
             // 
-            // dateTimePickerDesde
+            // checkBoxDesde
             // 
-            this.dateTimePickerDesde.Location = new System.Drawing.Point(90, 23);
-            this.dateTimePickerDesde.Name = "dateTimePickerDesde";
-            this.dateTimePickerDesde.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePickerDesde.TabIndex = 2;
-            // 
-            // dateTimePickerHasta
-            // 
-            this.dateTimePickerHasta.Location = new System.Drawing.Point(90, 56);
-            this.dateTimePickerHasta.Name = "dateTimePickerHasta";
-            this.dateTimePickerHasta.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePickerHasta.TabIndex = 3;
+            this.checkBoxDesde.AutoSize = true;
+            this.checkBoxDesde.Location = new System.Drawing.Point(6, 28);
+            this.checkBoxDesde.Name = "checkBoxDesde";
+            this.checkBoxDesde.Size = new System.Drawing.Size(60, 17);
+            this.checkBoxDesde.TabIndex = 0;
+            this.checkBoxDesde.Text = "Desde:";
+            this.checkBoxDesde.UseVisualStyleBackColor = true;
             // 
             // groupBox2
             // 
@@ -118,16 +120,16 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Orden:";
             // 
-            // rbFecha
+            // rbCliente
             // 
-            this.rbFecha.AutoSize = true;
-            this.rbFecha.Location = new System.Drawing.Point(21, 23);
-            this.rbFecha.Name = "rbFecha";
-            this.rbFecha.Size = new System.Drawing.Size(55, 17);
-            this.rbFecha.TabIndex = 0;
-            this.rbFecha.TabStop = true;
-            this.rbFecha.Text = "Fecha";
-            this.rbFecha.UseVisualStyleBackColor = true;
+            this.rbCliente.AutoSize = true;
+            this.rbCliente.Location = new System.Drawing.Point(21, 69);
+            this.rbCliente.Name = "rbCliente";
+            this.rbCliente.Size = new System.Drawing.Size(57, 17);
+            this.rbCliente.TabIndex = 2;
+            this.rbCliente.TabStop = true;
+            this.rbCliente.Text = "Cliente";
+            this.rbCliente.UseVisualStyleBackColor = true;
             // 
             // rbMatricula
             // 
@@ -140,16 +142,17 @@
             this.rbMatricula.Text = "Matricula";
             this.rbMatricula.UseVisualStyleBackColor = true;
             // 
-            // rbCliente
+            // rbFecha
             // 
-            this.rbCliente.AutoSize = true;
-            this.rbCliente.Location = new System.Drawing.Point(21, 69);
-            this.rbCliente.Name = "rbCliente";
-            this.rbCliente.Size = new System.Drawing.Size(57, 17);
-            this.rbCliente.TabIndex = 2;
-            this.rbCliente.TabStop = true;
-            this.rbCliente.Text = "Cliente";
-            this.rbCliente.UseVisualStyleBackColor = true;
+            this.rbFecha.AutoSize = true;
+            this.rbFecha.Checked = true;
+            this.rbFecha.Location = new System.Drawing.Point(21, 23);
+            this.rbFecha.Name = "rbFecha";
+            this.rbFecha.Size = new System.Drawing.Size(55, 17);
+            this.rbFecha.TabIndex = 0;
+            this.rbFecha.TabStop = true;
+            this.rbFecha.Text = "Fecha";
+            this.rbFecha.UseVisualStyleBackColor = true;
             // 
             // groupBox3
             // 
@@ -162,17 +165,6 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Listado:";
             // 
-            // rbResumido
-            // 
-            this.rbResumido.AutoSize = true;
-            this.rbResumido.Location = new System.Drawing.Point(7, 33);
-            this.rbResumido.Name = "rbResumido";
-            this.rbResumido.Size = new System.Drawing.Size(72, 17);
-            this.rbResumido.TabIndex = 0;
-            this.rbResumido.TabStop = true;
-            this.rbResumido.Text = "Resumido";
-            this.rbResumido.UseVisualStyleBackColor = true;
-            // 
             // rbDetallado
             // 
             this.rbDetallado.AutoSize = true;
@@ -183,6 +175,18 @@
             this.rbDetallado.TabStop = true;
             this.rbDetallado.Text = "Detallado";
             this.rbDetallado.UseVisualStyleBackColor = true;
+            // 
+            // rbResumido
+            // 
+            this.rbResumido.AutoSize = true;
+            this.rbResumido.Checked = true;
+            this.rbResumido.Location = new System.Drawing.Point(7, 33);
+            this.rbResumido.Name = "rbResumido";
+            this.rbResumido.Size = new System.Drawing.Size(72, 17);
+            this.rbResumido.TabIndex = 0;
+            this.rbResumido.TabStop = true;
+            this.rbResumido.Text = "Resumido";
+            this.rbResumido.UseVisualStyleBackColor = true;
             // 
             // btnCancelar
             // 
@@ -201,6 +205,7 @@
             this.btnAceptar.TabIndex = 5;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // FormAlquilerFecha
             // 

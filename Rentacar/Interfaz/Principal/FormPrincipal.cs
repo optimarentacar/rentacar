@@ -2,6 +2,7 @@
 using Rentacar.Interfaz.Accesorios;
 using Rentacar.Interfaz.Caracteristicas;
 using Rentacar.Interfaz.Clientes;
+using Rentacar.Interfaz.Informes;
 using Rentacar.Interfaz.Operaciones.Alquiler;
 using Rentacar.Interfaz.Operaciones.Clientes;
 using Rentacar.Interfaz.Operaciones.Vehiculos;
@@ -90,6 +91,12 @@ namespace Rentacar.Interfaz.Principal
             FormVehiculosAlquiler gm = Program.container.GetInstance<FormVehiculosAlquiler>();
             gm.ShowDialog();
 
+        }
+
+        private void listadoDeAlquileresPorFechaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormAlquilerFecha faf = Program.container.GetInstance<FormAlquilerFecha>();
+            faf.Show();
         }
     }
 }

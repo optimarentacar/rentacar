@@ -41,15 +41,17 @@
             this.buscarVehículoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.buscarPorMatrículaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.buscarPorFiltrosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.vehículosAlquiladosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.informesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ayudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button2 = new System.Windows.Forms.Button();
-
-            this.vehículosAlquiladosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-
             this.button1 = new System.Windows.Forms.Button();
-
+            this.listadoDeClientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.listadoResumidoDeVehículosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.listadoDetalladoDeVehículosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.listadoDeAlquileresPorFechaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.listadoDeAlquileresPorVehículosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -154,8 +156,21 @@
             this.buscarPorFiltrosToolStripMenuItem.Text = "Buscar por filtros";
             this.buscarPorFiltrosToolStripMenuItem.Click += new System.EventHandler(this.buscarPorFiltrosToolStripMenuItem_Click);
             // 
+            // vehículosAlquiladosToolStripMenuItem
+            // 
+            this.vehículosAlquiladosToolStripMenuItem.Name = "vehículosAlquiladosToolStripMenuItem";
+            this.vehículosAlquiladosToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
+            this.vehículosAlquiladosToolStripMenuItem.Text = "Vehículos alquilados";
+            this.vehículosAlquiladosToolStripMenuItem.Click += new System.EventHandler(this.vehículosAlquiladosToolStripMenuItem_Click);
+            // 
             // informesToolStripMenuItem
             // 
+            this.informesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.listadoDeClientesToolStripMenuItem,
+            this.listadoResumidoDeVehículosToolStripMenuItem,
+            this.listadoDetalladoDeVehículosToolStripMenuItem,
+            this.listadoDeAlquileresPorFechaToolStripMenuItem,
+            this.listadoDeAlquileresPorVehículosToolStripMenuItem});
             this.informesToolStripMenuItem.Name = "informesToolStripMenuItem";
             this.informesToolStripMenuItem.Size = new System.Drawing.Size(66, 20);
             this.informesToolStripMenuItem.Text = "Informes";
@@ -186,14 +201,6 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-
-            // vehículosAlquiladosToolStripMenuItem
-            // 
-            this.vehículosAlquiladosToolStripMenuItem.Name = "vehículosAlquiladosToolStripMenuItem";
-            this.vehículosAlquiladosToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
-            this.vehículosAlquiladosToolStripMenuItem.Text = "Vehículos alquilados";
-            this.vehículosAlquiladosToolStripMenuItem.Click += new System.EventHandler(this.vehículosAlquiladosToolStripMenuItem_Click);
-
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(637, 575);
@@ -203,7 +210,37 @@
             this.button1.Text = "prueba2";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
-
+            // 
+            // listadoDeClientesToolStripMenuItem
+            // 
+            this.listadoDeClientesToolStripMenuItem.Name = "listadoDeClientesToolStripMenuItem";
+            this.listadoDeClientesToolStripMenuItem.Size = new System.Drawing.Size(255, 22);
+            this.listadoDeClientesToolStripMenuItem.Text = "Listado de clientes";
+            // 
+            // listadoResumidoDeVehículosToolStripMenuItem
+            // 
+            this.listadoResumidoDeVehículosToolStripMenuItem.Name = "listadoResumidoDeVehículosToolStripMenuItem";
+            this.listadoResumidoDeVehículosToolStripMenuItem.Size = new System.Drawing.Size(255, 22);
+            this.listadoResumidoDeVehículosToolStripMenuItem.Text = "Listado resumido de vehículos";
+            // 
+            // listadoDetalladoDeVehículosToolStripMenuItem
+            // 
+            this.listadoDetalladoDeVehículosToolStripMenuItem.Name = "listadoDetalladoDeVehículosToolStripMenuItem";
+            this.listadoDetalladoDeVehículosToolStripMenuItem.Size = new System.Drawing.Size(255, 22);
+            this.listadoDetalladoDeVehículosToolStripMenuItem.Text = "Listado detallado de vehículos";
+            // 
+            // listadoDeAlquileresPorFechaToolStripMenuItem
+            // 
+            this.listadoDeAlquileresPorFechaToolStripMenuItem.Name = "listadoDeAlquileresPorFechaToolStripMenuItem";
+            this.listadoDeAlquileresPorFechaToolStripMenuItem.Size = new System.Drawing.Size(255, 22);
+            this.listadoDeAlquileresPorFechaToolStripMenuItem.Text = "Listado de alquileres por fecha";
+            this.listadoDeAlquileresPorFechaToolStripMenuItem.Click += new System.EventHandler(this.listadoDeAlquileresPorFechaToolStripMenuItem_Click);
+            // 
+            // listadoDeAlquileresPorVehículosToolStripMenuItem
+            // 
+            this.listadoDeAlquileresPorVehículosToolStripMenuItem.Name = "listadoDeAlquileresPorVehículosToolStripMenuItem";
+            this.listadoDeAlquileresPorVehículosToolStripMenuItem.Size = new System.Drawing.Size(255, 22);
+            this.listadoDeAlquileresPorVehículosToolStripMenuItem.Text = "Listado de alquileres por vehículos";
             // 
             // FormPrincipal
             // 
@@ -248,6 +285,10 @@
         private System.Windows.Forms.ToolStripMenuItem vehículosAlquiladosToolStripMenuItem;
 
         private System.Windows.Forms.Button button1;
-
+        private System.Windows.Forms.ToolStripMenuItem listadoDeClientesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem listadoResumidoDeVehículosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem listadoDetalladoDeVehículosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem listadoDeAlquileresPorFechaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem listadoDeAlquileresPorVehículosToolStripMenuItem;
     }
 }

@@ -1,4 +1,5 @@
-﻿using Rentacar.Interfaz.Operaciones.Vehiculos;
+﻿using Rentacar.Interfaz.Accesorios;
+using Rentacar.Interfaz.Operaciones.Vehiculos;
 using Rentacar.Repositorio.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -41,11 +42,11 @@ namespace Rentacar.Interfaz.Operaciones.Alquiler
                     Tabla.Rows.Add(Alquileres[i].Id, Alquileres[i].Vehiculo.Matricula,
                         Alquileres[i].Cliente.Dni, Alquileres[i].FechaInicio.ToString("dd/MM/yyyy")
                         , Alquileres[i].FechaFin.ToString("dd/MM/yyyy"),
-                        Alquileres[i].Importe,Alquileres[i].CostoTotalAccesorios);
+                        Alquileres[i].Importe, Alquileres[i].CostoTotalAccesorios);
                 }
 
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show("Ocurrió un error");
             }
@@ -62,10 +63,45 @@ namespace Rentacar.Interfaz.Operaciones.Alquiler
         {
             if (Tabla.SelectedRows.Count > 0)
             {
-                int id =(int) Tabla.SelectedRows[0].Cells[0].Value;
+                int id = (int)Tabla.SelectedRows[0].Cells[0].Value;
 
                 Alquiler = Alquileres.FirstOrDefault(a => a.Id == id);
             }
+        }
+
+        private async void btnEliminar_Click(object sender, EventArgs e)
+        {
+            DialogResult dr = MessageBox.Show("¿Deseas cancelar el " +
+                "alquiler del vehículo?", "Confirmación",
+                MessageBoxButtons.YesNoCancel,
+                MessageBoxIcon.Information);
+
+            if (dr == DialogResult.Yes)
+            {
+                bool borrado = false;
+                try
+                {
+                    borrado = await _repositorioAlquiler.Borrar(Alquiler.Id);
+                    await Listar();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Ocurrió un error");
+                }
+            }
+        }
+
+        private async void btnAccesorios_Click(object sender, EventArgs e)
+        {
+            FormAlquilerAccesorios faa = Program.container.GetInstance<FormAlquilerAccesorios>();
+            await faa.ListarAccesoriosAlquiler(Alquiler.Id);
+            faa.ShowDialog();
+            
+            if (faa.Cerrado)
+            {
+                await Listar();
+            }
+            
         }
     }
 }

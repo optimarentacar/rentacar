@@ -107,10 +107,10 @@
     <Compile Include="Interfaz\Clientes\FormGestionCliente.Designer.cs">
       <DependentUpon>FormGestionCliente.cs</DependentUpon>
     </Compile>
-    <Compile Include="Interfaz\Operaciones\Alquiler\FormAlquilerFecha.cs">
+    <Compile Include="Interfaz\Informes\FormAlquilerFecha.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Interfaz\Operaciones\Alquiler\FormAlquilerFecha.Designer.cs">
+    <Compile Include="Interfaz\Informes\FormAlquilerFecha.Designer.cs">
       <DependentUpon>FormAlquilerFecha.cs</DependentUpon>
     </Compile>
     <Compile Include="Interfaz\Operaciones\Alquiler\FormAlquilerVehiculos.cs">
@@ -222,7 +222,7 @@
     <EmbeddedResource Include="Interfaz\Clientes\FormGestionCliente.resx">
       <DependentUpon>FormGestionCliente.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Interfaz\Operaciones\Alquiler\FormAlquilerFecha.resx">
+    <EmbeddedResource Include="Interfaz\Informes\FormAlquilerFecha.resx">
       <DependentUpon>FormAlquilerFecha.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaz\Operaciones\Alquiler\FormAlquilerVehiculos.resx">

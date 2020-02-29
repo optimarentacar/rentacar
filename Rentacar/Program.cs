@@ -2,6 +2,7 @@
 using Rentacar.Interfaz.Accesorios;
 using Rentacar.Interfaz.Caracteristicas;
 using Rentacar.Interfaz.Clientes;
+using Rentacar.Interfaz.Informes;
 using Rentacar.Interfaz.Operaciones.Alquiler;
 using Rentacar.Interfaz.Operaciones.Clientes;
 using Rentacar.Interfaz.Operaciones.Vehiculos;
