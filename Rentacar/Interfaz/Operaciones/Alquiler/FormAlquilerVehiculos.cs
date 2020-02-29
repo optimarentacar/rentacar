@@ -69,7 +69,7 @@ namespace Rentacar.Interfaz.Operaciones.Alquiler
             }
         }
 
-<<<<<<< HEAD
+
         private async void btnEliminar_Click(object sender, EventArgs e)
         {
             DialogResult dr = MessageBox.Show("¿Deseas cancelar el " +
@@ -97,19 +97,19 @@ namespace Rentacar.Interfaz.Operaciones.Alquiler
             FormAlquilerAccesorios faa = Program.container.GetInstance<FormAlquilerAccesorios>();
             await faa.ListarAccesoriosAlquiler(Alquiler.Id);
             faa.ShowDialog();
-            
+
             if (faa.Cerrado)
             {
                 await Listar();
             }
-            
-=======
+
+        }
         private void btnAlquilar_Click(object sender, EventArgs e)
         {
             FormVehiculosAlquiler gm = Program.container.GetInstance<FormVehiculosAlquiler>();
             gm.ShowDialog();
 
->>>>>>> b9ae0a9e2120f6fec01761c424097e6e89b9627e
+
         }
     }
 }

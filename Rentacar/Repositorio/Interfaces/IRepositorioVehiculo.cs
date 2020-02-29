@@ -125,5 +125,6 @@ namespace Rentacar.Repositorio.Interfaces
 
         Task<List<Vehiculo>> ListarDisponibles(DateTime inicio,DateTime fin);
 
+
     }
 }

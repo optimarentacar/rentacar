@@ -23,5 +23,6 @@ namespace Rentacar.Modelos
             get => Application.StartupPath + PathFoto;
         }
         public List<Caracteristica> Caracteristicas { get; set; }
+        public List<Alquiler> Alquileres { get; set; }
     }
 }

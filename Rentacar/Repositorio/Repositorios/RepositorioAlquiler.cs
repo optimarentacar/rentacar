@@ -241,18 +241,18 @@ namespace Rentacar.Repositorio.Repositorios
                 "SELECT al.id, al.fechaInicio, al.fechaFin, al.importe, " +
                         "v.matricula, v.modelo, v.capacidad, v.anio, v.pathFoto, " +
                         "m.nombre, " +
-                        "c.dni, c.nombre, c.telefono, c.domicilio " +
-                        "SUM(ac.costo) " +
+                        "c.dni, c.nombre, c.telefono, c.domicilio, " +
+                        "IFNULL(SUM(ac.costo),0) " +
                 "FROM alquileres al " +
                 "INNER JOIN clientes c " +
                     "ON c.dni = al.dni " +
-                    "AND al.fechaInicion >= @inicio " +
+                    "AND al.fechaInicio >= @inicio " +
                     "AND al.fechaFin <= @fin " +
                 "INNER JOIN vehiculos v " +
                     "ON v.matricula = al.matricula " +
                 "INNER JOIN marcas m " +
                     "ON m.id = v.idMarca " +
-                "INNER JOIN accesorios_alquileres acal " +
+                "LEFT JOIN accesorios_alquileres acal " +
                     "ON acal.idAlquiler = al.id " +
                 "INNER JOIN accesorios ac " +
                     "ON acal.idAccesorio = ac.id " +
@@ -328,6 +328,7 @@ namespace Rentacar.Repositorio.Repositorios
             }
             catch (DbException ex)
             {
+                Console.WriteLine(ex);
                 throw ex;
             }
             finally
@@ -340,13 +341,14 @@ namespace Rentacar.Repositorio.Repositorios
 
         public async Task<List<Alquiler>> ListarPorFechaResumido(DateTime inicio, DateTime fin, Orden orden)
         {
-            string peticion = "SELECT al.id, al.fechaInicio, al.fechaFin " +
+            string peticion = "SELECT al.id, al.fechaInicio, al.fechaFin, " +
                                        "v.matricula, v.modelo," +
                                        "m.nombre, " +
                                        "c.dni, c.nombre " +
+                                       "FROM alquileres al "+
                               "INNER JOIN clientes c " +
                               "ON c.dni = al.dni " +
-                              "AND al.fechaInicion >= @inicio " +
+                              "AND al.fechaInicio >= @inicio " +
                               "AND al.fechaFin <= @fin " +
                               "INNER JOIN vehiculos v " +
                               "ON v.matricula = al.matricula " +
@@ -394,27 +396,83 @@ namespace Rentacar.Repositorio.Repositorios
                             Id = reader.GetInt32(0),
                             FechaInicio = reader.GetDateTime(1),
                             FechaFin = reader.GetDateTime(2),
-                            Importe = reader.GetFloat(3),
                             Vehiculo = new Vehiculo()
                             {
-                                Matricula = reader.GetString(4),
-                                Modelo = reader.GetString(5),
-                                Capacidad = reader.GetInt32(6),
-                                Anio = reader.GetString(7),
-                                PathFoto = reader.GetString(8),
+                                Matricula = reader.GetString(3),
+                                Modelo = reader.GetString(4),
                                 Marca = new Marca()
                                 {
-                                    Nombre = reader.GetString(9)
+                                    Nombre = reader.GetString(5)
                                 },
                             },
                             Cliente = new Cliente()
                             {
-                                Dni = reader.GetString(10),
-                                Nombre = reader.GetString(11),
-                                Telefono = reader.GetString(12),
-                                Domilicio = reader.GetString(13),
+                                Dni = reader.GetString(6),
+                                Nombre = reader.GetString(7)
+                            }
+                        };
+
+                        alquileres.Add(alquiler);
+                    }
+                }
+            }
+            catch (DbException ex)
+            {
+                Console.WriteLine(ex);
+                throw ex;
+            }
+            finally
+            {
+                conexion.Close();
+            }
+
+            return alquileres;
+        }
+
+        public async Task<List<Alquiler>> ListarConClientesPorVehiculo(string matricula)
+        {
+            string peticion =
+              "SELECT  al.fechaInicio,al.fechaFin, " +
+                "al.importe, c.dni, c.nombre,IFNULL(SUM(acc.costo),0) " +
+              "FROM alquileres al "+
+              "INNER JOIN clientes c " +
+              "ON c.dni = al.dni " +
+              "AND al.matricula = @matricula "+
+              "LEFT JOIN accesorios_alquileres aa " +
+              "ON al.id = aa.idAlquiler " +
+              "LEFT JOIN accesorios acc " +
+              "ON aa.idAccesorio = acc.id " +
+              "GROUP by al.matricula " +
+              "ORDER BY al.fechaInicio";
+
+            var conexion = ContextoBD.GetInstancia().GetConexion();
+            conexion.Open();
+            MySqlCommand command = new MySqlCommand(peticion, conexion);
+            command.Parameters.AddWithValue("@matricula", matricula);
+            command.Prepare();
+            List<Alquiler> alquileres = new List<Alquiler>();
+
+            try
+            {
+                DbDataReader reader = await command.ExecuteReaderAsync();
+
+                if (reader.HasRows)
+                {
+                    Alquiler alquiler;
+
+                    while (reader.Read())
+                    {
+                        alquiler = new Alquiler()
+                        {
+                            FechaInicio = reader.GetDateTime(0),
+                            FechaFin = reader.GetDateTime(1),
+                            Importe = reader.GetFloat(2),
+                            Cliente = new Cliente()
+                            {
+                                Dni = reader.GetString(3),
+                                Nombre = reader.GetString(4)
                             },
-                            CostoTotalAccesorios = reader.GetFloat(14)
+                            CostoTotalAccesorios =(float) reader.GetDecimal(5)
                         };
 
                         alquileres.Add(alquiler);
