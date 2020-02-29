@@ -85,5 +85,15 @@ namespace Rentacar.Interfaz.Informes
                 }
             }
         }
+
+        private void checkBoxDesde_CheckedChanged(object sender, EventArgs e)
+        {
+            dateTimePickerDesde.Enabled = checkBoxDesde.Checked;
+        }
+
+        private void checkBoxHasta_CheckedChanged(object sender, EventArgs e)
+        {
+            dateTimePickerHasta.Enabled = checkBoxHasta.Checked;
+        }
     }
 }

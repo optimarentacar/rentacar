@@ -15,6 +15,7 @@ namespace Rentacar.Repositorio.Interfaces
         Task<List<Alquiler>> ListarPorFechaDetallado(DateTime inicio, DateTime fin, Orden orden);
         Task<List<Alquiler>> ListarPorFechaResumido(DateTime inicio, DateTime fin, Orden orden);
         Task<List<Alquiler>> Listar();
+        Task<List<Alquiler>> ListarConClientesPorVehiculo(string matricula);
         Task<bool> AsignarAccesorios(int idAlquiler, List<int> idsAccesorio);
     }
 }

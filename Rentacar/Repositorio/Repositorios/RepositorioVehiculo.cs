@@ -120,7 +120,8 @@ namespace Rentacar.Repositorio.Repositorios
                       "v.capacidad, v.costoDia, v.pathFoto " +
                "FROM vehiculos v " +
                "INNER JOIN marcas m " +
-               "ON v.idMarca = m.id";
+               "ON v.idMarca = m.id " +
+               "ORDER BY v.matricula";
 
             var conexion = ContextoBD.GetInstancia().GetConexion();
             conexion.Open();
@@ -169,6 +170,8 @@ namespace Rentacar.Repositorio.Repositorios
 
             return vehiculos;
         }
+
+       
 
         public async Task<List<Vehiculo>> ListarDisponibles(DateTime inicio, DateTime fin)
         {

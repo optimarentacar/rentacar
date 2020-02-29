@@ -43,18 +43,15 @@
             this.buscarPorFiltrosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.vehículosAlquiladosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.informesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ayudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button2 = new System.Windows.Forms.Button();
-<<<<<<< HEAD
-            this.button1 = new System.Windows.Forms.Button();
             this.listadoDeClientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listadoResumidoDeVehículosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listadoDetalladoDeVehículosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listadoDeAlquileresPorFechaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listadoDeAlquileresPorVehículosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-=======
->>>>>>> b9ae0a9e2120f6fec01761c424097e6e89b9627e
+            this.ayudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -81,7 +78,7 @@
             this.accesoriosToolStripMenuItem,
             this.marcasToolStripMenuItem});
             this.tablasToolStripMenuItem.Name = "tablasToolStripMenuItem";
-            this.tablasToolStripMenuItem.Size = new System.Drawing.Size(51, 20);
+            this.tablasToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
             this.tablasToolStripMenuItem.Text = "Tablas";
             // 
             // clienteToolStripMenuItem
@@ -132,7 +129,7 @@
             // buscarClienteToolStripMenuItem
             // 
             this.buscarClienteToolStripMenuItem.Name = "buscarClienteToolStripMenuItem";
-            this.buscarClienteToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
+            this.buscarClienteToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
             this.buscarClienteToolStripMenuItem.Text = "Buscar cliente";
             this.buscarClienteToolStripMenuItem.Click += new System.EventHandler(this.buscarClienteToolStripMenuItem_Click);
             // 
@@ -142,7 +139,7 @@
             this.buscarPorMatrículaToolStripMenuItem,
             this.buscarPorFiltrosToolStripMenuItem});
             this.buscarVehículoToolStripMenuItem.Name = "buscarVehículoToolStripMenuItem";
-            this.buscarVehículoToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
+            this.buscarVehículoToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
             this.buscarVehículoToolStripMenuItem.Text = "Buscar Vehículo";
             // 
             // buscarPorMatrículaToolStripMenuItem
@@ -162,11 +159,7 @@
             // vehículosAlquiladosToolStripMenuItem
             // 
             this.vehículosAlquiladosToolStripMenuItem.Name = "vehículosAlquiladosToolStripMenuItem";
-<<<<<<< HEAD
             this.vehículosAlquiladosToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
-=======
-            this.vehículosAlquiladosToolStripMenuItem.Size = new System.Drawing.Size(181, 22);
->>>>>>> b9ae0a9e2120f6fec01761c424097e6e89b9627e
             this.vehículosAlquiladosToolStripMenuItem.Text = "Vehículos alquilados";
             this.vehículosAlquiladosToolStripMenuItem.Click += new System.EventHandler(this.vehículosAlquiladosToolStripMenuItem_Click);
             // 
@@ -181,43 +174,6 @@
             this.informesToolStripMenuItem.Name = "informesToolStripMenuItem";
             this.informesToolStripMenuItem.Size = new System.Drawing.Size(66, 20);
             this.informesToolStripMenuItem.Text = "Informes";
-            // 
-            // ayudaToolStripMenuItem
-            // 
-            this.ayudaToolStripMenuItem.Name = "ayudaToolStripMenuItem";
-            this.ayudaToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
-            this.ayudaToolStripMenuItem.Text = "Ayuda";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(0, 27);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(772, 543);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(95, 576);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "Pruebas";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-<<<<<<< HEAD
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(637, 575);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "prueba2";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // listadoDeClientesToolStripMenuItem
             // 
@@ -249,9 +205,44 @@
             this.listadoDeAlquileresPorVehículosToolStripMenuItem.Name = "listadoDeAlquileresPorVehículosToolStripMenuItem";
             this.listadoDeAlquileresPorVehículosToolStripMenuItem.Size = new System.Drawing.Size(255, 22);
             this.listadoDeAlquileresPorVehículosToolStripMenuItem.Text = "Listado de alquileres por vehículos";
+            this.listadoDeAlquileresPorVehículosToolStripMenuItem.Click += new System.EventHandler(this.listadoDeAlquileresPorVehículosToolStripMenuItem_Click);
             // 
-=======
->>>>>>> b9ae0a9e2120f6fec01761c424097e6e89b9627e
+            // ayudaToolStripMenuItem
+            // 
+            this.ayudaToolStripMenuItem.Name = "ayudaToolStripMenuItem";
+            this.ayudaToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
+            this.ayudaToolStripMenuItem.Text = "Ayuda";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(0, 27);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(772, 543);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(95, 576);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 3;
+            this.button2.Text = "Pruebas";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(637, 575);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 4;
+            this.button1.Text = "prueba2";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // FormPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -293,14 +284,12 @@
 
         private System.Windows.Forms.ToolStripMenuItem vehículosAlquiladosToolStripMenuItem;
 
-<<<<<<< HEAD
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ToolStripMenuItem listadoDeClientesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem listadoResumidoDeVehículosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem listadoDetalladoDeVehículosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem listadoDeAlquileresPorFechaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem listadoDeAlquileresPorVehículosToolStripMenuItem;
-=======
->>>>>>> b9ae0a9e2120f6fec01761c424097e6e89b9627e
+
     }
 }

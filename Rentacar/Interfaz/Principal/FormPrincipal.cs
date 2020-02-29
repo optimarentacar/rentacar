@@ -9,8 +9,10 @@ using Rentacar.Interfaz.Operaciones.Vehiculos;
 using Rentacar.Interfaz.Vehiculos;
 using Rentacar.Modelos;
 using Rentacar.Repositorio.Interfaces;
+using Rentacar.Repositorio.Repositorios;
 using Rentacar.Test;
 using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace Rentacar.Interfaz.Principal
@@ -86,7 +88,7 @@ namespace Rentacar.Interfaz.Principal
             FormAlquilerVehiculos fav = Program.container.GetInstance<FormAlquilerVehiculos>();
             fav.ShowDialog();
         }
-<<<<<<< HEAD
+
         private void button1_Click(object sender, EventArgs e)
         {
             FormVehiculosAlquiler gm = Program.container.GetInstance<FormVehiculosAlquiler>();
@@ -99,7 +101,35 @@ namespace Rentacar.Interfaz.Principal
             FormAlquilerFecha faf = Program.container.GetInstance<FormAlquilerFecha>();
             faf.Show();
         }
-=======
->>>>>>> b9ae0a9e2120f6fec01761c424097e6e89b9627e
+
+        private async void listadoDeAlquileresPorVehículosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ///CODIGO DE ACCESO A BASE DE DATOS
+            ///
+            try
+            {
+                ///PRIMERO SE SACA LA LISTA DE VEHICULOS
+                ///PARA PROBAR NO HAGO LA INYECCION DE DEPENDENCIA 
+                List<Vehiculo> vehiculos = await new RepositorioVehiculo().Listar();
+
+                ///POR CADA VEHICULO SACO SUS ALQUILERES CON DATOS DE CADA CLIENTE
+
+                vehiculos.ForEach(async v =>
+                {
+                    List<Alquiler> alquileres = await new RepositorioAlquiler()
+                            .ListarConClientesPorVehiculo(v.Matricula);
+                    v.Alquileres = alquileres;
+                });
+
+                
+                ///RELLENAR LA TABLA , CADA VEHICULO CONTIENE UNA LISTA DE ALQUILERES,
+                ///Y CADA ALQUILER CONTIENE UN OBJETO CLIENTE
+                ///
+
+            }catch(Exception ex)
+            {
+                MessageBox.Show("Ocurrió un error");
+            }
+        }
     }
 }

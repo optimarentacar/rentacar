@@ -97,6 +97,7 @@
             this.checkBoxHasta.TabIndex = 1;
             this.checkBoxHasta.Text = "Hasta:";
             this.checkBoxHasta.UseVisualStyleBackColor = true;
+            this.checkBoxHasta.CheckedChanged += new System.EventHandler(this.checkBoxHasta_CheckedChanged);
             // 
             // checkBoxDesde
             // 
@@ -107,6 +108,7 @@
             this.checkBoxDesde.TabIndex = 0;
             this.checkBoxDesde.Text = "Desde:";
             this.checkBoxDesde.UseVisualStyleBackColor = true;
+            this.checkBoxDesde.CheckedChanged += new System.EventHandler(this.checkBoxDesde_CheckedChanged);
             // 
             // groupBox2
             // 
