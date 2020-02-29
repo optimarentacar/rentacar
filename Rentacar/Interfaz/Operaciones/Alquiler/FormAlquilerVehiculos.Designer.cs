@@ -65,6 +65,7 @@
             this.btnAlquilar.TabIndex = 1;
             this.btnAlquilar.Text = "Alquilar";
             this.btnAlquilar.UseVisualStyleBackColor = true;
+            this.btnAlquilar.Click += new System.EventHandler(this.btnAlquilar_Click);
             // 
             // btnEliminar
             // 

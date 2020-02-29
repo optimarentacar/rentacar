@@ -67,5 +67,12 @@ namespace Rentacar.Interfaz.Operaciones.Alquiler
                 Alquiler = Alquileres.FirstOrDefault(a => a.Id == id);
             }
         }
+
+        private void btnAlquilar_Click(object sender, EventArgs e)
+        {
+            FormVehiculosAlquiler gm = Program.container.GetInstance<FormVehiculosAlquiler>();
+            gm.ShowDialog();
+
+        }
     }
 }
