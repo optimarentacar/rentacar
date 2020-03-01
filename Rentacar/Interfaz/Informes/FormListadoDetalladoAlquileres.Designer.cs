@@ -45,16 +45,17 @@
             // 
             // FlowLayoutPanel
             // 
+            this.FlowLayoutPanel.AutoScroll = true;
             this.FlowLayoutPanel.Location = new System.Drawing.Point(13, 147);
             this.FlowLayoutPanel.Name = "FlowLayoutPanel";
-            this.FlowLayoutPanel.Size = new System.Drawing.Size(768, 310);
+            this.FlowLayoutPanel.Size = new System.Drawing.Size(768, 562);
             this.FlowLayoutPanel.TabIndex = 1;
             // 
             // FormListadoDetalladoAlquileres
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(793, 469);
+            this.ClientSize = new System.Drawing.Size(793, 721);
             this.Controls.Add(this.FlowLayoutPanel);
             this.Controls.Add(this.pictureBox1);
             this.Name = "FormListadoDetalladoAlquileres";

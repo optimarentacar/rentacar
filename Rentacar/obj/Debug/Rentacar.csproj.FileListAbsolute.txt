@@ -210,5 +210,9 @@ F:\Rentacar\rentacar\Rentacar\obj\Debug\Rentacar.Interfaz.Informes.FormListadoCl
 F:\Rentacar\rentacar\Rentacar\obj\Debug\Rentacar.Interfaz.Informes.FormListadoResumidoVehiculos.resources
 F:\Rentacar\rentacar\Rentacar\obj\Debug\Rentacar.Interfaz.Informes.FormListadoResumidoAlquileres.resources
 >>>>>>> 595fcb00d971515c9cc3db37b5eb44a18583f087
+<<<<<<< HEAD
 F:\Rentacar\rentacar\Rentacar\obj\Debug\Rentacar.Interfaz.Informes.ControlListadoDetalladoAlquileres.resources
 F:\Rentacar\rentacar\Rentacar\obj\Debug\Rentacar.Interfaz.Informes.FormListadoDetalladoAlquileres.resources
+=======
+C:\Users\adria\Desktop\Rentacar\rentacar\Rentacar\obj\Debug\Rentacar.Interfaz.Informes.FormListadoResumidoAlquileres.resources
+>>>>>>> a702dd57c8c32f72fe7b416e834d70ac889c41d8
