@@ -124,35 +124,38 @@
   <data name="Cancelar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Assets\Iconos\Cancelar.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="GestionCaracteristicas" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Imagenes\GestionCaracteristicas.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="GestionAccesorios" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Imagenes\GestionAccesorios.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="AlquilerFecha" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Assets\Imagenes\AlquilerFecha.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="FlechaDerecha" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Assets\Iconos\FlechaDerecha.JPG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Añadir" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Assets\Iconos\Añadir.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="AlquilerAccesorios" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Assets\Imagenes\AlquilerAccesorios.JPG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="BusquedaVehiculosPorMatricula" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Assets\Imagenes\BusquedaVehiculosPorMatricula.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="AlquilerVehículos" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Imagenes\AlquilerVehículos.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Atras" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Assets\Iconos\Atras.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="BusquedaClientes" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Assets\Imagenes\BusquedaClientes.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ListadoVehiculos" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Imagenes\ListadoVehiculos.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="FlechaIzquierda" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Iconos\FlechaIzquierda.JPG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="BusquedaVehiculosFiltros" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Assets\Imagenes\BusquedaVehiculosFiltros.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ListadoClientes" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Assets\Imagenes\ListadoClientes.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="AlquilerVehiculosCalendario" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Assets\Imagenes\AlquilerVehiculosCalendario.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="DetallesAlquiler" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Imagenes\DetallesAlquiler.JPG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Eliminar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Assets\Iconos\Eliminar.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -160,11 +163,11 @@
   <data name="Validar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Assets\Iconos\Validar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="GestionCaracteristicas" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Assets\Imagenes\GestionCaracteristicas.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="AlquilerVehiculosCalendario" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Imagenes\AlquilerVehiculosCalendario.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="DetallesAlquiler" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Assets\Imagenes\DetallesAlquiler.JPG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ListadoClientes" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Imagenes\ListadoClientes.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Siguiente" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Assets\Iconos\Siguiente.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -172,8 +175,8 @@
   <data name="CaracteristicasVehiculo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Assets\Imagenes\CaracteristicasVehiculo.JPG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="AlquilerVehículos" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Assets\Imagenes\AlquilerVehículos.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Añadir" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Iconos\Añadir.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Modificar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Assets\Iconos\Modificar.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -184,13 +187,13 @@
   <data name="Primero" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Assets\Iconos\Primero.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="GestionAccesorios" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Assets\Imagenes\GestionAccesorios.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="BusquedaVehiculosPorMatricula" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Imagenes\BusquedaVehiculosPorMatricula.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="FlechaIzquierda" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Assets\Iconos\FlechaIzquierda.JPG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="BusquedaClientes" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Imagenes\BusquedaClientes.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ListadoVehiculos" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Assets\Imagenes\ListadoVehiculos.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ListadoDetalladoAlquileres" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Imagenes\ListadoDetalladoAlquileres.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

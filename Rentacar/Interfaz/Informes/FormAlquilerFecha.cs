@@ -77,6 +77,9 @@ namespace Rentacar.Interfaz.Informes
                 {
                     Alquileres = await _repositorioAlquiler.ListarPorFechaDetallado(inicio, fin, orden);
                     Console.WriteLine(Alquileres.Count);
+                    FormListadoDetalladoAlquileres al = Program.container.GetInstance<FormListadoDetalladoAlquileres>();
+                    await al.Listar(Alquileres);
+                    al.Show();
 
                 }
                 catch (Exception ex)
