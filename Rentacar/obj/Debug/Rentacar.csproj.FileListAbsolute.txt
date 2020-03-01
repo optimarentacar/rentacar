@@ -203,3 +203,6 @@ C:\Users\adria\Desktop\Rentacar\rentacar\Rentacar\obj\Debug\Rentacar.Interfaz.In
 C:\Users\adria\Desktop\Rentacar\rentacar\Rentacar\obj\Debug\Rentacar.Interfaz.Informes.FormListadoClientes.resources
 C:\Users\adria\Desktop\Rentacar\rentacar\Rentacar\obj\Debug\Rentacar.Interfaz.Informes.FormListadoVehiculos.resources
 C:\Users\adria\Desktop\Rentacar\rentacar\Rentacar\obj\Debug\Rentacar.Interfaz.Informes.FormListadoResumidoVehiculos.resources
+F:\Rentacar\rentacar\Rentacar\obj\Debug\Rentacar.Interfaz.Informes.FormListadoClientes.resources
+F:\Rentacar\rentacar\Rentacar\obj\Debug\Rentacar.Interfaz.Informes.FormListadoResumidoVehiculos.resources
+F:\Rentacar\rentacar\Rentacar\obj\Debug\Rentacar.Interfaz.Informes.FormListadoResumidoAlquileres.resources

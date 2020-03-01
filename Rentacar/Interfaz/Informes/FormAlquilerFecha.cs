@@ -64,7 +64,11 @@ namespace Rentacar.Interfaz.Informes
                 try
                 {
                     Alquileres = await _repositorioAlquiler.ListarPorFechaResumido(inicio, fin, orden);
-                    Console.WriteLine(Alquileres.Count);
+
+                    FormListadoResumidoAlquileres flra = Program.container.GetInstance<FormListadoResumidoAlquileres>();
+                    await flra.Listar(Alquileres);
+                    flra.Show();
+
                 }catch(Exception ex)
                 {
                     MessageBox.Show("Ocurrio un error");
