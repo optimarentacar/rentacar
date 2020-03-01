@@ -253,9 +253,15 @@ namespace Rentacar.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+<<<<<<< HEAD
         internal static System.Drawing.Bitmap ListadoDetalladoAlquileres {
             get {
                 object obj = ResourceManager.GetObject("ListadoDetalladoAlquileres", resourceCulture);
+=======
+        internal static System.Drawing.Bitmap ListadoResumidoAlquileres {
+            get {
+                object obj = ResourceManager.GetObject("ListadoResumidoAlquileres", resourceCulture);
+>>>>>>> 595fcb00d971515c9cc3db37b5eb44a18583f087
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -2,11 +2,6 @@
 using Rentacar.Repositorio.Interfaces;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -14,7 +9,7 @@ namespace Rentacar.Interfaz.Informes
 {
     public partial class FormListadoResumidoVehiculos : Form
     {
-        private IRepositorioVehiculo _repositorioVehiculo;
+        private readonly IRepositorioVehiculo _repositorioVehiculo;
         private List<Vehiculo> Vehiculos;
         public FormListadoResumidoVehiculos(IRepositorioVehiculo repositorioVehiculo)
         {

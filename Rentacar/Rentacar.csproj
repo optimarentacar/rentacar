@@ -125,11 +125,19 @@
     <Compile Include="Interfaz\Informes\FormListadoClientes.Designer.cs">
       <DependentUpon>FormListadoClientes.cs</DependentUpon>
     </Compile>
+<<<<<<< HEAD
     <Compile Include="Interfaz\Informes\FormListadoDetalladoAlquileres.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Interfaz\Informes\FormListadoDetalladoAlquileres.Designer.cs">
       <DependentUpon>FormListadoDetalladoAlquileres.cs</DependentUpon>
+=======
+    <Compile Include="Interfaz\Informes\FormListadoResumidoAlquileres.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaz\Informes\FormListadoResumidoAlquileres.Designer.cs">
+      <DependentUpon>FormListadoResumidoAlquileres.cs</DependentUpon>
+>>>>>>> 595fcb00d971515c9cc3db37b5eb44a18583f087
     </Compile>
     <Compile Include="Interfaz\Informes\FormListadoResumidoVehiculos.cs">
       <SubType>Form</SubType>
@@ -255,8 +263,13 @@
     <EmbeddedResource Include="Interfaz\Informes\FormListadoClientes.resx">
       <DependentUpon>FormListadoClientes.cs</DependentUpon>
     </EmbeddedResource>
+<<<<<<< HEAD
     <EmbeddedResource Include="Interfaz\Informes\FormListadoDetalladoAlquileres.resx">
       <DependentUpon>FormListadoDetalladoAlquileres.cs</DependentUpon>
+=======
+    <EmbeddedResource Include="Interfaz\Informes\FormListadoResumidoAlquileres.resx">
+      <DependentUpon>FormListadoResumidoAlquileres.cs</DependentUpon>
+>>>>>>> 595fcb00d971515c9cc3db37b5eb44a18583f087
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaz\Informes\FormListadoResumidoVehiculos.resx">
       <DependentUpon>FormListadoResumidoVehiculos.cs</DependentUpon>
@@ -346,7 +359,11 @@
     <Content Include="Assets\Imagenes\GestionMarcas.JPG" />
     <Content Include="Assets\Imagenes\GestionVehiculos.PNG" />
     <Content Include="Assets\Imagenes\ListadoClientes.PNG" />
+<<<<<<< HEAD
     <Content Include="Assets\Imagenes\ListadoDetalladoAlquileres.PNG" />
+=======
+    <None Include="Assets\Imagenes\ListadoResumidoAlquileres.jpg" />
+>>>>>>> 595fcb00d971515c9cc3db37b5eb44a18583f087
     <Content Include="Assets\Imagenes\ListadoVehiculos.PNG" />
     <Content Include="Assets\Imagenes\Portada.PNG" />
   </ItemGroup>
