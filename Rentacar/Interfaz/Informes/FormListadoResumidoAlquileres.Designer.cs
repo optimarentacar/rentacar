@@ -32,13 +32,13 @@ namespace Rentacar.Interfaz.Informes
         {
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
             this.Matricula = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Datos = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Dni = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Inicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Fin = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -49,6 +49,7 @@ namespace Rentacar.Interfaz.Informes
             this.pictureBox1.Location = new System.Drawing.Point(12, 12);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(562, 93);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
@@ -77,18 +78,6 @@ namespace Rentacar.Interfaz.Informes
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(562, 258);
             this.dataGridView1.TabIndex = 1;
-            // 
-            // label1
-            // 
-            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(200)))), ((int)(((byte)(239)))));
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(64)))), ((int)(((byte)(143)))));
-            this.label1.Location = new System.Drawing.Point(15, 381);
-            this.label1.Name = "label1";
-            this.label1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.label1.Size = new System.Drawing.Size(562, 19);
-            this.label1.TabIndex = 2;
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // Matricula
             // 
@@ -132,6 +121,18 @@ namespace Rentacar.Interfaz.Informes
             this.Fin.Name = "Fin";
             this.Fin.ReadOnly = true;
             this.Fin.Width = 70;
+            // 
+            // label1
+            // 
+            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(200)))), ((int)(((byte)(239)))));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(64)))), ((int)(((byte)(143)))));
+            this.label1.Location = new System.Drawing.Point(15, 381);
+            this.label1.Name = "label1";
+            this.label1.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.label1.Size = new System.Drawing.Size(562, 19);
+            this.label1.TabIndex = 2;
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // FormListadoResumidoAlquileres
             // 

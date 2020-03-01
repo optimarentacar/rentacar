@@ -254,7 +254,7 @@ namespace Rentacar.Repositorio.Repositorios
                     "ON m.id = v.idMarca " +
                 "LEFT JOIN accesorios_alquileres acal " +
                     "ON acal.idAlquiler = al.id " +
-                "INNER JOIN accesorios ac " +
+                "LEFT JOIN accesorios ac " +
                     "ON acal.idAccesorio = ac.id " +
                 "GROUP BY al.id " +
                 "ORDER BY @orden";

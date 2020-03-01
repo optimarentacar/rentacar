@@ -23,7 +23,6 @@ namespace Rentacar.Interfaz.Informes
             alquileres.ForEach(a =>
             {
                 FlowLayoutPanel.Controls.Add(new ControlListadoDetalladoAlquileres(a));
-                Console.WriteLine(a.Vehiculo.Matricula);
             });
         }
     }
