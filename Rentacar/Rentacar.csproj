@@ -138,6 +138,10 @@
     <Compile Include="Interfaz\Informes\FormListadoResumidoAlquileres.Designer.cs">
       <DependentUpon>FormListadoResumidoAlquileres.cs</DependentUpon>
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> fff920f87f21351836ee645267e4fac7b8b95504
     </Compile>
     <Compile Include="Interfaz\Informes\FormListadoResumidoVehiculos.cs">
       <SubType>Form</SubType>
@@ -264,7 +268,10 @@
       <DependentUpon>FormListadoClientes.cs</DependentUpon>
     </EmbeddedResource>
 
+<<<<<<< HEAD
     
+=======
+>>>>>>> fff920f87f21351836ee645267e4fac7b8b95504
     <EmbeddedResource Include="Interfaz\Informes\FormListadoDetalladoAlquileres.resx">
       <DependentUpon>FormListadoDetalladoAlquileres.cs</DependentUpon>
     </EmbeddedResource>
@@ -360,7 +367,10 @@
     <Content Include="Assets\Imagenes\GestionMarcas.JPG" />
     <Content Include="Assets\Imagenes\GestionVehiculos.PNG" />
     <Content Include="Assets\Imagenes\ListadoClientes.PNG" />
+<<<<<<< HEAD
 
+=======
+>>>>>>> fff920f87f21351836ee645267e4fac7b8b95504
 
     <Content Include="Assets\Imagenes\ListadoDetalladoAlquileres.PNG" />
 
