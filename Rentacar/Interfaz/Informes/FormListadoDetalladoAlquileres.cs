@@ -13,9 +13,11 @@ namespace Rentacar.Interfaz.Informes
 {
     public partial class FormListadoDetalladoAlquileres : Form
     {
+        private int cont;
         public FormListadoDetalladoAlquileres()
         {
             InitializeComponent();
+            cont = 0;
         }
 
         public async Task Listar(List<Alquiler> alquileres)
@@ -23,7 +25,14 @@ namespace Rentacar.Interfaz.Informes
             alquileres.ForEach(a =>
             {
                 FlowLayoutPanel.Controls.Add(new ControlListadoDetalladoAlquileres(a));
+                //cont++;
             });
+            //TotalAlquileres();
+        }
+
+        private void TotalAlquileres()
+        {
+            lbTotalAlquileres.Text = cont + " alquileres.";
         }
     }
 }
