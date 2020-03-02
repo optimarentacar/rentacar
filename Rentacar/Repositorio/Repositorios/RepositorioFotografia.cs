@@ -36,8 +36,18 @@ namespace Rentacar.Repositorio.Repositorios
         public void Borrar(string rutaRelativa)
         {
             if (File.Exists(Application.StartupPath + rutaRelativa))
-            {            
+            {
+     
                 File.Delete(Application.StartupPath + rutaRelativa);
+            }
+        }
+
+        public void BorrarAntiguaFoto (string rutaAbsoluta)
+        {
+            if (File.Exists(rutaAbsoluta))
+            {
+                Console.WriteLine("AAAAAAAAAAAAAAAAAAAAAAAAA"+ rutaAbsoluta);
+                File.Delete(rutaAbsoluta);
             }
         }
     }

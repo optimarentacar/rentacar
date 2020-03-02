@@ -14,6 +14,9 @@ namespace Rentacar.Repositorio.Interfaces
         string Guardar(Image fotografia);
 
         void Borrar(string pathFoto);
-    
+
+        void BorrarAntiguaFoto(string rutaAbsoluta);
+
+
     }
 }

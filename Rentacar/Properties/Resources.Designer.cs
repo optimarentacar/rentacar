@@ -300,10 +300,7 @@ namespace Rentacar.Properties
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-<<<<<<< HEAD
 
-=======
->>>>>>> a702dd57c8c32f72fe7b416e834d70ac889c41d8
         internal static System.Drawing.Bitmap ListadoDetalladoAlquileres
         {
             get
@@ -312,21 +309,16 @@ namespace Rentacar.Properties
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
-<<<<<<< HEAD
+
         internal static System.Drawing.Bitmap ListadoResumidoAlquileres
         {
             get
             {
                 object obj = ResourceManager.GetObject("ListadoResumidoAlquileres", resourceCulture);
-
-=======
-        internal static System.Drawing.Bitmap ListadoResumidoAlquileres {
-            get {
-                object obj = ResourceManager.GetObject("ListadoResumidoAlquileres", resourceCulture);
->>>>>>> a702dd57c8c32f72fe7b416e834d70ac889c41d8
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+
 
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.

@@ -105,7 +105,7 @@ namespace Rentacar.Interfaz.Clientes
                     await Listar();
                     activar();
                     limpiar();
-                } 
+                }
             }
             if (operacion == Operacion.CREAR)
             {
@@ -117,7 +117,7 @@ namespace Rentacar.Interfaz.Clientes
                 }
             }
             if (operacion == Operacion.ELIMINAR)
-            {               
+            {
                 if (await this.Eliminar() == true)
                 {
                     await Listar();
@@ -126,7 +126,7 @@ namespace Rentacar.Interfaz.Clientes
                 }
             }
         }
-    
+
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             limpiar();
@@ -233,7 +233,7 @@ namespace Rentacar.Interfaz.Clientes
             if (!results.IsValid)
             {
                 string mensaje = results.Errors[0].ErrorMessage;
-                Console.WriteLine(mensaje);
+                MessageBox.Show(mensaje);
             }
             else
             {
@@ -247,7 +247,7 @@ namespace Rentacar.Interfaz.Clientes
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine(ex.Message);
+                    MessageBox.Show("ocurrió un error.");
                 }
             }
             return creado;
@@ -269,7 +269,7 @@ namespace Rentacar.Interfaz.Clientes
             if (!results.IsValid)
             {
                 string mensaje = results.Errors[0].ErrorMessage;
-                Console.WriteLine(mensaje);
+                MessageBox.Show(mensaje);
             }
             else
             {
@@ -288,19 +288,19 @@ namespace Rentacar.Interfaz.Clientes
 
         private async Task<bool> Eliminar()
         {
-            
+
             bool borrado = false;
             String dni = textDni.Text;
             try
             {
-                if(! (await _repositorioCliente.TieneAlquileresAsignados(dni)))
+                if (!(await _repositorioCliente.TieneAlquileresAsignados(dni)))
                 {
                     borrado = await _repositorioCliente.Borrar(dni);
                 }
                 else
                 {
                     MessageBox.Show("Este cliente no se puede borrar " +
-                        "porque tiene alquileres asignador");
+                        "porque tiene alquileres asignados");
                 }
             }
             catch (Exception ex)

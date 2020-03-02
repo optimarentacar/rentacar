@@ -42,6 +42,7 @@ namespace Rentacar.Interfaz.Vehiculos
             await cargarComboBox();
             await Listar();
             btnCaracteristicas.Enabled = false;
+            this.FotoVehiculo.Click -= new System.EventHandler(this.FotoVehiculo_Click);
         }
 
         private async Task Listar()
@@ -121,7 +122,6 @@ namespace Rentacar.Interfaz.Vehiculos
             btnAñadir.Enabled = true;
             btnEliminar.Enabled = true;
             btnModificar.Enabled = true;
-
             textMatricula.Enabled = false;
             comboBoxMarca.Enabled = false;
             textModelo.Enabled = false;
@@ -129,12 +129,13 @@ namespace Rentacar.Interfaz.Vehiculos
             textCapacidad.Enabled = false;
             textCosto.Enabled = false;
             Tabla.Enabled = true;
+            this.FotoVehiculo.Click -= new System.EventHandler(this.FotoVehiculo_Click);
+
         }
 
         private void desactivar()
         {
             Tabla.Enabled = false;
-
 
             comboBoxMarca.Enabled = true;
             textModelo.Enabled = true;
@@ -142,6 +143,7 @@ namespace Rentacar.Interfaz.Vehiculos
             textCapacidad.Enabled = true;
             textCosto.Enabled = true;
 
+            this.FotoVehiculo.Click += new System.EventHandler(this.FotoVehiculo_Click);
 
             btnAtras.Enabled = false;
             btnPrimero.Enabled = false;
@@ -280,7 +282,7 @@ namespace Rentacar.Interfaz.Vehiculos
             bool creado = false;
             Vehiculo v = new Vehiculo()
             {
-                Matricula = textMatricula.Text,
+                Matricula = textMatricula.Text.ToUpper(),
                 Marca = new Marca()
                 {
                     Id = 0
@@ -321,7 +323,7 @@ namespace Rentacar.Interfaz.Vehiculos
             }
             catch (Exception ex)
             {
-                MessageBox.Show("El costo no es correcto");
+                MessageBox.Show("La marca no es correcta.");
             }
             
 
@@ -349,7 +351,7 @@ namespace Rentacar.Interfaz.Vehiculos
 
                     if (FotoCambiada)
                     {
-                        rutaRelativa = _repositorioFotografia.Guardar(pictureBox1.Image);
+                        rutaRelativa = _repositorioFotografia.Guardar(FotoVehiculo.Image);
                         v.PathFoto = rutaRelativa;
                         creado = await _repositorioVehiculo.Crear(v);
                     }
@@ -383,22 +385,51 @@ namespace Rentacar.Interfaz.Vehiculos
         {
             bool modificado = false;
 
-
             Vehiculo v = new Vehiculo()
             {
-                Matricula = textMatricula.Text,
+                Matricula = textMatricula.Text.ToUpper(),
                 Marca = new Marca()
                 {
-                    Id = (int)comboBoxMarca.SelectedValue
+                    Id = 0
                 },
                 Modelo = textModelo.Text,
-                Capacidad = Int32.Parse(textCapacidad.Text),
+                Capacidad = -1,
                 Anio = textAño.Text,
-                CostoDia = float.Parse(textCosto.Text),
-                Caracteristicas = vehiculo.Caracteristicas
-
-
+                CostoDia = -1,
+                Caracteristicas = vehiculo.Caracteristicas,
+                
             };
+            try
+            {
+
+                int capacidad = Int16.Parse(textCapacidad.Text);
+                v.Capacidad = capacidad;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("La capacidad no es correcta.");
+            }
+            try
+            {
+                float costoDia = float.Parse(textCosto.Text);
+                v.CostoDia = costoDia;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("El costo no es correcto.");
+            }
+            try
+            {
+                Marca marca = new Marca()
+                {
+                    Id = (int)comboBoxMarca.SelectedValue
+                };
+                v.Marca = marca;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("La marca no es correcta.");
+            }
 
             ValidacionVehiculo validator = new ValidacionVehiculo();
             ValidationResult results = validator.Validate(v);
@@ -420,20 +451,26 @@ namespace Rentacar.Interfaz.Vehiculos
 
 
                     if (FotoCambiada)
-                        rutaRelativa = _repositorioFotografia.Guardar(pictureBox1.Image);
+                        rutaRelativa = _repositorioFotografia.Guardar(FotoVehiculo.Image);
                     else
                         rutaRelativa = vehiculo.PathFoto;
 
                     v.PathFoto = rutaRelativa;
                     modificado = await _repositorioVehiculo.Modificar(v);
+
+                   
                 }
 
-                catch (Exception)
+                catch (Exception ex)
                 {
-                    //si falla el insert se borra la imagen
+                    MessageBox.Show("Ocurrió un error." + ex);
+                    //si falla la modificacion se borra la nueva imagen 
+                    if(FotoCambiada)
                     _repositorioFotografia.Borrar(rutaRelativa);
                     Console.WriteLine("Ocurrió un error");
                 }
+                
+                
             }
             return modificado;
 

@@ -55,7 +55,8 @@ namespace Rentacar.Validacion
             {
                 string parteDecimal = sCosto.Substring(sCosto.IndexOf("."));
                 int cantidadDigitos = parteDecimal.Length;
-
+                Console.WriteLine(parteDecimal);
+                Console.WriteLine(cantidadDigitos);
                 if (cantidadDigitos > 3)
                 {
                     esValido = false;
@@ -65,7 +66,8 @@ namespace Rentacar.Validacion
             {
                 string parteDecimal = sCosto.Substring(sCosto.IndexOf(","));
                 int cantidadDigitos = parteDecimal.Length;
-
+                Console.WriteLine(parteDecimal);
+                Console.WriteLine(cantidadDigitos);
                 if (cantidadDigitos > 3)
                 {
                     esValido = false;
