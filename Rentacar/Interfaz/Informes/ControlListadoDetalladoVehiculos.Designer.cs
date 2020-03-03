@@ -28,18 +28,99 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.lbMatricula = new System.Windows.Forms.Label();
+            this.lbModelo = new System.Windows.Forms.Label();
+            this.lbAyo = new System.Windows.Forms.Label();
+            this.lbPlazas = new System.Windows.Forms.Label();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(19, 15);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(107, 61);
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
+            // lbMatricula
+            // 
+            this.lbMatricula.AutoSize = true;
+            this.lbMatricula.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbMatricula.ForeColor = System.Drawing.Color.Blue;
+            this.lbMatricula.Location = new System.Drawing.Point(153, 15);
+            this.lbMatricula.Name = "lbMatricula";
+            this.lbMatricula.Size = new System.Drawing.Size(59, 13);
+            this.lbMatricula.TabIndex = 1;
+            this.lbMatricula.Text = "Matricula";
+            // 
+            // lbModelo
+            // 
+            this.lbModelo.AutoSize = true;
+            this.lbModelo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbModelo.ForeColor = System.Drawing.Color.Blue;
+            this.lbModelo.Location = new System.Drawing.Point(261, 15);
+            this.lbModelo.Name = "lbModelo";
+            this.lbModelo.Size = new System.Drawing.Size(42, 13);
+            this.lbModelo.TabIndex = 2;
+            this.lbModelo.Text = "Modelo";
+            // 
+            // lbAyo
+            // 
+            this.lbAyo.AutoSize = true;
+            this.lbAyo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbAyo.ForeColor = System.Drawing.Color.Blue;
+            this.lbAyo.Location = new System.Drawing.Point(354, 15);
+            this.lbAyo.Name = "lbAyo";
+            this.lbAyo.Size = new System.Drawing.Size(26, 13);
+            this.lbAyo.TabIndex = 3;
+            this.lbAyo.Text = "Año";
+            // 
+            // lbPlazas
+            // 
+            this.lbPlazas.AutoSize = true;
+            this.lbPlazas.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbPlazas.ForeColor = System.Drawing.Color.Blue;
+            this.lbPlazas.Location = new System.Drawing.Point(440, 15);
+            this.lbPlazas.Name = "lbPlazas";
+            this.lbPlazas.Size = new System.Drawing.Size(38, 13);
+            this.lbPlazas.TabIndex = 4;
+            this.lbPlazas.Text = "Plazas";
+            // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(156, 46);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(580, 100);
+            this.flowLayoutPanel1.TabIndex = 5;
             // 
             // ControlListadoDetalladoVehiculos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.flowLayoutPanel1);
+            this.Controls.Add(this.lbPlazas);
+            this.Controls.Add(this.lbAyo);
+            this.Controls.Add(this.lbModelo);
+            this.Controls.Add(this.lbMatricula);
+            this.Controls.Add(this.pictureBox1);
             this.Name = "ControlListadoDetalladoVehiculos";
-            this.Size = new System.Drawing.Size(805, 160);
+            this.Size = new System.Drawing.Size(739, 160);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
+
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label lbMatricula;
+        private System.Windows.Forms.Label lbModelo;
+        private System.Windows.Forms.Label lbAyo;
+        private System.Windows.Forms.Label lbPlazas;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
     }
 }

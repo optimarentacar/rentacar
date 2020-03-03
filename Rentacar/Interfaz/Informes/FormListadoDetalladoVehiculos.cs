@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Rentacar.Modelos;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,5 +17,19 @@ namespace Rentacar.Interfaz.Informes
         {
             InitializeComponent();
         }
+
+        public async Task Listar(List<Alquiler> alquileres)
+        {
+            alquileres.ForEach(a =>
+            {
+                FlowLayoutPanel.Controls.Add(new ControlListadoDetalladoVehiculos(a));
+            });
+        }
+        /*vehiculos.ForEach(async v =>
+                {
+                    List<Alquiler> alquileres = await new RepositorioAlquiler()
+                            .ListarConClientesPorVehiculo(v.Matricula);
+        v.Alquileres = alquileres;
+                });*/
     }
 }

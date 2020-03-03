@@ -208,7 +208,6 @@
             this.listadoDeAlquileresPorVehículosToolStripMenuItem.Name = "listadoDeAlquileresPorVehículosToolStripMenuItem";
             this.listadoDeAlquileresPorVehículosToolStripMenuItem.Size = new System.Drawing.Size(255, 22);
             this.listadoDeAlquileresPorVehículosToolStripMenuItem.Text = "Listado de alquileres por vehículos";
-            this.listadoDeAlquileresPorVehículosToolStripMenuItem.Click += new System.EventHandler(this.listadoDeAlquileresPorVehículosToolStripMenuItem_Click);
             // 
             // ayudaToolStripMenuItem
             // 

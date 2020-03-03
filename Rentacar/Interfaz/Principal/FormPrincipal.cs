@@ -19,6 +19,7 @@ namespace Rentacar.Interfaz.Principal
 {
     public partial class FormPrincipal : Form
     {
+        private List<Alquiler> Alquileres;
 
         public FormPrincipal()
         {
@@ -102,8 +103,9 @@ namespace Rentacar.Interfaz.Principal
             faf.Show();
         }
 
-        private async void listadoDeAlquileresPorVehículosToolStripMenuItem_Click(object sender, EventArgs e)
+        private async System.Threading.Tasks.Task listadoDeAlquileresPorVehículosToolStripMenuItem_ClickAsync(object sender, EventArgs e)
         {
+            /*
             ///CODIGO DE ACCESO A BASE DE DATOS
             ///
             try
@@ -112,13 +114,13 @@ namespace Rentacar.Interfaz.Principal
                 ///PARA PROBAR NO HAGO LA INYECCION DE DEPENDENCIA 
                 List<Vehiculo> vehiculos = await new RepositorioVehiculo().Listar();
 
-                ///POR CADA VEHICULO SACO SUS ALQUILERES CON DATOS DE CADA CLIENTE
+        ///POR CADA VEHICULO SACO SUS ALQUILERES CON DATOS DE CADA CLIENTE
 
-                vehiculos.ForEach(async v =>
+        vehiculos.ForEach(async v =>
                 {
                     List<Alquiler> alquileres = await new RepositorioAlquiler()
                             .ListarConClientesPorVehiculo(v.Matricula);
-                    v.Alquileres = alquileres;
+        v.Alquileres = alquileres;
                 });
 
                 
@@ -130,6 +132,7 @@ namespace Rentacar.Interfaz.Principal
             {
                 MessageBox.Show("Ocurrió un error");
             }
+             */
         }
 
         private void listadoDeClientesToolStripMenuItem_Click(object sender, EventArgs e)
