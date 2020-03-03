@@ -143,5 +143,10 @@ namespace Rentacar.Interfaz.Principal
             FormListadoResumidoVehiculos Lrv = Program.container.GetInstance<FormListadoResumidoVehiculos>();
             Lrv.Show();
         }
+
+        private void listadoDetalladoDeVehículosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

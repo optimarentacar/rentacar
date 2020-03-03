@@ -194,6 +194,7 @@
             this.listadoDetalladoDeVehículosToolStripMenuItem.Name = "listadoDetalladoDeVehículosToolStripMenuItem";
             this.listadoDetalladoDeVehículosToolStripMenuItem.Size = new System.Drawing.Size(255, 22);
             this.listadoDetalladoDeVehículosToolStripMenuItem.Text = "Listado detallado de vehículos";
+            this.listadoDetalladoDeVehículosToolStripMenuItem.Click += new System.EventHandler(this.listadoDetalladoDeVehículosToolStripMenuItem_Click);
             // 
             // listadoDeAlquileresPorFechaToolStripMenuItem
             // 
