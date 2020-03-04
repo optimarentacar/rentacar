@@ -107,6 +107,12 @@
     <Compile Include="Interfaz\Clientes\FormGestionCliente.Designer.cs">
       <DependentUpon>FormGestionCliente.cs</DependentUpon>
     </Compile>
+    <Compile Include="Interfaz\Informes\ControlListadoAlquileres.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Interfaz\Informes\ControlListadoAlquileres.Designer.cs">
+      <DependentUpon>ControlListadoAlquileres.cs</DependentUpon>
+    </Compile>
     <Compile Include="Interfaz\Informes\ControlListadoDetalladoAlquileres.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -263,6 +269,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaz\Clientes\FormGestionCliente.resx">
       <DependentUpon>FormGestionCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaz\Informes\ControlListadoAlquileres.resx">
+      <DependentUpon>ControlListadoAlquileres.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaz\Informes\ControlListadoDetalladoAlquileres.resx">
       <DependentUpon>ControlListadoDetalladoAlquileres.cs</DependentUpon>

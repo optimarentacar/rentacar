@@ -1,4 +1,5 @@
 ﻿using Rentacar.Modelos;
+using Rentacar.Repositorio.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,23 +14,47 @@ namespace Rentacar.Interfaz.Informes
 {
     public partial class FormListadoDetalladoVehiculos : Form
     {
-        public FormListadoDetalladoVehiculos()
+        private IRepositorioVehiculo _repositorioVehiculo;
+        private IRepositorioAlquiler _repositorioAlquiler;
+
+        public FormListadoDetalladoVehiculos(IRepositorioVehiculo repositorioVehiculo, IRepositorioAlquiler repositorioAlquiler)
         {
             InitializeComponent();
+            _repositorioVehiculo = repositorioVehiculo;
+            _repositorioAlquiler = repositorioAlquiler;
         }
 
-        public async Task Listar(List<Alquiler> alquileres)
+        private async Task Listar()
         {
-            alquileres.ForEach(a =>
+            List<Vehiculo> vehiculos = null;
+            try
             {
-                FlowLayoutPanel.Controls.Add(new ControlListadoDetalladoVehiculos(a));
+               vehiculos = await _repositorioVehiculo.Listar();
+
+
+                vehiculos.ForEach(async v =>
+                {
+                    List<Alquiler> alquileres = await _repositorioAlquiler
+                            .ListarConClientesPorVehiculo(v.Matricula);
+                    v.Alquileres = alquileres;
+                });
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ocurrió un error");
+            }
+            
+            vehiculos.ForEach(v =>
+            {
+                FlowLayoutPanel.Controls.Add(new ControlListadoDetalladoVehiculos(v));
+                Console.WriteLine(v.Alquileres.Count);
             });
         }
-        /*vehiculos.ForEach(async v =>
-                {
-                    List<Alquiler> alquileres = await new RepositorioAlquiler()
-                            .ListarConClientesPorVehiculo(v.Matricula);
-        v.Alquileres = alquileres;
-                });*/
+
+        private async void FormListadoDetalladoVehiculos_Load(object sender, EventArgs e)
+        {
+            await Listar();
+        }
     }
 }

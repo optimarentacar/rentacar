@@ -442,7 +442,7 @@ namespace Rentacar.Repositorio.Repositorios
               "ON al.id = aa.idAlquiler " +
               "LEFT JOIN accesorios acc " +
               "ON aa.idAccesorio = acc.id " +
-              "GROUP by al.matricula " +
+              "GROUP by al.id " +
               "ORDER BY al.fechaInicio";
 
             var conexion = ContextoBD.GetInstancia().GetConexion();

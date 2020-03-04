@@ -103,37 +103,7 @@ namespace Rentacar.Interfaz.Principal
             faf.Show();
         }
 
-        private async System.Threading.Tasks.Task listadoDeAlquileresPorVehículosToolStripMenuItem_ClickAsync(object sender, EventArgs e)
-        {
-            /*
-            ///CODIGO DE ACCESO A BASE DE DATOS
-            ///
-            try
-            {
-                ///PRIMERO SE SACA LA LISTA DE VEHICULOS
-                ///PARA PROBAR NO HAGO LA INYECCION DE DEPENDENCIA 
-                List<Vehiculo> vehiculos = await new RepositorioVehiculo().Listar();
-
-        ///POR CADA VEHICULO SACO SUS ALQUILERES CON DATOS DE CADA CLIENTE
-
-        vehiculos.ForEach(async v =>
-                {
-                    List<Alquiler> alquileres = await new RepositorioAlquiler()
-                            .ListarConClientesPorVehiculo(v.Matricula);
-        v.Alquileres = alquileres;
-                });
-
-                
-                ///RELLENAR LA TABLA , CADA VEHICULO CONTIENE UNA LISTA DE ALQUILERES,
-                ///Y CADA ALQUILER CONTIENE UN OBJETO CLIENTE
-                ///
-
-            }catch(Exception ex)
-            {
-                MessageBox.Show("Ocurrió un error");
-            }
-             */
-        }
+       
 
         private void listadoDeClientesToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -150,6 +120,13 @@ namespace Rentacar.Interfaz.Principal
         private void listadoDetalladoDeVehículosToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void listadoDeAlquileresPorVehículosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormListadoDetalladoVehiculos lc = Program.container.GetInstance<FormListadoDetalladoVehiculos>();
+
+            lc.Show();
         }
     }
 }

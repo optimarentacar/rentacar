@@ -72,7 +72,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Blue;
-            this.label2.Location = new System.Drawing.Point(21, 57);
+            this.label2.Location = new System.Drawing.Point(19, 41);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(120, 13);
             this.label2.TabIndex = 1;
@@ -83,7 +83,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Blue;
-            this.label3.Location = new System.Drawing.Point(21, 101);
+            this.label3.Location = new System.Drawing.Point(21, 71);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(50, 13);
             this.label3.TabIndex = 2;
@@ -101,7 +101,7 @@
             // lbPlazas
             // 
             this.lbPlazas.AutoSize = true;
-            this.lbPlazas.Location = new System.Drawing.Point(368, 57);
+            this.lbPlazas.Location = new System.Drawing.Point(341, 41);
             this.lbPlazas.Name = "lbPlazas";
             this.lbPlazas.Size = new System.Drawing.Size(65, 13);
             this.lbPlazas.TabIndex = 8;
@@ -110,7 +110,7 @@
             // lbAyo
             // 
             this.lbAyo.AutoSize = true;
-            this.lbAyo.Location = new System.Drawing.Point(450, 57);
+            this.lbAyo.Location = new System.Drawing.Point(448, 41);
             this.lbAyo.Name = "lbAyo";
             this.lbAyo.Size = new System.Drawing.Size(63, 13);
             this.lbAyo.TabIndex = 9;
@@ -121,7 +121,7 @@
             this.lbMatricula.AutoSize = true;
             this.lbMatricula.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbMatricula.ForeColor = System.Drawing.Color.Black;
-            this.lbMatricula.Location = new System.Drawing.Point(158, 57);
+            this.lbMatricula.Location = new System.Drawing.Point(158, 41);
             this.lbMatricula.Name = "lbMatricula";
             this.lbMatricula.Size = new System.Drawing.Size(59, 13);
             this.lbMatricula.TabIndex = 10;
@@ -130,7 +130,7 @@
             // lbModelo
             // 
             this.lbModelo.AutoSize = true;
-            this.lbModelo.Location = new System.Drawing.Point(255, 57);
+            this.lbModelo.Location = new System.Drawing.Point(255, 41);
             this.lbModelo.Name = "lbModelo";
             this.lbModelo.Size = new System.Drawing.Size(42, 13);
             this.lbModelo.TabIndex = 11;
@@ -141,7 +141,7 @@
             this.lbDni.AutoSize = true;
             this.lbDni.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbDni.ForeColor = System.Drawing.Color.Black;
-            this.lbDni.Location = new System.Drawing.Point(82, 101);
+            this.lbDni.Location = new System.Drawing.Point(82, 71);
             this.lbDni.Name = "lbDni";
             this.lbDni.Size = new System.Drawing.Size(29, 13);
             this.lbDni.TabIndex = 12;
@@ -150,7 +150,7 @@
             // lbNombre
             // 
             this.lbNombre.AutoSize = true;
-            this.lbNombre.Location = new System.Drawing.Point(216, 101);
+            this.lbNombre.Location = new System.Drawing.Point(191, 71);
             this.lbNombre.Name = "lbNombre";
             this.lbNombre.Size = new System.Drawing.Size(90, 13);
             this.lbNombre.TabIndex = 13;
@@ -159,7 +159,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(82, 125);
+            this.label5.Location = new System.Drawing.Point(82, 101);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(22, 13);
             this.label5.TabIndex = 14;
@@ -168,7 +168,7 @@
             // lbDireccion
             // 
             this.lbDireccion.AutoSize = true;
-            this.lbDireccion.Location = new System.Drawing.Point(110, 125);
+            this.lbDireccion.Location = new System.Drawing.Point(108, 101);
             this.lbDireccion.Name = "lbDireccion";
             this.lbDireccion.Size = new System.Drawing.Size(52, 13);
             this.lbDireccion.TabIndex = 15;
@@ -177,7 +177,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(350, 125);
+            this.label7.Location = new System.Drawing.Point(341, 101);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(25, 13);
             this.label7.TabIndex = 16;
@@ -186,7 +186,7 @@
             // lbTelefono
             // 
             this.lbTelefono.AutoSize = true;
-            this.lbTelefono.Location = new System.Drawing.Point(381, 125);
+            this.lbTelefono.Location = new System.Drawing.Point(374, 101);
             this.lbTelefono.Name = "lbTelefono";
             this.lbTelefono.Size = new System.Drawing.Size(49, 13);
             this.lbTelefono.TabIndex = 17;
@@ -206,7 +206,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.Blue;
-            this.label8.Location = new System.Drawing.Point(21, 154);
+            this.label8.Location = new System.Drawing.Point(21, 136);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(99, 13);
             this.label8.TabIndex = 19;
@@ -215,7 +215,7 @@
             // lbCantidadDias
             // 
             this.lbCantidadDias.AutoSize = true;
-            this.lbCantidadDias.Location = new System.Drawing.Point(127, 154);
+            this.lbCantidadDias.Location = new System.Drawing.Point(126, 136);
             this.lbCantidadDias.Name = "lbCantidadDias";
             this.lbCantidadDias.Size = new System.Drawing.Size(46, 13);
             this.lbCantidadDias.TabIndex = 20;
@@ -224,7 +224,7 @@
             // lbTotalAccesorios
             // 
             this.lbTotalAccesorios.AutoSize = true;
-            this.lbTotalAccesorios.Location = new System.Drawing.Point(341, 154);
+            this.lbTotalAccesorios.Location = new System.Drawing.Point(341, 136);
             this.lbTotalAccesorios.Name = "lbTotalAccesorios";
             this.lbTotalAccesorios.Size = new System.Drawing.Size(46, 13);
             this.lbTotalAccesorios.TabIndex = 22;
@@ -235,7 +235,7 @@
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.Blue;
-            this.label10.Location = new System.Drawing.Point(216, 154);
+            this.label10.Location = new System.Drawing.Point(213, 136);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(119, 13);
             this.label10.TabIndex = 21;
@@ -246,7 +246,7 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.Blue;
-            this.label9.Location = new System.Drawing.Point(527, 154);
+            this.label9.Location = new System.Drawing.Point(518, 136);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(51, 13);
             this.label9.TabIndex = 23;
@@ -257,7 +257,7 @@
             this.lbTotal.AutoSize = true;
             this.lbTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTotal.ForeColor = System.Drawing.Color.Red;
-            this.lbTotal.Location = new System.Drawing.Point(595, 154);
+            this.lbTotal.Location = new System.Drawing.Point(591, 136);
             this.lbTotal.Name = "lbTotal";
             this.lbTotal.Size = new System.Drawing.Size(60, 13);
             this.lbTotal.TabIndex = 24;
@@ -332,7 +332,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "ControlListadoDetalladoAlquileres";
-            this.Size = new System.Drawing.Size(723, 178);
+            this.Size = new System.Drawing.Size(723, 160);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

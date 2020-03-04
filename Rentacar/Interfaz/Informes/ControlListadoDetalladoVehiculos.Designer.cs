@@ -42,6 +42,7 @@
             this.pictureBox1.Location = new System.Drawing.Point(19, 15);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(107, 61);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
@@ -91,10 +92,13 @@
             // 
             // flowLayoutPanel1
             // 
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(156, 46);
+            this.flowLayoutPanel1.AutoScroll = true;
+            this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(156, 31);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(580, 100);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(681, 112);
             this.flowLayoutPanel1.TabIndex = 5;
+            this.flowLayoutPanel1.WrapContents = false;
             // 
             // ControlListadoDetalladoVehiculos
             // 
@@ -107,7 +111,7 @@
             this.Controls.Add(this.lbMatricula);
             this.Controls.Add(this.pictureBox1);
             this.Name = "ControlListadoDetalladoVehiculos";
-            this.Size = new System.Drawing.Size(739, 160);
+            this.Size = new System.Drawing.Size(840, 146);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
