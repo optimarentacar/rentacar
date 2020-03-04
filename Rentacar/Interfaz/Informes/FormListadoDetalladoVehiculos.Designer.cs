@@ -28,27 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::Rentacar.Properties.Resources.ListadoVehiculos;
-            this.pictureBox1.Location = new System.Drawing.Point(13, 13);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(775, 113);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
             // flowLayoutPanel1
             // 
+            this.flowLayoutPanel1.AutoScroll = true;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(13, 145);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(775, 354);
@@ -68,7 +59,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.label2.Location = new System.Drawing.Point(162, 129);
+            this.label2.Location = new System.Drawing.Point(167, 129);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(37, 13);
             this.label2.TabIndex = 4;
@@ -78,7 +69,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.label3.Location = new System.Drawing.Point(272, 129);
+            this.label3.Location = new System.Drawing.Point(307, 129);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(42, 13);
             this.label3.TabIndex = 5;
@@ -88,11 +79,21 @@
             // 
             this.label4.AutoSize = true;
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.label4.Location = new System.Drawing.Point(567, 129);
+            this.label4.Location = new System.Drawing.Point(480, 129);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(26, 13);
             this.label4.TabIndex = 6;
             this.label4.Text = "Año";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Rentacar.Properties.Resources.ListadoVehiculos;
+            this.pictureBox1.Location = new System.Drawing.Point(13, 13);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(775, 113);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // FormListadoDetalladoVehiculos
             // 
@@ -107,6 +108,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Name = "FormListadoDetalladoVehiculos";
             this.Text = "FormListadoDetalladoVehiculos";
+            this.Load += new System.EventHandler(this.FormListadoDetalladoVehiculos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

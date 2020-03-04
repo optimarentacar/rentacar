@@ -194,10 +194,8 @@ C:\Users\adria\Desktop\Rentacar\rentacar\Rentacar\obj\Debug\Rentacar.Interfaz.Ve
 F:\Rentacar\rentacar\Rentacar\obj\Debug\Rentacar.Interfaz.Operaciones.Alquiler.FormAlquilerFecha.resources
 F:\Rentacar\rentacar\Rentacar\obj\Debug\Rentacar.Interfaz.Operaciones.Alquiler.FormVehiculosAlquiler.resources
 F:\Rentacar\Rentacar\Rentacar\obj\Debug\Rentacar.Interfaz.Informes.FormAlquilerFecha.resources
-C:\Users\adria\Desktop\Rentacar\rentacar\Rentacar\obj\Debug\Rentacar.Interfaz.Operaciones.Alquiler.FormAlquilerFecha.resources
 C:\Users\adria\Desktop\Rentacar\rentacar\Rentacar\obj\Debug\Rentacar.Interfaz.Informes.FormAlquilerFecha.resources
 C:\Users\adria\Desktop\Rentacar\rentacar\Rentacar\obj\Debug\Rentacar.Interfaz.Informes.FormListadoClientes.resources
-C:\Users\adria\Desktop\Rentacar\rentacar\Rentacar\obj\Debug\Rentacar.Interfaz.Informes.FormListadoVehiculos.resources
 C:\Users\adria\Desktop\Rentacar\rentacar\Rentacar\obj\Debug\Rentacar.Interfaz.Informes.FormListadoResumidoVehiculos.resources
 C:\Users\adria\Desktop\Rentacar\rentacar\Rentacar\obj\Debug\Rentacar.Interfaz.Informes.ControlListadoDetalladoVehiculos.resources
 C:\Users\adria\Desktop\Rentacar\rentacar\Rentacar\obj\Debug\Rentacar.Interfaz.Informes.FormListadoDetalladoAlquileres.resources
@@ -223,3 +221,8 @@ C:\Users\optima\Desktop\rentacar\rentacar\Rentacar\obj\Debug\Rentacar.Interfaz.I
 C:\Users\optima\Desktop\rentacar\rentacar\Rentacar\obj\Debug\Rentacar.Interfaz.Informes.ControlListadoAlquilerPorVehiculos.resources
 C:\Users\optima\Desktop\rentacar\rentacar\Rentacar\obj\Debug\Rentacar.Interfaz.Informes.FormListadoAlquilerPorVehiculos.resources
 C:\Users\optima\Desktop\rentacar\rentacar\Rentacar\obj\Debug\Rentacar.Interfaz.Informes.FormListadoDetalladoVehiculos.resources
+C:\Users\adria\Desktop\Rentacar\rentacar\Rentacar\obj\Debug\Rentacar.Interfaz.Factura.FormFactura.resources
+C:\Users\adria\Desktop\Rentacar\rentacar\Rentacar\obj\Debug\Rentacar.Interfaz.Informes.ControlListadoAlquileres.resources
+C:\Users\adria\Desktop\Rentacar\rentacar\Rentacar\obj\Debug\Rentacar.Interfaz.Informes.ControlListadoAlquilerPorVehiculos.resources
+C:\Users\adria\Desktop\Rentacar\rentacar\Rentacar\obj\Debug\Rentacar.Interfaz.Informes.FormListadoAlquilerPorVehiculos.resources
+C:\Users\adria\Desktop\Rentacar\rentacar\Rentacar\obj\Debug\Rentacar.Interfaz.Informes.ControlListadoCaracteristicas.resources

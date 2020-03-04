@@ -107,11 +107,23 @@
     <Compile Include="Interfaz\Clientes\FormGestionCliente.Designer.cs">
       <DependentUpon>FormGestionCliente.cs</DependentUpon>
     </Compile>
+    <Compile Include="Interfaz\Factura\FormFactura.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaz\Factura\FormFactura.Designer.cs">
+      <DependentUpon>FormFactura.cs</DependentUpon>
+    </Compile>
     <Compile Include="Interfaz\Informes\ControlListadoAlquileres.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Interfaz\Informes\ControlListadoAlquileres.Designer.cs">
       <DependentUpon>ControlListadoAlquileres.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaz\Informes\ControlListadoCaracteristicas.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Interfaz\Informes\ControlListadoCaracteristicas.Designer.cs">
+      <DependentUpon>ControlListadoCaracteristicas.cs</DependentUpon>
     </Compile>
     <Compile Include="Interfaz\Informes\ControlListadoDetalladoAlquileres.cs">
       <SubType>UserControl</SubType>
@@ -282,8 +294,14 @@
     <EmbeddedResource Include="Interfaz\Clientes\FormGestionCliente.resx">
       <DependentUpon>FormGestionCliente.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Interfaz\Factura\FormFactura.resx">
+      <DependentUpon>FormFactura.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Interfaz\Informes\ControlListadoAlquileres.resx">
       <DependentUpon>ControlListadoAlquileres.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaz\Informes\ControlListadoCaracteristicas.resx">
+      <DependentUpon>ControlListadoCaracteristicas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaz\Informes\ControlListadoDetalladoAlquileres.resx">
       <DependentUpon>ControlListadoDetalladoAlquileres.cs</DependentUpon>

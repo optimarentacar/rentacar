@@ -119,13 +119,13 @@ namespace Rentacar.Interfaz.Principal
 
         private void listadoDetalladoDeVehículosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            FormListadoDetalladoVehiculos Lrv = Program.container.GetInstance<FormListadoDetalladoVehiculos>();
+            Lrv.Show();
         }
 
         private void listadoDeAlquileresPorVehículosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FormListadoAlquilerPorVehiculos lc = Program.container.GetInstance<FormListadoAlquilerPorVehiculos>();
-
             lc.Show();
         }
     }

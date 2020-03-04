@@ -1,5 +1,7 @@
 ﻿using Rentacar.Interfaz.Accesorios;
+using Rentacar.Interfaz.Factura;
 using Rentacar.Interfaz.Operaciones.Vehiculos;
+using Rentacar.Modelos;
 using Rentacar.Repositorio.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -18,10 +20,14 @@ namespace Rentacar.Interfaz.Operaciones.Alquiler
         private readonly IRepositorioAlquiler _repositorioAlquiler;
         private List<Modelos.Alquiler> Alquileres;
         private Modelos.Alquiler Alquiler;
+        private IRepositorioVehiculo _repositorioVehiculo;
+        private IRepositorioCliente _repositorioCliente;
 
-        public FormAlquilerVehiculos(IRepositorioAlquiler repositorioAlquiler)
+        public FormAlquilerVehiculos(IRepositorioAlquiler repositorioAlquiler, IRepositorioVehiculo repositorioVehiculo, IRepositorioCliente repositorioCliente)
         {
             _repositorioAlquiler = repositorioAlquiler;
+            _repositorioVehiculo = repositorioVehiculo;
+            _repositorioCliente = repositorioCliente;
             InitializeComponent();
         }
 
@@ -110,6 +116,28 @@ namespace Rentacar.Interfaz.Operaciones.Alquiler
             gm.ShowDialog();
 
 
+        }
+
+        private async void btnImprimir_Click(object sender, EventArgs e)
+        {
+            await cargarDatosAlquiler();
+            FormFactura gm = Program.container.GetInstance<FormFactura>();
+            gm.rellenarDatos(Alquiler);
+        }
+
+        private async Task cargarDatosAlquiler()
+        {
+            try
+            {
+                Cliente c = await _repositorioCliente.ObtenerPorDni(Alquiler.Cliente.Dni);
+                Vehiculo v = await _repositorioVehiculo.Obtener(Alquiler.Vehiculo.Matricula);
+                Alquiler.Vehiculo = v;
+                Alquiler.Cliente = c;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+            }
         }
     }
 }

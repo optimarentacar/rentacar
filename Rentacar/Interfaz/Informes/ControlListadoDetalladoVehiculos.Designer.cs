@@ -29,15 +29,15 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.lbMatricula = new System.Windows.Forms.Label();
-            this.lbModelo = new System.Windows.Forms.Label();
-            this.lbMarca = new System.Windows.Forms.Label();
             this.lbAyo = new System.Windows.Forms.Label();
+            this.lbMarca = new System.Windows.Forms.Label();
+            this.lbModelo = new System.Windows.Forms.Label();
+            this.lbMatricula = new System.Windows.Forms.Label();
             this.lbPlazas = new System.Windows.Forms.Label();
             this.lbCostoDia = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -54,33 +54,15 @@
             this.panel1.Size = new System.Drawing.Size(585, 21);
             this.panel1.TabIndex = 0;
             // 
-            // pictureBox1
+            // lbAyo
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(580, 4);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(157, 87);
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
-            // 
-            // lbMatricula
-            // 
-            this.lbMatricula.AutoSize = true;
-            this.lbMatricula.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbMatricula.Location = new System.Drawing.Point(16, 5);
-            this.lbMatricula.Name = "lbMatricula";
-            this.lbMatricula.Size = new System.Drawing.Size(69, 13);
-            this.lbMatricula.TabIndex = 0;
-            this.lbMatricula.Text = "lbMatricula";
-            // 
-            // lbModelo
-            // 
-            this.lbModelo.AutoSize = true;
-            this.lbModelo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbModelo.Location = new System.Drawing.Point(296, 5);
-            this.lbModelo.Name = "lbModelo";
-            this.lbModelo.Size = new System.Drawing.Size(50, 13);
-            this.lbModelo.TabIndex = 1;
-            this.lbModelo.Text = "lbModelo";
+            this.lbAyo.AutoSize = true;
+            this.lbAyo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbAyo.Location = new System.Drawing.Point(461, 5);
+            this.lbAyo.Name = "lbAyo";
+            this.lbAyo.Size = new System.Drawing.Size(33, 13);
+            this.lbAyo.TabIndex = 3;
+            this.lbAyo.Text = "lbAyo";
             // 
             // lbMarca
             // 
@@ -92,15 +74,25 @@
             this.lbMarca.TabIndex = 2;
             this.lbMarca.Text = "lbMarca";
             // 
-            // lbAyo
+            // lbModelo
             // 
-            this.lbAyo.AutoSize = true;
-            this.lbAyo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbAyo.Location = new System.Drawing.Point(461, 5);
-            this.lbAyo.Name = "lbAyo";
-            this.lbAyo.Size = new System.Drawing.Size(33, 13);
-            this.lbAyo.TabIndex = 3;
-            this.lbAyo.Text = "lbAyo";
+            this.lbModelo.AutoSize = true;
+            this.lbModelo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbModelo.Location = new System.Drawing.Point(296, 5);
+            this.lbModelo.Name = "lbModelo";
+            this.lbModelo.Size = new System.Drawing.Size(50, 13);
+            this.lbModelo.TabIndex = 1;
+            this.lbModelo.Text = "lbModelo";
+            // 
+            // lbMatricula
+            // 
+            this.lbMatricula.AutoSize = true;
+            this.lbMatricula.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbMatricula.Location = new System.Drawing.Point(16, 5);
+            this.lbMatricula.Name = "lbMatricula";
+            this.lbMatricula.Size = new System.Drawing.Size(69, 13);
+            this.lbMatricula.TabIndex = 0;
+            this.lbMatricula.Text = "lbMatricula";
             // 
             // lbPlazas
             // 
@@ -134,10 +126,19 @@
             // 
             // flowLayoutPanel1
             // 
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(357, 59);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(357, 62);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(217, 88);
             this.flowLayoutPanel1.TabIndex = 7;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(580, 4);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(157, 87);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
             // 
             // ControlListadoDetalladoVehiculos
             // 

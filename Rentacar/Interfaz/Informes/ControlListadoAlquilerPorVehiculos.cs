@@ -30,7 +30,6 @@ namespace Rentacar.Interfaz.Informes
             vehiculo.Alquileres.ForEach(a =>
             {
                 flowLayoutPanel1.Controls.Add(new ControlListadoAlquileres(a));
-                Console.WriteLine(a.FechaFin);
             });
         }
     }
