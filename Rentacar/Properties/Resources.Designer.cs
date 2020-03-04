@@ -8,11 +8,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Rentacar.Properties
-{
+namespace Rentacar.Properties {
     using System;
-
-
+    
+    
     /// <summary>
     ///   Clase de recurso fuertemente tipado, para buscar cadenas traducidas, etc.
     /// </summary>
@@ -23,370 +22,319 @@ namespace Rentacar.Properties
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class Resources
-    {
-
+    internal class Resources {
+        
         private static global::System.Resources.ResourceManager resourceMan;
-
+        
         private static global::System.Globalization.CultureInfo resourceCulture;
-
+        
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal Resources()
-        {
+        internal Resources() {
         }
-
+        
         /// <summary>
         ///   Devuelve la instancia de ResourceManager almacenada en caché utilizada por esta clase.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager
-        {
-            get
-            {
-                if (object.ReferenceEquals(resourceMan, null))
-                {
+        internal static global::System.Resources.ResourceManager ResourceManager {
+            get {
+                if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Rentacar.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
             }
         }
-
+        
         /// <summary>
         ///   Reemplaza la propiedad CurrentUICulture del subproceso actual para todas las
         ///   búsquedas de recursos mediante esta clase de recurso fuertemente tipado.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture
-        {
-            get
-            {
+        internal static global::System.Globalization.CultureInfo Culture {
+            get {
                 return resourceCulture;
             }
-            set
-            {
+            set {
                 resourceCulture = value;
             }
         }
-
+        
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap AlquilerAccesorios
-        {
-            get
-            {
+        internal static System.Drawing.Bitmap AlquilerAccesorios {
+            get {
                 object obj = ResourceManager.GetObject("AlquilerAccesorios", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
-
+        
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap AlquilerFecha
-        {
-            get
-            {
+        internal static System.Drawing.Bitmap AlquilerFecha {
+            get {
                 object obj = ResourceManager.GetObject("AlquilerFecha", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
-
+        
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap AlquilerVehículos
-        {
-            get
-            {
+        internal static System.Drawing.Bitmap AlquilerVehículos {
+            get {
                 object obj = ResourceManager.GetObject("AlquilerVehículos", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
-
+        
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap AlquilerVehiculosCalendario
-        {
-            get
-            {
+        internal static System.Drawing.Bitmap AlquilerVehiculosCalendario {
+            get {
                 object obj = ResourceManager.GetObject("AlquilerVehiculosCalendario", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
-
+        
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Añadir
-        {
-            get
-            {
+        internal static System.Drawing.Bitmap Añadir {
+            get {
                 object obj = ResourceManager.GetObject("Añadir", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
-
+        
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Atras
-        {
-            get
-            {
+        internal static System.Drawing.Bitmap Atras {
+            get {
                 object obj = ResourceManager.GetObject("Atras", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
-
+        
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap BusquedaClientes
-        {
-            get
-            {
+        internal static System.Drawing.Bitmap BusquedaClientes {
+            get {
                 object obj = ResourceManager.GetObject("BusquedaClientes", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
-
+        
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap BusquedaVehiculosFiltros
-        {
-            get
-            {
+        internal static System.Drawing.Bitmap BusquedaVehiculosFiltros {
+            get {
                 object obj = ResourceManager.GetObject("BusquedaVehiculosFiltros", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
-
+        
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap BusquedaVehiculosPorMatricula
-        {
-            get
-            {
+        internal static System.Drawing.Bitmap BusquedaVehiculosPorMatricula {
+            get {
                 object obj = ResourceManager.GetObject("BusquedaVehiculosPorMatricula", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
-
+        
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Cancelar
-        {
-            get
-            {
+        internal static System.Drawing.Bitmap Cancelar {
+            get {
                 object obj = ResourceManager.GetObject("Cancelar", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
-
+        
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap CaracteristicasVehiculo
-        {
-            get
-            {
+        internal static System.Drawing.Bitmap CaracteristicasVehiculo {
+            get {
                 object obj = ResourceManager.GetObject("CaracteristicasVehiculo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
-
+        
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap DetallesAlquiler
-        {
-            get
-            {
+        internal static System.Drawing.Bitmap DetallesAlquiler {
+            get {
                 object obj = ResourceManager.GetObject("DetallesAlquiler", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
-
+        
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Eliminar
-        {
-            get
-            {
+        internal static System.Drawing.Bitmap Eliminar {
+            get {
                 object obj = ResourceManager.GetObject("Eliminar", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
-
+        
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap FlechaDerecha
-        {
-            get
-            {
+        internal static System.Drawing.Bitmap FlechaDerecha {
+            get {
                 object obj = ResourceManager.GetObject("FlechaDerecha", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
-
+        
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap FlechaIzquierda
-        {
-            get
-            {
+        internal static System.Drawing.Bitmap FlechaIzquierda {
+            get {
                 object obj = ResourceManager.GetObject("FlechaIzquierda", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
-
+        
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap GestionAccesorios
-        {
-            get
-            {
+        internal static System.Drawing.Bitmap GestionAccesorios {
+            get {
                 object obj = ResourceManager.GetObject("GestionAccesorios", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
-
+        
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap GestionCaracteristicas
-        {
-            get
-            {
+        internal static System.Drawing.Bitmap GestionCaracteristicas {
+            get {
                 object obj = ResourceManager.GetObject("GestionCaracteristicas", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
-
+        
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Guardar
-        {
-            get
-            {
+        internal static System.Drawing.Bitmap Guardar {
+            get {
                 object obj = ResourceManager.GetObject("Guardar", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
-
+        
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap ListadoClientes
-        {
-            get
-            {
+        internal static System.Drawing.Bitmap ListadoClientes {
+            get {
                 object obj = ResourceManager.GetObject("ListadoClientes", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
-
+        
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-
-        internal static System.Drawing.Bitmap ListadoDetalladoAlquileres
-        {
-            get
-            {
+        internal static System.Drawing.Bitmap ListadoDetalladoAlquileres {
+            get {
                 object obj = ResourceManager.GetObject("ListadoDetalladoAlquileres", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
-
-        internal static System.Drawing.Bitmap ListadoResumidoAlquileres
-        {
-            get
-            {
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ListadoDetalladoVehiculos {
+            get {
+                object obj = ResourceManager.GetObject("ListadoDetalladoVehiculos", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ListadoResumidoAlquileres {
+            get {
                 object obj = ResourceManager.GetObject("ListadoResumidoAlquileres", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
-
-
+        
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap ListadoVehiculos
-        {
-            get
-            {
+        internal static System.Drawing.Bitmap ListadoVehiculos {
+            get {
                 object obj = ResourceManager.GetObject("ListadoVehiculos", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
-
+        
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Modificar
-        {
-            get
-            {
+        internal static System.Drawing.Bitmap Modificar {
+            get {
                 object obj = ResourceManager.GetObject("Modificar", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
-
+        
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Primero
-        {
-            get
-            {
+        internal static System.Drawing.Bitmap Primero {
+            get {
                 object obj = ResourceManager.GetObject("Primero", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
-
+        
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Siguiente
-        {
-            get
-            {
+        internal static System.Drawing.Bitmap Siguiente {
+            get {
                 object obj = ResourceManager.GetObject("Siguiente", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
-
+        
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Ultimo
-        {
-            get
-            {
+        internal static System.Drawing.Bitmap Ultimo {
+            get {
                 object obj = ResourceManager.GetObject("Ultimo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
-
+        
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Validar
-        {
-            get
-            {
+        internal static System.Drawing.Bitmap Validar {
+            get {
                 object obj = ResourceManager.GetObject("Validar", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }

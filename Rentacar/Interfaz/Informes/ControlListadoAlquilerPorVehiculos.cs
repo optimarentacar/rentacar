@@ -11,9 +11,9 @@ using Rentacar.Modelos;
 
 namespace Rentacar.Interfaz.Informes
 {
-    public partial class ControlListadoDetalladoVehiculos : UserControl
+    public partial class ControlListadoAlquilerPorVehiculos : UserControl
     {
-        public ControlListadoDetalladoVehiculos(Vehiculo vehiculo)
+        public ControlListadoAlquilerPorVehiculos(Vehiculo vehiculo)
         {
             InitializeComponent();
             rellenarDatos(vehiculo);
@@ -23,11 +23,15 @@ namespace Rentacar.Interfaz.Informes
         {
             pictureBox1.Image = Image.FromFile(vehiculo.PathAbsolutoFoto);
             lbMatricula.Text = vehiculo.Matricula;
-            lbMarca.Text = vehiculo.Marca.Nombre;
             lbModelo.Text = vehiculo.Modelo;
             lbAyo.Text = vehiculo.Anio;
-            lbPlazas.Text = vehiculo.Capacidad.ToString() + " €";
-            lbCostoDia.Text = vehiculo.CostoDia.ToString() + " €";
+            lbPlazas.Text = vehiculo.Capacidad + " plazas";
+
+            vehiculo.Alquileres.ForEach(a =>
+            {
+                flowLayoutPanel1.Controls.Add(new ControlListadoAlquileres(a));
+                Console.WriteLine(a.FechaFin);
+            });
         }
     }
 }

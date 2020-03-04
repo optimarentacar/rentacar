@@ -119,6 +119,12 @@
     <Compile Include="Interfaz\Informes\ControlListadoDetalladoAlquileres.Designer.cs">
       <DependentUpon>ControlListadoDetalladoAlquileres.cs</DependentUpon>
     </Compile>
+    <Compile Include="Interfaz\Informes\ControlListadoAlquilerPorVehiculos.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Interfaz\Informes\ControlListadoAlquilerPorVehiculos.Designer.cs">
+      <DependentUpon>ControlListadoAlquilerPorVehiculos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Interfaz\Informes\ControlListadoDetalladoVehiculos.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -142,6 +148,12 @@
     </Compile>
     <Compile Include="Interfaz\Informes\FormListadoDetalladoAlquileres.Designer.cs">
       <DependentUpon>FormListadoDetalladoAlquileres.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interfaz\Informes\FormListadoAlquilerPorVehiculos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interfaz\Informes\FormListadoAlquilerPorVehiculos.Designer.cs">
+      <DependentUpon>FormListadoAlquilerPorVehiculos.cs</DependentUpon>
     </Compile>
     <Compile Include="Interfaz\Informes\FormListadoDetalladoVehiculos.cs">
       <SubType>Form</SubType>
@@ -276,6 +288,9 @@
     <EmbeddedResource Include="Interfaz\Informes\ControlListadoDetalladoAlquileres.resx">
       <DependentUpon>ControlListadoDetalladoAlquileres.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Interfaz\Informes\ControlListadoAlquilerPorVehiculos.resx">
+      <DependentUpon>ControlListadoAlquilerPorVehiculos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Interfaz\Informes\ControlListadoDetalladoVehiculos.resx">
       <DependentUpon>ControlListadoDetalladoVehiculos.cs</DependentUpon>
     </EmbeddedResource>
@@ -287,6 +302,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaz\Informes\FormListadoDetalladoAlquileres.resx">
       <DependentUpon>FormListadoDetalladoAlquileres.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interfaz\Informes\FormListadoAlquilerPorVehiculos.resx">
+      <DependentUpon>FormListadoAlquilerPorVehiculos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Interfaz\Informes\FormListadoDetalladoVehiculos.resx">
       <DependentUpon>FormListadoDetalladoVehiculos.cs</DependentUpon>
@@ -386,6 +404,7 @@
     <None Include="Assets\Imagenes\ListadoResumidoAlquileres.jpg" />
     <Content Include="Assets\Imagenes\ListadoDetalladoAlquileres.PNG" />
     <None Include="Assets\Imagenes\ListadoResumidoAlquileres.jpg" />
+    <Content Include="Assets\Imagenes\ListadoDetalladoVehiculos.JPG" />
     <Content Include="Assets\Imagenes\ListadoVehiculos.PNG" />
     <Content Include="Assets\Imagenes\Portada.PNG" />
   </ItemGroup>

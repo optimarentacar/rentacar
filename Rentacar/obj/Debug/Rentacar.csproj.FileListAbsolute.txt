@@ -211,14 +211,15 @@ C:\Users\adria\Desktop\Rentacar\rentacar\Rentacar\obj\Debug\Rentacar.Interfaz.In
 C:\Users\adria\Desktop\Rentacar\rentacar\Rentacar\obj\Debug\Rentacar.Interfaz.Informes.FormListadoDetalladoVehiculos.resources
 C:\Users\optima\Desktop\rentacar\rentacar\Rentacar\obj\Debug\Rentacar.Interfaz.Accesorios.FormAlquilerAccesorios.resources
 C:\Users\optima\Desktop\rentacar\rentacar\Rentacar\obj\Debug\Rentacar.Interfaz.Informes.ControlListadoDetalladoAlquileres.resources
-C:\Users\optima\Desktop\rentacar\rentacar\Rentacar\obj\Debug\Rentacar.Interfaz.Informes.ControlListadoDetalladoVehiculos.resources
 C:\Users\optima\Desktop\rentacar\rentacar\Rentacar\obj\Debug\Rentacar.Interfaz.Informes.FormAlquilerFecha.resources
 C:\Users\optima\Desktop\rentacar\rentacar\Rentacar\obj\Debug\Rentacar.Interfaz.Informes.FormListadoClientes.resources
 C:\Users\optima\Desktop\rentacar\rentacar\Rentacar\obj\Debug\Rentacar.Interfaz.Informes.FormListadoDetalladoAlquileres.resources
-C:\Users\optima\Desktop\rentacar\rentacar\Rentacar\obj\Debug\Rentacar.Interfaz.Informes.FormListadoDetalladoVehiculos.resources
 C:\Users\optima\Desktop\rentacar\rentacar\Rentacar\obj\Debug\Rentacar.Interfaz.Informes.FormListadoResumidoAlquileres.resources
 C:\Users\optima\Desktop\rentacar\rentacar\Rentacar\obj\Debug\Rentacar.Interfaz.Informes.FormListadoResumidoVehiculos.resources
 C:\Users\optima\Desktop\rentacar\rentacar\Rentacar\obj\Debug\Rentacar.Interfaz.Operaciones.Alquiler.FormAlquilerVehiculos.resources
 C:\Users\optima\Desktop\rentacar\rentacar\Rentacar\obj\Debug\Rentacar.Interfaz.Operaciones.Alquiler.FormVehiculosAlquiler.resources
 C:\Users\optima\Desktop\rentacar\rentacar\Rentacar\obj\Debug\Rentacar.Interfaz.Operaciones.Vehiculos.FormDetallesAlquiler.resources
 C:\Users\optima\Desktop\rentacar\rentacar\Rentacar\obj\Debug\Rentacar.Interfaz.Informes.ControlListadoAlquileres.resources
+C:\Users\optima\Desktop\rentacar\rentacar\Rentacar\obj\Debug\Rentacar.Interfaz.Informes.ControlListadoAlquilerPorVehiculos.resources
+C:\Users\optima\Desktop\rentacar\rentacar\Rentacar\obj\Debug\Rentacar.Interfaz.Informes.FormListadoAlquilerPorVehiculos.resources
+C:\Users\optima\Desktop\rentacar\rentacar\Rentacar\obj\Debug\Rentacar.Interfaz.Informes.FormListadoDetalladoVehiculos.resources
