@@ -99,7 +99,7 @@
             // 
             // btnImprimir
             // 
-            this.btnImprimir.Location = new System.Drawing.Point(713, 294);
+            this.btnImprimir.Location = new System.Drawing.Point(713, 285);
             this.btnImprimir.Name = "btnImprimir";
             this.btnImprimir.Size = new System.Drawing.Size(75, 24);
             this.btnImprimir.TabIndex = 5;

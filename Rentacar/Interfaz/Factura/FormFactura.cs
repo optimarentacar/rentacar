@@ -40,7 +40,46 @@ namespace Rentacar.Interfaz.Factura
 
         public void rellenarDatos(Alquiler alquiler)
         {
+            //DATOS VEHICULO
+            lbMatricula.Text = alquiler.Vehiculo.Matricula;
+            lbMarca.Text = alquiler.Vehiculo.Marca.Nombre;
+            lbModelo.Text = alquiler.Vehiculo.Modelo;
+            lbAyo.Text = alquiler.Vehiculo.Anio;
+            lbPrecioDia.Text = alquiler.Vehiculo.CostoDia.ToString() + " €";
+            pictureBoxVehiculo.Image = Image.FromFile(alquiler.Vehiculo.PathAbsolutoFoto);
+
+            alquiler.Vehiculo.Caracteristicas.ForEach(c =>
+            {
+                Label label = new Label();
+                label.Text = c.Nombre;
+                label.Size = new Size(label.PreferredWidth, label.PreferredHeight);
+                listViewCaracteristicas.Controls.Add(label);
+            });
             
+            //DATOS CLIENTE
+            lbDni.Text = alquiler.Cliente.Dni;
+            lbNombre.Text = alquiler.Cliente.Nombre;
+            lbTelefono.Text = alquiler.Cliente.Telefono;
+            lbDomicilio.Text = alquiler.Cliente.Domilicio;
+
+            //DATOS ALQUILER
+            lbFechaInicio.Text = alquiler.FechaInicio.ToString("dd/MM/yyyy");
+            lbFechaEntrega.Text = alquiler.FechaFin.ToString("dd/MM/yyyy");
+            lbDias.Text = (alquiler.FechaFin - alquiler.FechaInicio).Days.ToString();
+            lbCosteDia.Text = alquiler.Vehiculo.CostoDia.ToString() + " €";
+            lbPrecioTotalDias.Text = ((alquiler.FechaFin - alquiler.FechaInicio).Days * (alquiler.Vehiculo.CostoDia)).ToString() + " €";
+            lbTotalAcceorios.Text = alquiler.CostoTotalAccesorios.ToString() + " €";
+            lbTotal.Text = alquiler.Importe.ToString() + " €";
+            
+            alquiler.Accesorios.ForEach(a =>
+            {
+                Label label = new Label();
+                label.Text = a.Nombre;
+                label.Size = new Size(label.PreferredWidth, label.PreferredHeight);
+                listViewAccesorios.Controls.Add(label);
+            });
+
+
             Show();
             this.Update();
             imprimir();

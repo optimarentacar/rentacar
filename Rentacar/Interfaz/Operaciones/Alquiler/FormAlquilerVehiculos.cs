@@ -22,12 +22,16 @@ namespace Rentacar.Interfaz.Operaciones.Alquiler
         private Modelos.Alquiler Alquiler;
         private IRepositorioVehiculo _repositorioVehiculo;
         private IRepositorioCliente _repositorioCliente;
+        private IRepositorioCaracteristica _repositorioCaracteristica;
+        private IRepositorioAccesorio _repositorioAccesorio;
 
-        public FormAlquilerVehiculos(IRepositorioAlquiler repositorioAlquiler, IRepositorioVehiculo repositorioVehiculo, IRepositorioCliente repositorioCliente)
+        public FormAlquilerVehiculos(IRepositorioAlquiler repositorioAlquiler, IRepositorioVehiculo repositorioVehiculo, IRepositorioCliente repositorioCliente, IRepositorioCaracteristica repositorioCaracteristica, IRepositorioAccesorio repositorioAccesorio)
         {
             _repositorioAlquiler = repositorioAlquiler;
             _repositorioVehiculo = repositorioVehiculo;
             _repositorioCliente = repositorioCliente;
+            _repositorioCaracteristica = repositorioCaracteristica;
+            _repositorioAccesorio = repositorioAccesorio;
             InitializeComponent();
         }
 
@@ -134,6 +138,12 @@ namespace Rentacar.Interfaz.Operaciones.Alquiler
                 Vehiculo v = await _repositorioVehiculo.Obtener(Alquiler.Vehiculo.Matricula);
                 Alquiler.Vehiculo = v;
                 Alquiler.Cliente = c;
+
+                List<Caracteristica> caracteristicas = await _repositorioCaracteristica.ListarPorMatricula(Alquiler.Vehiculo.Matricula);
+                Alquiler.Vehiculo.Caracteristicas = caracteristicas;
+                List<Accesorio> accesorios = await _repositorioAccesorio.ListarPorAlquiler(Alquiler.Id);
+                Alquiler.Accesorios = accesorios;
+
             }
             catch (Exception ex)
             {
