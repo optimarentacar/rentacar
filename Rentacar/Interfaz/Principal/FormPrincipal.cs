@@ -10,7 +10,6 @@ using Rentacar.Interfaz.Vehiculos;
 using Rentacar.Modelos;
 using Rentacar.Repositorio.Interfaces;
 using Rentacar.Repositorio.Repositorios;
-using Rentacar.Test;
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
@@ -19,8 +18,6 @@ namespace Rentacar.Interfaz.Principal
 {
     public partial class FormPrincipal : Form
     {
-        private List<Alquiler> Alquileres;
-
         public FormPrincipal()
         {
             InitializeComponent();
@@ -36,11 +33,6 @@ namespace Rentacar.Interfaz.Principal
         {
             FormGestionVehiculos fgv = Program.container.GetInstance<FormGestionVehiculos>();
             fgv.ShowDialog();
-        }
-
-        private async void button2_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void accesoriosToolStripMenuItem_Click(object sender, EventArgs e)
@@ -100,7 +92,7 @@ namespace Rentacar.Interfaz.Principal
         private void listadoDeAlquileresPorFechaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FormAlquilerFecha faf = Program.container.GetInstance<FormAlquilerFecha>();
-            faf.Show();
+            faf.ShowDialog();
         }
 
        
@@ -108,25 +100,25 @@ namespace Rentacar.Interfaz.Principal
         private void listadoDeClientesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FormListadoClientes lc = Program.container.GetInstance<FormListadoClientes>();
-            lc.Show();
+            lc.ShowDialog();
         }
 
         private void listadoResumidoDeVehículosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FormListadoResumidoVehiculos Lrv = Program.container.GetInstance<FormListadoResumidoVehiculos>();
-            Lrv.Show();
+            Lrv.ShowDialog();
         }
 
         private void listadoDetalladoDeVehículosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FormListadoDetalladoVehiculos Lrv = Program.container.GetInstance<FormListadoDetalladoVehiculos>();
-            Lrv.Show();
+            Lrv.ShowDialog();
         }
 
         private void listadoDeAlquileresPorVehículosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FormListadoAlquilerPorVehiculos lc = Program.container.GetInstance<FormListadoAlquilerPorVehiculos>();
-            lc.Show();
+            lc.ShowDialog();
         }
     }
 }

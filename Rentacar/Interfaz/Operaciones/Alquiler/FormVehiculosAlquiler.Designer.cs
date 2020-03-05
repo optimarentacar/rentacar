@@ -227,7 +227,11 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.pictureBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FormVehiculosAlquiler";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Alquiler";
             this.Load += new System.EventHandler(this.FormVehiculosAlquiler_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

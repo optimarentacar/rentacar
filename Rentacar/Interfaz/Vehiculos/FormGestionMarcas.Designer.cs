@@ -130,7 +130,11 @@
             this.Controls.Add(this.listBoxMarcas);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pictureBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FormGestionMarcas";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormGestionMarcas";
             this.Load += new System.EventHandler(this.FormGestionMarcas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

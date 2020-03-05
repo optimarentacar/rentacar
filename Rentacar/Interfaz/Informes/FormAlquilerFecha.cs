@@ -67,7 +67,7 @@ namespace Rentacar.Interfaz.Informes
 
                     FormListadoResumidoAlquileres flra = Program.container.GetInstance<FormListadoResumidoAlquileres>();
                     await flra.Listar(Alquileres);
-                    flra.Show();
+                    flra.ShowDialog();
 
                 }catch(Exception ex)
                 {
@@ -83,7 +83,7 @@ namespace Rentacar.Interfaz.Informes
                     Console.WriteLine(Alquileres.Count);
                     FormListadoDetalladoAlquileres al = Program.container.GetInstance<FormListadoDetalladoAlquileres>();
                     await al.Listar(Alquileres);
-                    al.Show();
+                    al.ShowDialog();
 
                 }
                 catch (Exception ex)

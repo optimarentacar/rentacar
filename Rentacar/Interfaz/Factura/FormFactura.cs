@@ -40,8 +40,7 @@ namespace Rentacar.Interfaz.Factura
 
         public void rellenarDatos(Alquiler alquiler)
         {
-            label1.Text = alquiler.Cliente.Nombre;
-            pictureBox1.Image = Image.FromFile(alquiler.Vehiculo.PathAbsolutoFoto);
+            
             Show();
             this.Update();
             imprimir();

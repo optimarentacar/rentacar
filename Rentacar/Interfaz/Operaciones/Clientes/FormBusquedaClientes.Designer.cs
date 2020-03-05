@@ -31,8 +31,8 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.rbDni = new System.Windows.Forms.RadioButton();
             this.rbNombre = new System.Windows.Forms.RadioButton();
+            this.rbDni = new System.Windows.Forms.RadioButton();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.cbBusqueda = new System.Windows.Forms.CheckBox();
@@ -69,18 +69,6 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Búsqueda por:";
             // 
-            // rbDni
-            // 
-            this.rbDni.AutoSize = true;
-            this.rbDni.Location = new System.Drawing.Point(6, 21);
-            this.rbDni.Name = "rbDni";
-            this.rbDni.Size = new System.Drawing.Size(49, 20);
-            this.rbDni.TabIndex = 0;
-            this.rbDni.TabStop = true;
-            this.rbDni.Text = "DNI";
-            this.rbDni.UseVisualStyleBackColor = true;
-            this.rbDni.Click += new System.EventHandler(this.rbDni_Click);
-            // 
             // rbNombre
             // 
             this.rbNombre.AutoSize = true;
@@ -92,6 +80,18 @@
             this.rbNombre.Text = "Nombre";
             this.rbNombre.UseVisualStyleBackColor = true;
             this.rbNombre.Click += new System.EventHandler(this.rbNombre_Click);
+            // 
+            // rbDni
+            // 
+            this.rbDni.AutoSize = true;
+            this.rbDni.Location = new System.Drawing.Point(6, 21);
+            this.rbDni.Name = "rbDni";
+            this.rbDni.Size = new System.Drawing.Size(49, 20);
+            this.rbDni.TabIndex = 0;
+            this.rbDni.TabStop = true;
+            this.rbDni.Text = "DNI";
+            this.rbDni.UseVisualStyleBackColor = true;
+            this.rbDni.Click += new System.EventHandler(this.rbDni_Click);
             // 
             // textBox1
             // 
@@ -213,6 +213,9 @@
             this.Controls.Add(this.labelBusqueda);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.pictureBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FormBusquedaClientes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Alquiler de Vehículos 1.0";

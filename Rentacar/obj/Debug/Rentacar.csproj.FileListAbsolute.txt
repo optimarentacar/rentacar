@@ -134,7 +134,6 @@ C:\Users\optima\Desktop\rentacar\rentacar\Rentacar\obj\Debug\Rentacar.Interfaz.O
 C:\Users\optima\Desktop\rentacar\rentacar\Rentacar\obj\Debug\Rentacar.Interfaz.Principal.FormPrincipal.resources
 C:\Users\optima\Desktop\rentacar\rentacar\Rentacar\obj\Debug\Rentacar.Interfaz.Vehiculos.FormGestionVehiculos.resources
 C:\Users\optima\Desktop\rentacar\rentacar\Rentacar\obj\Debug\Rentacar.Properties.Resources.resources
-C:\Users\optima\Desktop\rentacar\rentacar\Rentacar\obj\Debug\Rentacar.Test.FormTest.resources
 C:\Users\optima\Desktop\rentacar\rentacar\Rentacar\obj\Debug\Rentacar.csproj.GenerateResource.cache
 C:\Users\optima\Desktop\rentacar\rentacar\Rentacar\obj\Debug\Rentacar.csproj.CopyComplete
 C:\Users\optima\Desktop\rentacar\rentacar\Rentacar\obj\Debug\Rentacar.exe
@@ -226,3 +225,6 @@ C:\Users\adria\Desktop\Rentacar\rentacar\Rentacar\obj\Debug\Rentacar.Interfaz.In
 C:\Users\adria\Desktop\Rentacar\rentacar\Rentacar\obj\Debug\Rentacar.Interfaz.Informes.ControlListadoAlquilerPorVehiculos.resources
 C:\Users\adria\Desktop\Rentacar\rentacar\Rentacar\obj\Debug\Rentacar.Interfaz.Informes.FormListadoAlquilerPorVehiculos.resources
 C:\Users\adria\Desktop\Rentacar\rentacar\Rentacar\obj\Debug\Rentacar.Interfaz.Informes.ControlListadoCaracteristicas.resources
+C:\Users\optima\Desktop\rentacar\rentacar\Rentacar\obj\Debug\Rentacar.Interfaz.Factura.FormFactura.resources
+C:\Users\optima\Desktop\rentacar\rentacar\Rentacar\obj\Debug\Rentacar.Interfaz.Informes.ControlListadoCaracteristicas.resources
+C:\Users\optima\Desktop\rentacar\rentacar\Rentacar\obj\Debug\Rentacar.Interfaz.Informes.ControlListadoDetalladoVehiculos.resources

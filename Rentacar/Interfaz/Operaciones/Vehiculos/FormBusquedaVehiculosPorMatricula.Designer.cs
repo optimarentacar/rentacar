@@ -172,7 +172,11 @@
             this.Controls.Add(this.tbMatricula);
             this.Controls.Add(this.labelPersonalizado1);
             this.Controls.Add(this.pictureBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FormBusquedaVehiculosPorMatricula";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Alquiler de Vehículos 1.0";
             this.Load += new System.EventHandler(this.FormBusquedaVehiculosPorMatricula_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

@@ -42,7 +42,7 @@ namespace Rentacar.Interfaz.Informes
                     List<Caracteristica> c = await _repositorioCaracteristica.Listar();
                     v.Caracteristicas = c;
                 });
-
+                lbCantidad.Text = vehiculos.Count.ToString() + " Vehículos";
             }
             catch (Exception ex)
             {

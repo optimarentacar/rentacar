@@ -62,7 +62,7 @@ namespace Rentacar.Interfaz.Operaciones.Alquiler
         {
             FormDetallesAlquiler fda = Program.container.GetInstance<FormDetallesAlquiler>();
             await fda.CargarDatosAlquiler(Alquiler);
-            fda.Show();
+            fda.ShowDialog();
         }
 
         private void Tabla_SelectionChanged(object sender, EventArgs e)
@@ -110,10 +110,11 @@ namespace Rentacar.Interfaz.Operaciones.Alquiler
             }
 
         }
-        private void btnAlquilar_Click(object sender, EventArgs e)
+        private async void btnAlquilar_Click(object sender, EventArgs e)
         {
             FormVehiculosAlquiler gm = Program.container.GetInstance<FormVehiculosAlquiler>();
             gm.ShowDialog();
+            await Listar();
 
 
         }

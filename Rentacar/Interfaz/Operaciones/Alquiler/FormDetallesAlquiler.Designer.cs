@@ -438,9 +438,12 @@
             this.Controls.Add(this.DatosCliente);
             this.Controls.Add(this.DatosVehículo);
             this.Controls.Add(this.pictureBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FormDetallesAlquiler";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Alquiler de Vehículos 1.0";
-            this.Load += new System.EventHandler(this.FormDetallesAlquiler_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.DatosVehículo.ResumeLayout(false);
             this.DatosVehículo.PerformLayout();

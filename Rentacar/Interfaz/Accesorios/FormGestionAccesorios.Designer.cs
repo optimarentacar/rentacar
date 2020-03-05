@@ -30,18 +30,18 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormGestionAccesorios));
             this.tabla = new System.Windows.Forms.DataGridView();
+            this.columnaId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columnaNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.columnaPrecio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.tbPrecio = new System.Windows.Forms.TextBox();
             this.tbNombre = new System.Windows.Forms.TextBox();
-            this.pictureBox = new System.Windows.Forms.PictureBox();
             this.labelPersonalizado2 = new Rentacar.Interfaz.Personalizados.LabelPersonalizado();
             this.labelPersonalizado1 = new Rentacar.Interfaz.Personalizados.LabelPersonalizado();
-            this.columnaId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.columnaNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.columnaPrecio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pictureBox = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.tabla)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
@@ -74,6 +74,28 @@
             this.tabla.Size = new System.Drawing.Size(313, 150);
             this.tabla.TabIndex = 1;
             this.tabla.SelectionChanged += new System.EventHandler(this.tabla_SelectionChanged);
+            // 
+            // columnaId
+            // 
+            this.columnaId.HeaderText = "Id";
+            this.columnaId.Name = "columnaId";
+            this.columnaId.ReadOnly = true;
+            this.columnaId.Visible = false;
+            // 
+            // columnaNombre
+            // 
+            this.columnaNombre.HeaderText = "Nombre";
+            this.columnaNombre.Name = "columnaNombre";
+            this.columnaNombre.ReadOnly = true;
+            this.columnaNombre.Width = 250;
+            // 
+            // columnaPrecio
+            // 
+            this.columnaPrecio.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.columnaPrecio.HeaderText = "Precio";
+            this.columnaPrecio.Name = "columnaPrecio";
+            this.columnaPrecio.ReadOnly = true;
+            this.columnaPrecio.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
             // groupBox1
             // 
@@ -145,15 +167,6 @@
             this.tbNombre.TabIndex = 2;
             this.tbNombre.TextChanged += new System.EventHandler(this.TextBoxes_TextChanged);
             // 
-            // pictureBox
-            // 
-            this.pictureBox.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox.Image")));
-            this.pictureBox.Location = new System.Drawing.Point(12, 12);
-            this.pictureBox.Name = "pictureBox";
-            this.pictureBox.Size = new System.Drawing.Size(313, 49);
-            this.pictureBox.TabIndex = 0;
-            this.pictureBox.TabStop = false;
-            // 
             // labelPersonalizado2
             // 
             this.labelPersonalizado2.AutoSize = true;
@@ -174,27 +187,14 @@
             this.labelPersonalizado1.TabIndex = 0;
             this.labelPersonalizado1.Text = "Accesorio:";
             // 
-            // columnaId
+            // pictureBox
             // 
-            this.columnaId.HeaderText = "Id";
-            this.columnaId.Name = "columnaId";
-            this.columnaId.ReadOnly = true;
-            this.columnaId.Visible = false;
-            // 
-            // columnaNombre
-            // 
-            this.columnaNombre.HeaderText = "Nombre";
-            this.columnaNombre.Name = "columnaNombre";
-            this.columnaNombre.ReadOnly = true;
-            this.columnaNombre.Width = 250;
-            // 
-            // columnaPrecio
-            // 
-            this.columnaPrecio.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.columnaPrecio.HeaderText = "Precio";
-            this.columnaPrecio.Name = "columnaPrecio";
-            this.columnaPrecio.ReadOnly = true;
-            this.columnaPrecio.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.pictureBox.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox.Image")));
+            this.pictureBox.Location = new System.Drawing.Point(12, 12);
+            this.pictureBox.Name = "pictureBox";
+            this.pictureBox.Size = new System.Drawing.Size(313, 49);
+            this.pictureBox.TabIndex = 0;
+            this.pictureBox.TabStop = false;
             // 
             // FormGestionAccesorios
             // 
@@ -205,6 +205,8 @@
             this.Controls.Add(this.tabla);
             this.Controls.Add(this.pictureBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FormGestionAccesorios";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Alquiler de vehículos 1.0";

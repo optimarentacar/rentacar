@@ -32,8 +32,6 @@ namespace Rentacar.Interfaz.Accesorios
             try
             {
                 this.accesorios = await _repositorioAccesorio.Listar();
-
-
             }
             catch (Exception)
             {

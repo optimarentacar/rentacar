@@ -34,6 +34,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.lbCantidad = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -42,7 +43,7 @@
             this.flowLayoutPanel1.AutoScroll = true;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(13, 145);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(775, 354);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(775, 476);
             this.flowLayoutPanel1.TabIndex = 1;
             // 
             // label1
@@ -95,18 +96,36 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+            // lbCantidad
+            // 
+            this.lbCantidad.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(200)))), ((int)(((byte)(239)))));
+            this.lbCantidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbCantidad.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(64)))), ((int)(((byte)(143)))));
+            this.lbCantidad.Location = new System.Drawing.Point(12, 624);
+            this.lbCantidad.Name = "lbCantidad";
+            this.lbCantidad.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lbCantidad.Size = new System.Drawing.Size(776, 19);
+            this.lbCantidad.TabIndex = 7;
+            this.lbCantidad.Text = "lbCantidad";
+            this.lbCantidad.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // FormListadoDetalladoVehiculos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 511);
+            this.ClientSize = new System.Drawing.Size(800, 660);
+            this.Controls.Add(this.lbCantidad);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.pictureBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FormListadoDetalladoVehiculos";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormListadoDetalladoVehiculos";
             this.Load += new System.EventHandler(this.FormListadoDetalladoVehiculos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -123,5 +142,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lbCantidad;
     }
 }

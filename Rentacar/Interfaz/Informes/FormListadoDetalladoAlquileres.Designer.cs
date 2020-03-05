@@ -30,11 +30,8 @@
         {
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.FlowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.lbTotal = new System.Windows.Forms.Label();
-            this.lbTotalAlquileres = new System.Windows.Forms.Label();
+            this.lbBarra = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -52,54 +49,35 @@
             this.FlowLayoutPanel.AutoScroll = true;
             this.FlowLayoutPanel.Location = new System.Drawing.Point(13, 147);
             this.FlowLayoutPanel.Name = "FlowLayoutPanel";
-            this.FlowLayoutPanel.Size = new System.Drawing.Size(768, 545);
+            this.FlowLayoutPanel.Size = new System.Drawing.Size(768, 483);
             this.FlowLayoutPanel.TabIndex = 1;
             // 
-            // panel1
+            // lbBarra
             // 
-            this.panel1.BackColor = System.Drawing.Color.DodgerBlue;
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.lbTotalAlquileres);
-            this.panel1.Controls.Add(this.lbTotal);
-            this.panel1.Location = new System.Drawing.Point(13, 698);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(768, 24);
-            this.panel1.TabIndex = 5;
-            // 
-            // lbTotal
-            // 
-            this.lbTotal.AutoSize = true;
-            this.lbTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTotal.ForeColor = System.Drawing.Color.MediumBlue;
-            this.lbTotal.Location = new System.Drawing.Point(626, 2);
-            this.lbTotal.Name = "lbTotal";
-            this.lbTotal.Size = new System.Drawing.Size(116, 20);
-            this.lbTotal.TabIndex = 0;
-            this.lbTotal.Text = "Importe Total";
-            // 
-            // lbTotalAlquileres
-            // 
-            this.lbTotalAlquileres.AutoSize = true;
-            this.lbTotalAlquileres.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTotalAlquileres.ForeColor = System.Drawing.Color.MediumBlue;
-            this.lbTotalAlquileres.Location = new System.Drawing.Point(487, 2);
-            this.lbTotalAlquileres.Name = "lbTotalAlquileres";
-            this.lbTotalAlquileres.Size = new System.Drawing.Size(133, 20);
-            this.lbTotalAlquileres.TabIndex = 1;
-            this.lbTotalAlquileres.Text = "Total Alquileres";
+            this.lbBarra.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(200)))), ((int)(((byte)(239)))));
+            this.lbBarra.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbBarra.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(64)))), ((int)(((byte)(143)))));
+            this.lbBarra.Location = new System.Drawing.Point(12, 633);
+            this.lbBarra.Name = "lbBarra";
+            this.lbBarra.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lbBarra.Size = new System.Drawing.Size(769, 19);
+            this.lbBarra.TabIndex = 3;
+            this.lbBarra.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // FormListadoDetalladoAlquileres
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(793, 732);
-            this.Controls.Add(this.panel1);
+            this.ClientSize = new System.Drawing.Size(793, 659);
+            this.Controls.Add(this.lbBarra);
             this.Controls.Add(this.FlowLayoutPanel);
             this.Controls.Add(this.pictureBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FormListadoDetalladoAlquileres";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -108,8 +86,6 @@
 
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.FlowLayoutPanel FlowLayoutPanel;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label lbTotal;
-        private System.Windows.Forms.Label lbTotalAlquileres;
+        private System.Windows.Forms.Label lbBarra;
     }
 }

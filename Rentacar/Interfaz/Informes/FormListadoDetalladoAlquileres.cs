@@ -20,10 +20,15 @@ namespace Rentacar.Interfaz.Informes
 
         public async Task Listar(List<Alquiler> alquileres)
         {
+            float total = 0f;
             alquileres.ForEach(a =>
             {
+                total += a.Importe;
+
                 FlowLayoutPanel.Controls.Add(new ControlListadoDetalladoAlquileres(a));
             });
+            
+            lbBarra.Text = alquileres.Count.ToString() + " alquileres.      " + total.ToString() + " €";
         }
     }
 }

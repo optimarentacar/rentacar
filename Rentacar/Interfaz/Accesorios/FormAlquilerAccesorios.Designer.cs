@@ -182,7 +182,11 @@
             this.Controls.Add(this.btnIzquierda);
             this.Controls.Add(this.btnDerecha);
             this.Controls.Add(this.pictureBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FormAlquilerAccesorios";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Alquiler de Vehículos 1.0";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormAlquilerAccesorios_FormClosed);
             this.Load += new System.EventHandler(this.FormAlquilerAccesorios_Load);

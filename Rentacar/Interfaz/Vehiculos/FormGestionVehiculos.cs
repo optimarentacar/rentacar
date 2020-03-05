@@ -505,7 +505,7 @@ namespace Rentacar.Interfaz.Vehiculos
 
             FormCaracteristicas fc = Program.container.GetInstance<FormCaracteristicas>();
             await fc.ListarCaracteristicasVehiculo(vehiculo);
-            fc.Show();
+            fc.ShowDialog();
 
 
 

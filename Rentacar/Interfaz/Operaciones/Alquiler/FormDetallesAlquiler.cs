@@ -32,14 +32,6 @@ namespace Rentacar.Interfaz.Operaciones.Vehiculos
             InitializeComponent();
         }
 
-        
-
-
-        private void FormDetallesAlquiler_Load(object sender, EventArgs e)
-        {
-
-        }
-
         public async Task CargarDatosAlquiler(Modelos.Alquiler alquiler)
         {
             
@@ -86,7 +78,6 @@ namespace Rentacar.Interfaz.Operaciones.Vehiculos
                 listBoxCaracteristicas.DataSource = caracteristicas;
                 listBoxCaracteristicas.DisplayMember = "Nombre";
                 listBoxCaracteristicas.ValueMember = "Id";
-
 
             }
             catch (Exception ex)

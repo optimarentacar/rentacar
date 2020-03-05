@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnAplicarFiltro = new System.Windows.Forms.Button();
@@ -38,13 +38,16 @@
             this.checkboxMarca = new System.Windows.Forms.CheckBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnBuscar = new System.Windows.Forms.Button();
+            this.labelPersonalizado3 = new Rentacar.Interfaz.Personalizados.LabelPersonalizado();
             this.tbVeces = new System.Windows.Forms.TextBox();
+            this.labelPersonalizado2 = new Rentacar.Interfaz.Personalizados.LabelPersonalizado();
             this.tbModelo = new System.Windows.Forms.TextBox();
             this.tbMarca = new System.Windows.Forms.TextBox();
             this.cbCaracteristicas = new System.Windows.Forms.ComboBox();
             this.rbAlquiladosVeces = new System.Windows.Forms.RadioButton();
             this.rbAlquiladosGroupBy = new System.Windows.Forms.RadioButton();
             this.rbAlquiladoDistinct = new System.Windows.Forms.RadioButton();
+            this.labelPersonalizado1 = new Rentacar.Interfaz.Personalizados.LabelPersonalizado();
             this.rbMarcaModelo = new System.Windows.Forms.RadioButton();
             this.rbCaracteristicas = new System.Windows.Forms.RadioButton();
             this.tabla = new System.Windows.Forms.DataGridView();
@@ -54,9 +57,6 @@
             this.columnaPlazas = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.columnaAnio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.columnaCoste = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.labelPersonalizado3 = new Rentacar.Interfaz.Personalizados.LabelPersonalizado();
-            this.labelPersonalizado2 = new Rentacar.Interfaz.Personalizados.LabelPersonalizado();
-            this.labelPersonalizado1 = new Rentacar.Interfaz.Personalizados.LabelPersonalizado();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -174,12 +174,32 @@
             this.btnBuscar.UseVisualStyleBackColor = true;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
+            // labelPersonalizado3
+            // 
+            this.labelPersonalizado3.AutoSize = true;
+            this.labelPersonalizado3.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F);
+            this.labelPersonalizado3.Location = new System.Drawing.Point(326, 141);
+            this.labelPersonalizado3.Name = "labelPersonalizado3";
+            this.labelPersonalizado3.Size = new System.Drawing.Size(40, 16);
+            this.labelPersonalizado3.TabIndex = 11;
+            this.labelPersonalizado3.Text = "veces";
+            // 
             // tbVeces
             // 
             this.tbVeces.Location = new System.Drawing.Point(220, 137);
             this.tbVeces.Name = "tbVeces";
             this.tbVeces.Size = new System.Drawing.Size(100, 22);
             this.tbVeces.TabIndex = 10;
+            // 
+            // labelPersonalizado2
+            // 
+            this.labelPersonalizado2.AutoSize = true;
+            this.labelPersonalizado2.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F);
+            this.labelPersonalizado2.Location = new System.Drawing.Point(533, 64);
+            this.labelPersonalizado2.Name = "labelPersonalizado2";
+            this.labelPersonalizado2.Size = new System.Drawing.Size(58, 16);
+            this.labelPersonalizado2.TabIndex = 9;
+            this.labelPersonalizado2.Text = "( Aprox.)";
             // 
             // tbModelo
             // 
@@ -239,6 +259,16 @@
             this.rbAlquiladoDistinct.UseVisualStyleBackColor = true;
             this.rbAlquiladoDistinct.Click += new System.EventHandler(this.TodosLosRadioBox_OnCLick);
             // 
+            // labelPersonalizado1
+            // 
+            this.labelPersonalizado1.AutoSize = true;
+            this.labelPersonalizado1.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F);
+            this.labelPersonalizado1.Location = new System.Drawing.Point(302, 64);
+            this.labelPersonalizado1.Name = "labelPersonalizado1";
+            this.labelPersonalizado1.Size = new System.Drawing.Size(64, 16);
+            this.labelPersonalizado1.TabIndex = 2;
+            this.labelPersonalizado1.Text = "Y modelo";
+            // 
             // rbMarcaModelo
             // 
             this.rbMarcaModelo.AutoSize = true;
@@ -269,14 +299,14 @@
             this.tabla.AllowUserToDeleteRows = false;
             this.tabla.BackgroundColor = System.Drawing.Color.White;
             this.tabla.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.tabla.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.tabla.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.tabla.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.tabla.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.columaMatricula,
@@ -343,36 +373,6 @@
             this.columnaCoste.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.columnaCoste.Width = 110;
             // 
-            // labelPersonalizado3
-            // 
-            this.labelPersonalizado3.AutoSize = true;
-            this.labelPersonalizado3.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F);
-            this.labelPersonalizado3.Location = new System.Drawing.Point(326, 141);
-            this.labelPersonalizado3.Name = "labelPersonalizado3";
-            this.labelPersonalizado3.Size = new System.Drawing.Size(40, 16);
-            this.labelPersonalizado3.TabIndex = 11;
-            this.labelPersonalizado3.Text = "veces";
-            // 
-            // labelPersonalizado2
-            // 
-            this.labelPersonalizado2.AutoSize = true;
-            this.labelPersonalizado2.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F);
-            this.labelPersonalizado2.Location = new System.Drawing.Point(533, 64);
-            this.labelPersonalizado2.Name = "labelPersonalizado2";
-            this.labelPersonalizado2.Size = new System.Drawing.Size(58, 16);
-            this.labelPersonalizado2.TabIndex = 9;
-            this.labelPersonalizado2.Text = "( Aprox.)";
-            // 
-            // labelPersonalizado1
-            // 
-            this.labelPersonalizado1.AutoSize = true;
-            this.labelPersonalizado1.Font = new System.Drawing.Font("Microsoft Tai Le", 9.75F);
-            this.labelPersonalizado1.Location = new System.Drawing.Point(302, 64);
-            this.labelPersonalizado1.Name = "labelPersonalizado1";
-            this.labelPersonalizado1.Size = new System.Drawing.Size(64, 16);
-            this.labelPersonalizado1.TabIndex = 2;
-            this.labelPersonalizado1.Text = "Y modelo";
-            // 
             // FormBusquedaVehiculosPorFiltros
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -382,6 +382,9 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.pictureBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FormBusquedaVehiculosPorFiltros";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Alquiler de Vehículos 1.0";

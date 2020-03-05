@@ -193,6 +193,16 @@ namespace Rentacar.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Factura {
+            get {
+                object obj = ResourceManager.GetObject("Factura", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap FlechaDerecha {
             get {
                 object obj = ResourceManager.GetObject("FlechaDerecha", resourceCulture);

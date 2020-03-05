@@ -197,7 +197,11 @@
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnAlquilar);
             this.Controls.Add(this.pictureBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FormAlquilerVehiculos";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormAlquilerVehículos";
             this.Load += new System.EventHandler(this.FormAlquilerVehiculos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

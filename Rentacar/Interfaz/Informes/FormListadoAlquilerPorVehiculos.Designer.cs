@@ -172,7 +172,7 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // FormListadoDetalladoVehiculos
+            // FormListadoAlquilerPorVehiculos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -190,7 +190,11 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.FlowLayoutPanel);
             this.Controls.Add(this.pictureBox1);
-            this.Name = "FormListadoDetalladoVehiculos";
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.Name = "FormListadoAlquilerPorVehiculos";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.FormListadoDetalladoVehiculos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

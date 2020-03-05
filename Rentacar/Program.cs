@@ -11,7 +11,6 @@ using Rentacar.Interfaz.Principal;
 using Rentacar.Interfaz.Vehiculos;
 using Rentacar.Repositorio.Interfaces;
 using Rentacar.Repositorio.Repositorios;
-using Rentacar.Test;
 using SimpleInjector;
 using System;
 using System.Collections.Generic;
@@ -58,9 +57,6 @@ namespace Rentacar
             container.Register<FormVehiculosAlquiler>();
             container.Register<FormAlquilerFecha>();
             container.Register<FormFactura>();
-
-
-            container.Register<FormTest>();
 
             //Informes
             container.Register<FormListadoClientes>();

@@ -118,6 +118,9 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="Cancelar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Iconos\Cancelar.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Eliminar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Assets\Iconos\Eliminar.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -141,9 +144,6 @@
   </data>
   <data name="BusquedaVehiculosFiltros" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Assets\Imagenes\BusquedaVehiculosFiltros.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ListadoResumidoAlquileres" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Assets\Imagenes\ListadoResumidoAlquileres.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="ListadoVehiculos" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Assets\Imagenes\ListadoVehiculos.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -169,8 +169,8 @@
   <data name="Primero" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Assets\Iconos\Primero.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Cancelar" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Assets\Iconos\Cancelar.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ListadoResumidoAlquileres" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Imagenes\ListadoResumidoAlquileres.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="BusquedaVehiculosPorMatricula" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Assets\Imagenes\BusquedaVehiculosPorMatricula.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -180,6 +180,9 @@
   </data>
   <data name="Siguiente" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Assets\Iconos\Siguiente.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ListadoDetalladoVehiculos" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Imagenes\ListadoDetalladoVehiculos.JPG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Modificar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Assets\Iconos\Modificar.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -199,7 +202,7 @@
   <data name="AlquilerVehículos" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Assets\Imagenes\AlquilerVehículos.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ListadoDetalladoVehiculos" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Assets\Imagenes\ListadoDetalladoVehiculos.JPG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Factura" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Assets\Imagenes\Factura.JPG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
